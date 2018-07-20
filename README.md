@@ -1,15 +1,18 @@
 ### Setup
 
-1. [Install Stencil CLI](https://stencil.bigcommerce.com/docs/installing-stencil-cli-1)
-2. `nvm install`
-3. `npm install`
-4. Ask admmmins for Client ID & Access Token
-5. `stencil init`
+1. `nvm install`
+2. `nvm use`
+3. `npm install -g @bigcommerce/stencil-cli`
+4. `npm install`
+5. Ask admmmins for Client ID & Access Token
+6. `stencil init`
     - Enter homepage URL `http://salter-house.mybigcommerce.com`
     - Enter port `3000`
     - Enter Client ID & Access Token
 
 ### Running Locally
+`npm install` (if new packages)
+
 `stencil start`
 
 or with local version of Theme Editor:
