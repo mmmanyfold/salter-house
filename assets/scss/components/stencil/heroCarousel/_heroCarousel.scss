@@ -56,7 +56,10 @@
     }
 
     .slick-dots {
-        bottom: spacing("third");
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 100%;
 
         @include breakpoint("medium") {
             bottom: spacing("single");
