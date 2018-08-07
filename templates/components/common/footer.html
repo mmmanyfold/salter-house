@@ -25,6 +25,11 @@
                             <a href="{{url}}">{{name}}</a>
                         </li>
                     {{/each}}
+                    {{#if settings.gift_certificates_enabled}}
+                        <li class="navUser-item">
+                            <a class="navUser-action" href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
+                        </li>
+                    {{/if}}
                     <li>
                         <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
                     </li>
