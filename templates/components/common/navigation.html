@@ -24,6 +24,13 @@
             </li>
             <li class="navUser-item navUser-item--divider">|</li>
         {{/if}}
+        {{#unless theme_settings.hide_content_navigation}}
+            {{#each pages}}
+                <li class="navUser-item">
+                    <a class="navUser-action" href="{{url}}">{{name}}</a>
+                </li>
+            {{/each}}
+        {{/unless}}
         <li class="navUser-item">
             <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">{{lang 'common.search'}}</a>
         </li>
@@ -38,6 +45,7 @@
                 <!--{{/if}}-->
             <!--{{/if}}-->
         <!--</li>-->
+        <br>
         <li class="navUser-item navUser-item--cart">
             <a
                 class="navUser-action"
@@ -45,7 +53,8 @@
                 data-dropdown="cart-preview-dropdown"
                 data-options="align:right"
                 href="{{urls.cart}}">
-                <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span> <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
+                <img width="20px" src="../assets/img/shopping-bag.png">
+                <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
             </a>
 
             <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>

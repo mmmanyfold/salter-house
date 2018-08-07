@@ -111,11 +111,19 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         float: none;
     }
+}
 
-    + .navPages-list {
-        border-top: 1px solid $navPages-list--user-borderColor;
-        margin-top: spacing("half");
-        padding-top: spacing("half");
+.navPages-list-left {
+    @include breakpoint("medium") {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        .navPages-action {
+            padding-right: 1.75em;
+        }
+    }
+
+    .navPages-action {
+        color: black;
     }
 }
 
@@ -225,6 +233,10 @@
         stroke: stencilColor("navPages-color");
         transition: all 0.15s ease;
     }
+}
+
+#newArrivals-link {
+    color: #F39838;
 }
 
 .navPages-action--storeCredit {
