@@ -79,7 +79,7 @@
         font-size: 0; // 1
         overflow-y: visible;
         padding: 0;
-        text-align: center;
+        margin: remCalc($header-toggle-width * 0.36) 0;
     }
 
     ul {
@@ -107,7 +107,8 @@
     margin: 0;
 
     @include breakpoint("medium") {
-        display: inline-block;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         float: none;
     }
 
@@ -196,7 +197,7 @@
 
     @include breakpoint("medium") {
         display: inline-block;
-        padding: spacing("half") (spacing("half") + spacing("quarter")) (spacing("half") + spacing("quarter"));
+        padding: 0 spacing("half");
 
         &.is-open {
             background-color: stencilColor("navPages-subMenu-backgroundColor");
