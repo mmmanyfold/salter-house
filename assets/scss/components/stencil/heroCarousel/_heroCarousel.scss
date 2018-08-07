@@ -110,25 +110,14 @@
 }
 
 .heroCarousel-content {
-    background-color: rgba($carousel-bgColor, 1);
-    padding: spacing("half") spacing("single") (spacing("double"));
-    text-align: center;
-
-    @include breakpoint("medium") {
-        @include carouselOpaqueBackgrounds;
-        background-color: rgba($carousel-bgColor, 0.9);
-        left: 0;
-        margin: 0 auto;
-        padding: spacing("single") * 1.5;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: remCalc(700px);
-
-        &.heroCarousel-content--empty {
-            background-color: transparent;
-        }
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    top: 90%;
+    padding: 0 spacing("double");
+    &.heroCarousel-action.button.button--primary.button--large {
+      transform: translateY(-50%);
+      margin-top: 0;
     }
 }
 
@@ -136,9 +125,8 @@
     color: $carousel-title-color;
     font-size: fontSize("small");
     margin-top: 0;
-
-    @include breakpoint("medium") {
-        font-size: fontSize("hero");
+    &.heroCarousel-description {
+        font-weight: normal;
     }
 }
 
@@ -158,7 +146,9 @@
 .heroCarousel-action {
     margin: 0;
 
-    @include breakpoint("medium") {
-        margin-top: spacing("single");
+    &.button--primary {
+        background-color: transparent;
+        border-color: $carousel-title-color;
+        color: $carousel-title-color;
     }
 }
