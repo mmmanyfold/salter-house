@@ -11,13 +11,16 @@
     - Enter Client ID & Access Token
 
 ### Running Locally
+
 `npm install` (if new packages)
 
-`stencil start`
+### Commands
 
-or with local version of Theme Editor:
+- `npm start` starts dev mode without theme editor
+- `npm run dev` starts dev mode with theme editor
+- `npm run zip` zips up project for deployment
 
-`stencil start -e`
+---
 
 - [Stencil CLI options](https://stencil.bigcommerce.com/docs/stencil-cli-options)
 - [Stencil Theme's Path Anatomy](https://stencil.bigcommerce.com/docs/anatomy-of-the-stencil-theme)
