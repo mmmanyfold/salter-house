@@ -115,18 +115,25 @@
     left: 0;
     top: 90%;
     padding: 0 spacing("double");
-    &.heroCarousel-action.button.button--primary.button--large {
-      transform: translateY(-50%);
-      margin-top: 0;
+    .heroCarousel-action.button.button--primary.button--large {
+        transform: translateY(-5%);
+        margin-top: 0;
+        margin-left: 0.25rem;
+        font-size: fontSize("larger");
+        font-family: $fontFamily-sans;
+        padding: 0.5rem;
+        text-transform: capitalize;
+        border-width: 2px;
     }
 }
 
 .heroCarousel-title {
     color: $carousel-title-color;
-    font-size: fontSize("small");
+    font-size: fontSize("larger");
     margin-top: 0;
-    &.heroCarousel-description {
+    .heroCarousel-description {
         font-weight: normal;
+        font-size: fontSize("larger");
     }
 }
 
