@@ -66,6 +66,7 @@
   },
   "scripts": {
     "start": "stencil start",
+    "dev": "stencil start -e",
     "build": "webpack --config webpack.prod.js",
     "buildDev": "webpack --config webpack.dev.js"
   }
