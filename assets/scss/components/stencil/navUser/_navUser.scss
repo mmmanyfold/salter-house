@@ -17,7 +17,7 @@
     @include verticalPositionMiddle("absolute");
     right: 0;
     top: 26px; // 2
-    width: 100%; // 4
+    //width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
 
     @include breakpoint("medium") {
@@ -27,6 +27,7 @@
         top: auto;
         transform: none;
         z-index: zIndex("high");
+        margin: remCalc($header-toggle-width * 0.36) 0;
     }
 
     .dropdown-menu {
@@ -65,7 +66,7 @@
 .navUser-action {
     color: stencilColor("navUser-color");
     font-weight: fontWeight("bold");
-    padding: spacing("base") spacing("half");
+    padding: 0 spacing("half");
     text-decoration: none;
     text-transform: uppercase;
 
@@ -151,6 +152,7 @@
 
 .navUser-item--cart {
     display: block;
+    float: right;
 
     .navUser-action {
         color: stencilColor("navUser-color");

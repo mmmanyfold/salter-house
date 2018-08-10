@@ -26,6 +26,19 @@
         {{inject 'maintenanceMode' settings.maintenance}}
         {{inject 'urls' urls}}
         {{{snippet 'htmlhead'}}}
+
+        <style type="text/css" media="screen, print">
+            @font-face {
+                font-family: "Plaids";
+                src: url("{{cdn '/fonts/Plaid-XS.woff2'}}") format('woff2'),
+                     url("{{cdn '/fonts/Plaid-XS.woff'}}") format('woff');
+            }
+            @font-face {
+                font-family: "MS-PMincho";
+                src: url("{{cdn '/fonts/MS-PMincho.woff2'}}") format('woff2'),
+                     url("{{cdn '/fonts/MS-PMincho.woff'}}") format('woff');
+            }
+        </style>
     </head>
     <body>
         {{{snippet 'header'}}}
