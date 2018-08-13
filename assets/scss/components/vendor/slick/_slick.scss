@@ -93,10 +93,13 @@
 
 .slick-dots {  // 2
     margin: 0;
-    margin-left: 2.5em;
+
+    @include breakpoint("medium") {
+        margin-left: 2.4em;
+    }
 
     li {
-        @include square(32px);
+        @include square(29px);
         margin: 0;
         padding: remCalc(5px);
 

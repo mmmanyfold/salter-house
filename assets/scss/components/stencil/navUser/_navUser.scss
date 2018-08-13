@@ -30,7 +30,7 @@
         transform: none;
         z-index: zIndex("high");
         margin: remCalc($header-toggle-width * 0.36) 0;
-        margin-right: spacing("quarter");
+        margin-right: spacing("half");
     }
 
     .dropdown-menu {

@@ -50,10 +50,9 @@
     }
 
     @include breakpoint("medium") {
-        //margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
         padding: 0;
-        margin-left: remCalc($header-toggle-width * 0.65);
-        margin-right: remCalc($header-toggle-width * 0.35);
+        margin-left: spacing("double");
+        margin-right: spacing("single");
         width: 350px;
 
         .header.fixed & {
