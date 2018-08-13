@@ -44,7 +44,7 @@
 
 .facetedSearch-toggle-indicator {
     @include grid-column(5);
-    font-weight: bold;
+    font-weight: normal;
     padding: 0;
     text-align: right;
 }
@@ -122,6 +122,6 @@
 // Facted search ratings
 .facetedSearch-content--rating {
     .is-selected {
-        font-weight: bold;
+        font-weight: normal;
     }
 }

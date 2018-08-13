@@ -45,7 +45,6 @@
                 <!--{{/if}}-->
             <!--{{/if}}-->
         <!--</li>-->
-        <br>
         <li class="navUser-item navUser-item--cart">
             <a
                 class="navUser-action"
@@ -53,7 +52,7 @@
                 data-dropdown="cart-preview-dropdown"
                 data-options="align:right"
                 href="{{urls.cart}}">
-                <img width="20px" src="../assets/img/shopping-bag.png">
+                <span class="navUser-item-cartLabel"><img width="20px" src="../assets/img/shopping-bag.png"></span>
                 <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
             </a>
 

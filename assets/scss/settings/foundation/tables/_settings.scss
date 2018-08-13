@@ -55,7 +55,7 @@ $table-border-color:                container("borderColor");
 $table-head-bg:                     container("fill", "dark");
 $table-head-font-size:              fontSize("base");
 $table-head-font-color:             null;
-$table-head-font-weight:            fontWeight("bold");
+$table-head-font-weight:            fontWeight("normal");
 $table-head-padding:                spacing("half") spacing("single");
 
 // These control the table foot styles

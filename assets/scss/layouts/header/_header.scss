@@ -17,10 +17,11 @@
 
 .header {
     background-color: $header-bg;
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     z-index: zIndex("low");
+    letter-spacing: 0.1em;
 
     @include breakpoint("medium") {
         background-color: rgba(0,0,0,0);
