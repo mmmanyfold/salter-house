@@ -81,14 +81,14 @@
     .heroCarousel-image {
         @include breakpoint("medium") {
             object-fit: cover; // 1
-            max-height: remCalc(600px);
+            max-height: remCalc(800px);
             width: 100%;
         }
     }
 
     .heroCarousel-image-wrapper {
         @include breakpoint("medium") {
-            max-height: remCalc(600px);
+            max-height: remCalc(800px);
         }
     }
 

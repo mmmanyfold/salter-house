@@ -93,6 +93,7 @@
 
 .slick-dots {  // 2
     margin: 0;
+    margin-left: 2.5em;
 
     li {
         @include square(32px);

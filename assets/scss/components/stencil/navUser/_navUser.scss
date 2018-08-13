@@ -20,6 +20,7 @@
     width: 14.8em;
     //width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
+    margin-right: spacing("quarter");
 
     @include breakpoint("medium") {
         padding: 0 spacing("single");
@@ -29,6 +30,7 @@
         transform: none;
         z-index: zIndex("high");
         margin: remCalc($header-toggle-width * 0.36) 0;
+        margin-right: spacing("quarter");
     }
 
     .dropdown-menu {
@@ -71,6 +73,7 @@
     padding: 0 spacing("half");
     text-decoration: none;
     text-transform: uppercase;
+    line-height: 1.2em;
 
     &:hover,
     &.is-open {
@@ -188,11 +191,7 @@
 }
 
 .navUser-item-cartLabel {
-    display: none;
-
-    @include breakpoint("small") {
-        display: inline;
-    }
+    display: inline;
 }
 
 .navUser-item--compare {

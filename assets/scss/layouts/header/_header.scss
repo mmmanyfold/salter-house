@@ -54,7 +54,7 @@
         padding: 0;
         margin-left: remCalc($header-toggle-width * 0.65);
         margin-right: remCalc($header-toggle-width * 0.35);
-        width: 380px;
+        width: 350px;
 
         .header.fixed & {
             background-color: color("greys", "lightest");
