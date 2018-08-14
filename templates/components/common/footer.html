@@ -17,75 +17,72 @@
             </article>
         {{/if}}
         <section class="footer-info">
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
-                <h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each pages}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    {{#if settings.gift_certificates_enabled}}
-                        <li class="navUser-item">
-                            <a class="navUser-action" href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
-                        </li>
-                    {{/if}}
-                    <li>
-                        <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
-                    </li>
-                </ul>
-            </article>
+            <div class="footer-info-col footer-links">
+                <article data-section-type="footer-webPages">
+                    <ul class="footer-info-list">
+                        {{#each pages}}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                        {{/each}}
+                        {{#if settings.gift_certificates_enabled}}
+                            <li>
+                                <a href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
+                            </li>
+                        {{/if}}
+                    </ul>
+                </article>
 
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
-                <h5 class="footer-info-heading">{{lang 'footer.categories'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each categories}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                </ul>
-            </article>
+                <article data-section-type="footer-categories">
+                    <ul class="footer-info-list">
+                        {{#each categories}}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </article>
 
-            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
-                <h5 class="footer-info-heading">{{lang 'footer.brands'}}</h5>
-                <ul class="footer-info-list">
-                    {{#each shop_by_brand}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
-                </ul>
-            </article>
-            {{/and}}
+                {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+                <article data-section-type="footer-brands">
+                    <ul class="footer-info-list">
+                        {{#each shop_by_brand}}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                        {{/each}}
+                        <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
+                    </ul>
+                </article>
+                {{/and}}
+            </div>
 
-            {{#if settings.address}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
-                <h5 class="footer-info-heading">{{lang 'footer.info'}}</h5>
-                <address>{{nl2br settings.address}}</address>
-                {{#if settings.phone_number}}
-                    <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
+            <div class="footer-info-col footer-logo">
+                <img src="../assets/img/logo.svg"/>
+            </div>
+
+            <div class="footer-info-col">
+                {{#if settings.address}}
+                <article data-section-type="storeInfo">
+                    <address>{{nl2br settings.address}}</address>
+                    <!--{{#if settings.phone_number}}-->
+                    <!--<strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>-->
+                    <!--{{/if}}-->
+                </article>
                 {{/if}}
-            </article>
-            {{/if}}
 
-            <article class="footer-info-col" data-section-type="newsletterSubscription">
-                {{#if settings.show_newsletter_box}}
+                <article data-section-type="newsletterSubscription">
+                    {{#if settings.show_newsletter_box}}
                     {{> components/common/subscription-form}}
-                {{/if}}
-                {{> components/common/payment-icons}}
-            </article>
+                    {{/if}}
+                    {{> components/common/payment-icons}}
+                </article>
+            </div>
+
         </section>
         {{#if theme_settings.geotrust_ssl_common_name}}
             <div class="footer-geotrust-ssl-seal">
                 {{> components/common/geotrust-ssl-seal}}
-            </div>
-        {{/if}}
-        {{#if theme_settings.show_powered_by}}
-            <div class="footer-copyright">
-                <p class="powered-by">Powered by <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>
             </div>
         {{/if}}
         {{#if theme_settings.show_copyright_footer}}

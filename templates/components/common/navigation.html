@@ -24,13 +24,10 @@
             </li>
             <li class="navUser-item navUser-item--divider">|</li>
         {{/if}}
-        {{#unless theme_settings.hide_content_navigation}}
-            {{#each pages}}
-                <li class="navUser-item">
-                    <a class="navUser-action" href="{{url}}">{{name}}</a>
-                </li>
-            {{/each}}
-        {{/unless}}
+        <li class="navUser-item">
+            <a class="navUser-action" href="../info">INFO</a>
+        </li>
+
         <li class="navUser-item">
             <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">{{lang 'common.search'}}</a>
         </li>
