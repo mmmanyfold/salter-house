@@ -18,6 +18,10 @@
 // -----------------------------------------------------------------------------
 
 .heroCarousel {
+    @include breakpoint("medium") {
+        margin-top: -7.1em;
+    }
+
     &.slick-dotted.slick-slider {
         margin-bottom: 0;
     }

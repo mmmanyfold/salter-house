@@ -17,7 +17,6 @@
 
 .header {
     background-color: $header-bg;
-    position: absolute;
     top: 0;
     width: 100%;
     z-index: zIndex("low");
@@ -43,6 +42,7 @@
     font-size: 0;   // 1
     margin: 0 remCalc($header-toggle-width); // 2
     text-align: center;
+    z-index: 20;
 
     @include breakpoint("small") { // 4
         margin-left: remCalc($header-toggle-width * 1.5);
