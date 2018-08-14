@@ -10,23 +10,22 @@
 
 .body {
     margin-bottom: spacing("double") * 2;
-    margin-top: spacing("single"); // 1
-
-    @include breakpoint("medium") {
-        margin-top: spacing("single") + spacing("base"); // 1
-    }
 }
-
 
 .page {
     @include grid-row(
         $behavior: nest
     );
+    margin: 0;
 }
 
 .page-content,
 .page-content--full {
     @include grid-column(12);
+    padding: 0;
+    @include breakpoint("medium") {
+        margin-top: 6em;
+    }
 }
 
 .page-content--centered {
