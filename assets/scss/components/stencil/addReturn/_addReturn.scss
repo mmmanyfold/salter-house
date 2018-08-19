@@ -93,7 +93,7 @@
 
 .return-itemName {
     font-size: fontSize("smaller");
-    font-weight: fontWeight("bold");
+    font-weight: fontWeight("normal");
 
     @include breakpoint("small") {
         font-size: fontSize("base");

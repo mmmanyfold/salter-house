@@ -17,14 +17,14 @@
 
 .header {
     background-color: $header-bg;
-    position: fixed;
     top: 0;
     width: 100%;
     z-index: zIndex("low");
+    letter-spacing: 0.1em;
 
     @include breakpoint("medium") {
         background-color: rgba(0,0,0,0);
-        overflow: visible;
+        overflow: hidden;
         display: flex;
         justify-content: space-between;
     }
@@ -42,6 +42,7 @@
     font-size: 0;   // 1
     margin: 0 remCalc($header-toggle-width); // 2
     text-align: center;
+    z-index: 20;
 
     @include breakpoint("small") { // 4
         margin-left: remCalc($header-toggle-width * 1.5);
@@ -49,11 +50,10 @@
     }
 
     @include breakpoint("medium") {
-        //margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
         padding: 0;
-        margin-left: remCalc($header-toggle-width * 0.65);
-        margin-right: remCalc($header-toggle-width * 0.35);
-        width: 380px;
+        margin-left: spacing("double");
+        margin-right: spacing("single");
+        width: 350px;
 
         .header.fixed & {
             background-color: color("greys", "lightest");

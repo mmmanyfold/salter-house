@@ -197,11 +197,12 @@
 .navPages-action {
     color: stencilColor("navPages-color");
     display: block;
-    font-size: fontSize("smaller");
-    font-weight: fontWeight("bold");
+    font-size: fontSize("small");
+    font-weight: fontWeight("normal");
     padding: spacing("half") 0;
     text-decoration: none;
     text-transform: uppercase;
+    line-height: 1.2em;
 
     @include breakpoint("medium") {
         display: inline-block;

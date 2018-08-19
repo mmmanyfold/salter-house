@@ -15,46 +15,21 @@
 .footer {
     background-color: $footer-background;
     border-top: container("border");
-    padding: spacing("double") 0;
+    padding: spacing("double");
 }
 
 .footer-info {
-    @include grid-row($behavior: nest);
-    font-size: 0; // 1
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .footer-info-col {
-    @include grid-column(12);
     color: stencilColor("color-textSecondary");
-    display: inline-block;
-    float: none;
-    font-size: fontSize("base"); // 2
+    font-size: 1.3rem; // 2
     margin-bottom: spacing("double");
-    text-align: center;
+    text-align: left;
     vertical-align: top;
-
-    @include breakpoint("small") {
-        text-align: left;
-        width: width("6/12");
-    }
-
-    @include breakpoint("medium") {
-        width: width("4/12");
-    }
-
-    > :first-child {
-        margin-top: 0;
-    }
-
-    > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-.footer-info-col--small {
-    @include breakpoint("medium") {
-        width: width("2/12");
-    }
 }
 
 .footer-info-col--social {
@@ -91,6 +66,7 @@
 }
 
 .footer-info-list {
+    font-family: MS-PMincho;
     list-style: none;
     margin-left: 0;
 
@@ -115,7 +91,7 @@
 
     > .powered-by {
         color: stencilColor("color-textSecondary");
-        font-size: fontSize("tiny");
+        font-size: fontSize("smaller");
         margin: 0;
     }
 
@@ -165,4 +141,27 @@
 
 .footer-newsletter-summary {
     text-align: left;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 2em;
+}
+
+.footer-links {
+    display: flex;
+    > :first-child {
+        padding-right: 4em;
+    }
+}
+
+.footer-logo {
+    text-align: center;
+    img {
+        width: 100px;
+    }
+}
+
+.form-prefixPostfix .form-input {
+    flex: 0;
 }

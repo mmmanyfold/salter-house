@@ -325,7 +325,7 @@
 .jstree-default .jstree-search {
   font-style: italic;
   color: #8b0000;
-  font-weight: bold;
+  font-weight: normal;
 }
 .jstree-default .jstree-no-checkboxes .jstree-checkbox {
   display: none !important;
@@ -889,7 +889,7 @@
 @media (max-width: 768px) {
   #jstree-dnd.jstree-dnd-responsive {
     line-height: 40px;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.1em;
     text-shadow: 1px 1px white;
   }
@@ -991,7 +991,7 @@
     background-position: 0 -120px;
   }
   .jstree-default-responsive .jstree-anchor {
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.1em;
     text-shadow: 1px 1px white;
   }

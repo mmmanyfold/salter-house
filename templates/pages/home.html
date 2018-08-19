@@ -34,7 +34,7 @@ blog:
     <!--{{/if}}-->
 
     {{#if products.new}}
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    {{> components/products/grid products=products.new columns=theme_settings.homepage_new_products_column_count}}
     {{/if}}
 </div>
 {{/partial}}

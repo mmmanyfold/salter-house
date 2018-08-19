@@ -23,7 +23,7 @@ h1, h1 a {
 .InvoiceTitle,
 .PackingSlipTitle {
   font-size: 15px;
-  font-weight: bold;
+  font-weight: normal;
   background: #000;
   color: #fff;
   padding: 5px;
@@ -31,14 +31,14 @@ h1, h1 a {
 }
 
 .StoreAddress {
-  font-weight: bold;
+  font-weight: 300;
   margin-bottom: 10px;
 }
 
 .InvoiceHeading,
 .PackingSlipHeading {
   font-size: 15px;
-  font-weight: bold;
+  font-weight: normal;
   margin-bottom: 10px;
 }
 
@@ -63,7 +63,7 @@ h1, h1 a {
 
 .InvoiceTable th,
 .PackingSlipTable th {
-  font-weight: bold;
+  font-weight: normal;
   padding: 5px;
   text-align: left;
 }
@@ -88,7 +88,7 @@ th.ProductTotal,
 }
 
 .InvoiceTotalRow:last-child {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .AddressRow, .InvoiceDetails, .PackingSlipDetails {
@@ -147,7 +147,7 @@ th.ProductTotal,
 
 .InvoiceDetails .DetailRow .Label,
 .PackingSlipDetails .DetailRow .Label {
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .ConfigurableProductRow {

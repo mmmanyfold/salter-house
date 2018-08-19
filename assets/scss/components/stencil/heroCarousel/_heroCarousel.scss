@@ -18,13 +18,13 @@
 // -----------------------------------------------------------------------------
 
 .heroCarousel {
-    margin-bottom: (spacing("double") + spacing("single"));
-    margin-top: -(spacing("single")); // 3
-
     @include breakpoint("medium") {
-        margin-top: -(spacing("single") + spacing("base")); // 3
+        margin-top: -7.1em;
     }
 
+    &.slick-dotted.slick-slider {
+        margin-bottom: 0;
+    }
     &.slick-initialized { // 2
         max-height: remCalc(1000);
         opacity: 1;
@@ -57,7 +57,7 @@
 
     .slick-dots {
         left: 0;
-        top: 50%;
+        top: 45%;
         width: 0;
         height: 100%;
 
@@ -79,16 +79,19 @@
     }
 
     .heroCarousel-image {
+        object-fit: cover; // 1
+        max-height: remCalc(200px);
+        width: 100%;
         @include breakpoint("medium") {
             object-fit: cover; // 1
-            max-height: remCalc(600px);
-            width: 100%;
+            min-height: remCalc(700px);
         }
     }
 
     .heroCarousel-image-wrapper {
+        max-height: remCalc(200px);
         @include breakpoint("medium") {
-            max-height: remCalc(600px);
+            max-height: remCalc(700px);
         }
     }
 
@@ -113,26 +116,28 @@
     position: absolute;
     background-color: transparent;
     left: 0;
-    top: 90%;
+    bottom: 1.75em;
     padding: 0 spacing("double");
     .heroCarousel-action.button.button--primary.button--large {
         transform: translateY(-5%);
         margin-top: 0;
-        margin-left: 0.25rem;
-        font-size: fontSize("larger");
+        margin-left: 0.4rem;
+        font-size: 1em;
         font-family: $fontFamily-sans;
-        padding: 0.5rem;
+        padding: 0.35rem;
         text-transform: capitalize;
-        border-width: 2px;
+        border-width: 0.07em;
+        border-radius: 0.3em;
     }
 }
 
 .heroCarousel-title {
     color: $carousel-title-color;
-    font-size: fontSize("larger");
+    font-size: 1.34em;
     margin-top: 0;
+    margin-bottom: 0;
     .heroCarousel-description {
-        font-size: fontSize("larger");
+        font-size: fontSize("small");
         font-family: "MS-PMincho";
     }
 }

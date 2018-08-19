@@ -17,8 +17,10 @@
     @include verticalPositionMiddle("absolute");
     right: 0;
     top: 26px; // 2
+    width: 14.8em;
     //width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
+    margin-right: spacing("quarter");
 
     @include breakpoint("medium") {
         padding: 0 spacing("single");
@@ -28,6 +30,7 @@
         transform: none;
         z-index: zIndex("high");
         margin: remCalc($header-toggle-width * 0.36) 0;
+        margin-right: spacing("half");
     }
 
     .dropdown-menu {
@@ -65,10 +68,12 @@
 
 .navUser-action {
     color: stencilColor("navUser-color");
-    font-weight: fontWeight("bold");
+    font-size: fontSize("small");
+    font-weight: fontWeight("normal");
     padding: 0 spacing("half");
     text-decoration: none;
     text-transform: uppercase;
+    line-height: 1.2em;
 
     &:hover,
     &.is-open {
@@ -186,11 +191,7 @@
 }
 
 .navUser-item-cartLabel {
-    display: none;
-
-    @include breakpoint("small") {
-        display: inline;
-    }
+    display: inline;
 }
 
 .navUser-item--compare {
@@ -307,7 +308,7 @@
     color: color("whites", "bright");
     display: none;
     font-size: fontSize("tiny");
-    font-weight: fontWeight("bold");
+    font-weight: fontWeight("normal");
     height: 20px; // 1
     line-height: 20px; // 1
     margin-left: spacing("eighth");
