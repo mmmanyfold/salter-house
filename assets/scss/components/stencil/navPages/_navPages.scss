@@ -116,9 +116,19 @@
 .navPages-list-left {
     @include breakpoint("medium") {
         display: grid;
-        grid-template-rows: 1fr 1fr;
         .navPages-action {
             padding-right: 1.75em;
+        }
+        grid-template-rows: 1fr;
+        #filter-item {
+            display: none;
+        }
+    }
+
+    @include breakpoint(1255px) {
+        grid-template-rows: 1fr 1fr;
+        #filter-item {
+            display: block;
         }
     }
 
