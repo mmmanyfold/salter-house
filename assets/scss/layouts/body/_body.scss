@@ -12,17 +12,6 @@
     margin-bottom: spacing("double") * 2;
 }
 
-.page {
-    @include grid-row(
-        $behavior: nest
-    );
-}
-
-.page-content,
-.page-content--full {
-    @include grid-column(12);
-}
-
 .page-content--centered {
 
     @include breakpoint("medium") {
