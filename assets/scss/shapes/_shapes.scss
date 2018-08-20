@@ -1,0 +1,48 @@
+// CSS Shapes:
+// https://css-tricks.com/examples/ShapesOfCSS/
+
+$size: 12px;
+$green: #007A51;
+$orange: #F39838;
+
+.circle {
+  width: $size;
+  height: $size;
+  background: red;
+  -moz-border-radius: $size / 2;
+  -webkit-border-radius: $size / 2;
+  border-radius: $size / 2;
+}
+
+.category-dot-container {
+  position: relative;
+}
+
+.category-dot-selected {
+  @extend .circle;
+  margin: 1em;
+  background: $orange;
+  position: absolute;
+  top: 7px;
+  left: -5px;
+}
+
+.category-dot-unselected {
+  @extend .circle;
+  margin: 1em;
+  background: transparent;
+  border: 1px $green solid;
+  position: absolute;
+  top: 7px;
+  left: -5px;
+}
+
+.category-dot-unselected-orange {
+  @extend .category-dot-unselected;
+  border: 1px $orange solid;
+}
+
+.category-dot-selected-green {
+  @extend .category-dot-selected;
+  background: $green;
+}
