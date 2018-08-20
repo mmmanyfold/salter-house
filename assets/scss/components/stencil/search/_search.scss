@@ -24,6 +24,7 @@
 }
 
 .quickSearchResults {
+    width: 1000px;
     margin-top: spacing("single");
 
     @include breakpoint("medium") {
@@ -92,4 +93,13 @@
     font-size: fontSize("largest");
     margin: spacing("single") 0 0;
     text-align: center;
+}
+
+#quickSearch-container {
+    position: relative;
+    max-width: 200px;
+    margin: inherit;
+    &> .form {
+        margin: inherit;
+    }
 }
