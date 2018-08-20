@@ -21,10 +21,15 @@ $orange: #F39838;
 .category-dot-selected {
   @extend .circle;
   margin: 1em;
-  background: $orange;
+  background: $green;
   position: absolute;
   top: 7px;
   left: -5px;
+}
+
+.category-dot-selected-orange {
+  @extend .category-dot-selected;
+  background: $orange;
 }
 
 .category-dot-unselected {

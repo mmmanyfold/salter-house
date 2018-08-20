@@ -14,7 +14,7 @@ export default class PageManager {
             if (this.currentUrl !== '/') {
                 const selector = $('#newArrivals-link');
                 selector
-                    .siblings('div.category-dot-selected')
+                    .siblings('div.category-dot-selected-orange')
                     .toggleClass('u-hiddenVisually');
                 selector
                     .siblings('div.category-dot-unselected-orange')
