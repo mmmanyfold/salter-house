@@ -1,13 +1,20 @@
 import $ from 'jquery';
 import Url from 'url';
 
+let newArrivalsClickEventRegistered = false;
+
 export default class PageManager {
+
     constructor(context) {
         this.context = context;
-        $('#newArrivals-link').click(() => {
-            const url = Url.parse(window.location.href, true);
-            window.location.href=`${url.protocol}//${url.host}/#new`
-        });
+        newArrivalsClickEventRegistered = !newArrivalsClickEventRegistered;
+        if (newArrivalsClickEventRegistered) {
+            $('#newArrivals-link').click(() => {
+                const url = Url.parse(window.location.href, true);
+                window.location.href=`${url.protocol}//${url.host}/#new`
+            });
+        }
+
     }
 
     type() {
