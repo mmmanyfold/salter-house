@@ -8,6 +8,9 @@
 
 .productView {
     @include grid-row($behavior: "nest");
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
     margin-left: -(spacing("base"));
     margin-right: -(spacing("base"));
 
@@ -47,13 +50,19 @@
 
 .productView-description {
     @include grid-column(12);
-    padding-left: spacing("base");
-    padding-right: spacing("base");
+    font-family: fontFamily("serif");
+    font-size: fontSize("smaller");
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+
+    p {
+        display: inline-block;
+    }
 
     @include breakpoint("large") {
         clear: right;
         float: right;
-        width: grid-calc(6, $total-columns);
     }
 
     .productView-title {
@@ -67,7 +76,6 @@
         @include breakpoint("medium") {
             clear: both;
             float: none;
-            width: 100%;
         }
     }
 }

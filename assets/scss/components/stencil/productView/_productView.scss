@@ -1,4 +1,5 @@
 // =============================================================================
+// =============================================================================
 // PRODUCT VIEW (CSS)
 // =============================================================================
 
@@ -115,6 +116,8 @@
 
 .productView-details {
     margin-bottom: spacing("single") + spacing("third");
+    border-bottom: 1px solid #007a51;
+
 }
 
 
@@ -123,7 +126,6 @@
 
 .productView-product {
     @include breakpoint("medium") {
-        border-bottom: container("border");
         padding-bottom: spacing("single") + spacing("third");
     }
 
@@ -133,7 +135,9 @@
 }
 
 .productView-title {
-    font-size: fontSize("small");
+    font-family: fontFamily("headingSans");
+    text-transform: uppercase;
+    font-weight: fontWeight("normal");
     margin: -(spacing("half")) 0 spacing("quarter");
 
     @include breakpoint("medium") {
@@ -146,17 +150,26 @@
 }
 
 .productView-brand {
+    display: inline-block;
     color: $productView-brand-link-color;
     font-size: fontSize("smaller");
     margin: 0 0 spacing("half");
+    text-transform: uppercase;
+    border: 1px solid #007a51;
+    border-radius: 8px;
+    padding: 2px 4px;
+    font-weight: fontWeight("normal");
+    letter-spacing: .1em;
 
     @include breakpoint("large") {
-        font-size: fontSize("small");
+        font-size: fontSize("smaller");
         margin: -(spacing("eighth")) 0 spacing("base");
     }
 
     a {
         color: $productView-brand-link-color;
+
+        text-decoration: none;
 
         // scss-lint:disable NestingDepth
         &:hover {
@@ -170,10 +183,12 @@
 
 .productView-price {
     font-size: fontSize("smaller");
+    font-family: fontFamily("serif");
     margin-bottom: spacing("third");
+    display: inline-block;
 
     @include breakpoint("medium") {
-        font-size: fontSize("larger");
+        font-size: fontSize("smaller");
         margin-bottom: spacing("base");
     }
 
@@ -211,6 +226,12 @@
             color: stencilColor("color-textSecondary--hover");
         }
     }
+}
+
+#price-brand {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 
