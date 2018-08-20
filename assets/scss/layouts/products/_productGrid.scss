@@ -13,7 +13,6 @@
 .productGrid {
 
     @include u-listBullets("none");
-    @include grid-row($behavior: "nest");
     font-size: 0; // 1
     margin-bottom: spacing("single");
 
@@ -22,6 +21,7 @@
         display: inline-block;
         font-size: fontSize("base"); // 1
         vertical-align: top;
+        padding: 0;
 
         @include breakpoint("small") {
             width: grid-calc(4, $total-columns);

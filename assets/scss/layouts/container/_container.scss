@@ -9,7 +9,6 @@
     max-width: layout("max");
     padding: 0 $container-padding;
     position: relative;
-    width: layout("fixed");
 
     @include breakpoint("large") {
         padding: 0 ($container-padding * 4);
