@@ -14,19 +14,18 @@
 
 .footer {
     background-color: $footer-background;
-    border-top: container("border");
     padding: spacing("double");
 }
 
 .footer-info {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
 }
 
 .footer-info-col {
     color: stencilColor("color-textSecondary");
-    font-size: 1.3rem; // 2
+    font-size: 1.2rem; // 2
     margin-bottom: spacing("double");
     text-align: left;
     vertical-align: top;
@@ -150,8 +149,8 @@ address {
 
 .footer-links {
     display: flex;
-    > :first-child {
-        padding-right: 4em;
+    > :not(:last-child) {
+        padding-right: 3em;
     }
 }
 
@@ -160,6 +159,10 @@ address {
     img {
         width: 100px;
     }
+}
+
+.footer-right {
+    float: right;
 }
 
 .form-prefixPostfix .form-input {
