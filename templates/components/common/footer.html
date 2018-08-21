@@ -62,21 +62,23 @@
             </div>
 
             <div class="footer-info-col">
-                {{#if settings.address}}
-                <article data-section-type="storeInfo">
-                    <address>{{nl2br settings.address}}</address>
-                    <!--{{#if settings.phone_number}}-->
-                    <!--<strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>-->
-                    <!--{{/if}}-->
-                </article>
-                {{/if}}
-
-                <article data-section-type="newsletterSubscription">
-                    {{#if settings.show_newsletter_box}}
-                    {{> components/common/subscription-form}}
+                <div class="footer-right">
+                    {{#if settings.address}}
+                    <article data-section-type="storeInfo">
+                        <address>{{nl2br settings.address}}</address>
+                        <!--{{#if settings.phone_number}}-->
+                        <!--<strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>-->
+                        <!--{{/if}}-->
+                    </article>
                     {{/if}}
-                    {{> components/common/payment-icons}}
-                </article>
+
+                    <article data-section-type="newsletterSubscription">
+                        {{#if settings.show_newsletter_box}}
+                        {{> components/common/subscription-form}}
+                        {{/if}}
+                        {{> components/common/payment-icons}}
+                    </article>
+                </div>
             </div>
 
         </section>

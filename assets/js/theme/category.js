@@ -2,9 +2,26 @@ import { hooks } from '@bigcommerce/stencil-utils';
 import CatalogPage from './catalog';
 import $ from 'jquery';
 import FacetedSearch from './common/faceted-search';
+import urlUtils from "./common/url-utils";
 
 export default class Category extends CatalogPage {
+
+    constructor() {
+        super();
+        this.currentUrl = urlUtils.getUrl();
+    }
+
     onReady() {
+        const currentCategoryNode = $('.navPages-action').filter(`a[href="${this.currentUrl}"]`);
+
+        $(currentCategoryNode)
+            .siblings('div.u-hiddenVisually.category-dot-selected')
+            .toggleClass('u-hiddenVisually');
+
+        $(currentCategoryNode)
+            .siblings('div.category-dot-unselected')
+            .toggleClass('u-hiddenVisually');
+
         if ($('#facetedSearch').length > 0) {
             this.initFacetedSearch();
         } else {

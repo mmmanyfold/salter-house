@@ -82,8 +82,7 @@
 
 @import "layouts/layouts"; // 1
 
-@import "vendor/jstree/style";
+// CSS Shapes
+@import "shapes/shapes";
 
-body {
-  padding: 0;
-}
+@import "vendor/jstree/style";
