@@ -12,7 +12,11 @@ export default class Category extends CatalogPage {
     }
 
     onReady() {
-        const currentCategoryNode = $('.navPages-action').filter(`a[href="${this.currentUrl}"]`);
+        const currentUrl = this.currentUrl;
+        const currentCategoryNode = $('.navPages-action').filter((index, elem) => {
+            const url = $(elem).attr('href');
+            return !!url && url.includes(currentUrl);
+        });
 
         $(currentCategoryNode)
             .siblings('div.u-hiddenVisually.category-dot-selected')
