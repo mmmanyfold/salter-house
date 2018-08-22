@@ -9,48 +9,61 @@
     {{/each}}
 
     <section class="productView-images" data-image-gallery>
-        <figure class="productView-image"
-                data-image-gallery-main
-                {{#if product.main_image}}
-                data-zoom-image="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}"
-                {{/if}}
-        >
         <div class="productView-img-container">
-            {{!-- Remove the surrounding a-element if there is no main image. --}}
-            {{#if product.main_image}}
-            <a href="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}">
-                {{/if}}
-
-                <img class="productView-image--default lazyload"
-                     data-sizes="auto"
-                     src="{{cdn 'img/loading.svg'}}"
-                     data-src="{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}"
-                     alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}" data-main-image>
-
-                {{#if product.main_image}}
-            </a>
-            {{/if}}
-        </div>
-        </figure>
-        <ul class="productView-thumbnails"{{#gt product.images.length 5}} data-slick='{
-                "infinite": false,
+        <section class="productView-carousel"
+            data-slick='{
+                "dots": true,
                 "mobileFirst": true,
-                "slidesToShow": 5,
-                "slidesToScroll": 1
-            }'{{/gt}}>
-        {{#each product.images}}
-        <li class="productView-thumbnail">
-            <a
-                    class="productView-thumbnail-link"
-                    href="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
-                    data-image-gallery-item
-                    data-image-gallery-new-image-url="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
-                    data-image-gallery-zoom-image-url="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}">
-                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage this 'productview_thumb_size' (cdn ../theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}">
-            </a>
-        </li>
-        {{/each}}
-        </ul>
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "autoplay": true,
+                "arrows": false,
+                "vertical": false,
+                "verticalSwiping": true,
+                "autoplaySpeed": {{carousel.swap_frequency}},
+                "lazyLoad": "anticipated"
+            }'>
+
+            {{#each product.images}}
+            <div class="productView-carousel-slide {{#if @first}}productView-carousel-slide--first{{/if}}">
+                <div class="productView-carousel-image-wrapper">
+                    <img data-image-gallery-item
+                         data-image-gallery-zoom-image-url="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}"
+                         class="productView-carousel-image lazyload"
+                         data-sizes="auto"
+                         src="{{cdn 'img/loading.svg'}}"
+                         data-src="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
+                         alt="{{this.alt}}"
+                         title="{{this.alt}}"/>
+                </div>
+            </div>
+            {{/each}}
+        </section>
+        </div>
+
+        <!--<figure class="productView-image"-->
+                <!--data-image-gallery-main-->
+                <!--{{#if product.main_image}}-->
+                <!--data-zoom-image="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}"-->
+                <!--{{/if}}-->
+        <!--&gt;-->
+        <!--<div class="productView-img-container">-->
+            <!--{{!&#45;&#45; Remove the surrounding a-element if there is no main image. &#45;&#45;}}-->
+            <!--{{#if product.main_image}}-->
+            <!--<a href="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}">-->
+                <!--{{/if}}-->
+
+                <!--<img class="productView-image&#45;&#45;default lazyload"-->
+                     <!--data-sizes="auto"-->
+                     <!--src="{{cdn 'img/loading.svg'}}"-->
+                     <!--data-src="{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}"-->
+                     <!--alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}" data-main-image>-->
+
+                <!--{{#if product.main_image}}-->
+            <!--</a>-->
+            <!--{{/if}}-->
+        <!--</div>-->
+        <!--</figure>-->
     </section>
 
     <section class="productView-details">
@@ -161,27 +174,25 @@
                     <dd class="productView-info-value">{{{value}}}</dd>
                 {{/each}}
             </dl>
-    </section>
 
-    <!--<section class="productView-details">
         <div class="productView-options">
             {{#if product.release_date }}
-                <p>{{product.release_date}}</p>
+            <p>{{product.release_date}}</p>
             {{/if}}
             <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
                   data-cart-item-add>
                 <input type="hidden" name="action" value="add">
                 <input type="hidden" name="product_id" value="{{product.id}}"/>
-                    {{#each product.customizations}}
-                        {{{dynamicComponent 'components/products/customizations'}}}
-                    {{/each}}
+                {{#each product.customizations}}
+                {{{dynamicComponent 'components/products/customizations'}}}
+                {{/each}}
                 <div data-product-option-change style="display:none;">
                     {{#each product.options}}
-                        {{{dynamicComponent 'components/products/options'}}}
+                    {{{dynamicComponent 'components/products/options'}}}
                     {{/each}}
                 </div>
                 {{#if product.event_date}}
-                    {{> components/products/event-date}}
+                {{> components/products/event-date}}
                 {{/if}}
                 <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
                     <label class="form-label form-label--alternate">
@@ -190,20 +201,19 @@
                     </label>
                 </div>
                 {{#if product.can_purchase}}
-                    {{> components/products/add-to-cart}}
+                {{> components/products/add-to-cart}}
                 {{/if}}
                 {{#if product.out_of_stock}}
-                    {{#if product.out_of_stock_message}}
-                        {{> components/common/alert-error product.out_of_stock_message}}
-                    {{else}}
-                        {{> components/common/alert-error (lang 'products.sold_out')}}
-                    {{/if}}
+                {{#if product.out_of_stock_message}}
+                {{> components/common/alert-error product.out_of_stock_message}}
+                {{else}}
+                {{> components/common/alert-error (lang 'products.sold_out')}}
+                {{/if}}
                 {{/if}}
             </form>
         </div>
-        {{> components/common/share}}
         {{{snippet 'product_details'}}}
-    </section>-->
+    </section>
 </div>
 
 <div id="previewModal" class="modal modal--large" data-reveal>

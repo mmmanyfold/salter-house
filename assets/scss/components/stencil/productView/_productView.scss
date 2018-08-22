@@ -15,10 +15,6 @@
 // Images
 // -----------------------------------------------------------------------------
 
-.productView-images {
-    margin-bottom: spacing("double");
-}
-
 .productView-image {
     align-items: center;
     display: flex;
@@ -45,79 +41,6 @@
     margin: auto;
     max-width: get-width(stencilString('product_size'));
     width: 100%;
-
-    img {
-        @include lazy-loaded-img;
-        max-height: 100%;
-        width: auto;
-    }
-
-    @include lazy-loaded-padding('product_size');
-}
-
-.productView-thumbnails {
-    @include u-listBullets("none");
-    @include grid-row($behavior: "nest");
-
-    margin-left: -(spacing("quarter"));
-    margin-right: -(spacing("quarter"));
-
-    .slick-list {
-        margin-left: remCalc(40px);
-        margin-right: remCalc(40px);
-    }
-
-    .slick-next {
-        right: 0;
-    }
-
-    .slick-prev {
-        left: 0;
-    }
-
-    img {
-        @include lazy-loaded-img;
-        max-height: 50px;
-        max-width: 50px;
-        width: auto;
-    }
-}
-
-.productView-thumbnail {
-    @include grid-column(3);
-    padding-left: spacing("quarter");
-    padding-right: spacing("quarter");
-    text-align: center;
-
-    @include breakpoint("large") {
-        width: 20%;
-    }
-}
-
-.productView-thumbnail-link {
-    border: container("border");
-    display: inline-block;
-    height: 67px;
-    max-width: 75px;
-    padding: 2px;
-    position: relative;
-    text-align: center;
-    width: 100%;
-
-    &:hover,
-    &.is-active {
-        border-color: color("greys", "darker");
-    }
-}
-
-
-// Details
-// -----------------------------------------------------------------------------
-
-.productView-details {
-    margin-bottom: spacing("single") + spacing("third");
-    border-bottom: 1px solid #007a51;
-
 }
 
 
@@ -138,15 +61,7 @@
     font-family: fontFamily("headingSans");
     text-transform: uppercase;
     font-weight: fontWeight("normal");
-    margin: -(spacing("half")) 0 spacing("quarter");
-
-    @include breakpoint("medium") {
-        margin-top: spacing("single");
-    }
-
-    @include breakpoint("large") {
-        font-size: fontSize("largest");
-    }
+    font-size: 1.25em;
 }
 
 .productView-brand {
@@ -346,8 +261,6 @@
 
         @include breakpoint("small") {
             float: left;
-            padding: 0 remCalc(10);
-            width: 50%;
         }
 
         @include breakpoint("medium") {
@@ -365,7 +278,7 @@
         .button {
             width: 100%;
 
-            @include breakpoint("large") {
+            @include breakpoint("medium") {
                 margin-right: spacing("half");
                 width: auto;
             }
