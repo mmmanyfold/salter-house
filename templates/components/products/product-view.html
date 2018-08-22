@@ -67,6 +67,7 @@
     </section>
 
     <section class="productView-details">
+        <div class="productView-details-inner">
         <div class="productView-product">
             <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
             <div class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
@@ -213,6 +214,7 @@
             </form>
         </div>
         {{{snippet 'product_details'}}}
+        </div>
     </section>
 </div>
 
