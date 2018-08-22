@@ -27,7 +27,7 @@
         overflow: hidden;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 2em;
+        margin-bottom: 1.5em;
     }
 
     &.is-open {
@@ -52,7 +52,7 @@
 
     @include breakpoint("medium") {
         padding: 0;
-        margin-left: spacing("double");
+        margin-left: (spacing("single") + spacing("half"));
         margin-right: spacing("single");
         width: 264px;
 
@@ -64,6 +64,10 @@
             top: 0;
             width: 100%;
         }
+    }
+
+    @include breakpoint("large") {
+        width: 345px;
     }
 
     > a {

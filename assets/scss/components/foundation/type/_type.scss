@@ -36,8 +36,9 @@ cite {
 }
 
 .page-heading {
-    margin: 0 0 spacing("double");
-    text-align: center;
+    margin: 0 spacing("single") (spacing("base") + spacing("half") + spacing("quarter"));
+    text-align: left;
+
 }
 
 h1 {

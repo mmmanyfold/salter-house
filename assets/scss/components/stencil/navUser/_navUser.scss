@@ -17,20 +17,18 @@
     @include verticalPositionMiddle("absolute");
     right: 0;
     top: 26px; // 2
-    width: 14.8em;
     //width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
     margin-right: spacing("quarter");
 
     @include breakpoint("medium") {
-        padding: 0 spacing("single");
+        padding: 0 (spacing("single") + spacing("quarter"));
         position: relative;
         right: auto;
         top: auto;
         transform: none;
         z-index: zIndex("high");
         margin: remCalc($header-toggle-width * 0.36) 0;
-        margin-right: spacing("half");
     }
 
     .dropdown-menu {
@@ -74,6 +72,10 @@
     text-decoration: none;
     text-transform: uppercase;
     line-height: 1.2em;
+
+    @include breakpoint("large") {
+        font-size: fontSize("small");
+    }
 
     &:hover,
     &.is-open {
