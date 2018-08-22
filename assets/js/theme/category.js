@@ -13,8 +13,8 @@ export default class Category extends CatalogPage {
 
     onReady() {
         const currentUrl = this.currentUrl;
-        const currentCategoryNode = $('.navPages-action').filter(function (index, elem) {
-            const url = $(this).attr('href');
+        const currentCategoryNode = $('.navPages-action').filter((index, elem) => {
+            const url = $(elem).attr('href');
             return !!url && url.includes(currentUrl);
         });
 
