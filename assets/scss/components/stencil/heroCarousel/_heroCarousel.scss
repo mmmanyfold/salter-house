@@ -19,7 +19,7 @@
 
 .heroCarousel {
     @include breakpoint("medium") {
-        margin-top: -7.1em;
+        margin-top: -9.1em;
     }
 
     &.slick-dotted.slick-slider {
