@@ -25,16 +25,15 @@ blog:
     {{/each}}
 
 <div id ="new" class="main full">
-    <!--{{#if products.featured}}-->
-        <!--{{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}-->
-    <!--{{/if}}-->
-
     <!--{{#if products.top_sellers}}-->
         <!--{{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}-->
     <!--{{/if}}-->
 
     {{#if products.new}}
-    {{> components/products/grid products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    {{> components/products/grid-new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    {{/if}}
+    {{#if products.featured}}
+    {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}
 </div>
 {{/partial}}

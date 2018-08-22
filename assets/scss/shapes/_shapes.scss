@@ -1,7 +1,7 @@
 // CSS Shapes:
 // https://css-tricks.com/examples/ShapesOfCSS/
 
-$size: 12px;
+$size: 10px;
 $green: #007A51;
 $orange: #F39838;
 
@@ -23,7 +23,7 @@ $orange: #F39838;
   margin: 1em;
   background: $green;
   position: absolute;
-  top: 7px;
+  top: 5px;
   left: -5px;
 }
 
@@ -38,7 +38,7 @@ $orange: #F39838;
   background: transparent;
   border: 1px $green solid;
   position: absolute;
-  top: 7px;
+  top: 5px;
   left: -5px;
 }
 

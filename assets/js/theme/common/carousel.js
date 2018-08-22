@@ -18,5 +18,13 @@ export default function () {
                 $container.css('backgroundImage', `url(${imgUrl})`).addClass('compat-object-fit');
             }
         });
+        $('.productView-carousel-slide').each(() => {
+            const $container = $(this);
+            const imgUrl = $container.find('img').data('lazy');
+
+            if (imgUrl) {
+                $container.css('backgroundImage', `url(${imgUrl})`).addClass('compat-object-fit');
+            }
+        });
     }
 }
