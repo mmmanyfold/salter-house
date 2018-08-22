@@ -10,6 +10,7 @@ export default class PageManager {
         this.currentUrl = urlUtils.getUrl();
         this.context = context;
         homePageEventRegister = !homePageEventRegister;
+        console.log('got here 0');
     }
 
     type() {
@@ -17,7 +18,9 @@ export default class PageManager {
     }
 
     onReady() {
+        console.log('got here 1');
         if (homePageEventRegister) {
+            console.log('got here 2');
             if (this.currentUrl !== '/') {
                 const selector = $('#newArrivals-link');
                 selector
@@ -27,8 +30,9 @@ export default class PageManager {
                     .siblings('div.category-dot-unselected-orange')
                     .toggleClass('u-hiddenVisually');
             } else if (this.currentUrl === '/') {
+                console.log('got here 3');
                 $('.navPages-action')
-                // filter out new category link
+                    // filter out new category link
                     .filter('a[id!="newArrivals-link"]')
                     .siblings('div.u-hiddenVisually.category-dot-selected-green')
                     .toggleClass('u-hiddenVisually');
