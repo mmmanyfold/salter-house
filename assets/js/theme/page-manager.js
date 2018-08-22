@@ -10,6 +10,7 @@ export default class PageManager {
         this.currentUrl = urlUtils.getUrl();
         this.context = context;
         homePageEventRegister = !homePageEventRegister;
+        console.log(currentUrl);
         if (homePageEventRegister) {
             if (this.currentUrl !== '/') {
                 const selector = $('#newArrivals-link');
