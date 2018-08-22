@@ -74,22 +74,15 @@
             {{{product.description}}}
             {{{snippet 'product_description'}}}
             <div id="price-brand">
-            {{#if product.call_for_price}}
-            <div class="productView-price">
-                {{product.call_for_price}}
-            </div>
-            {{/if}}
-            <div class="productView-price">
-                {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
-                {{> components/products/price price=product.price schema_org=schema}}
-                {{else}}
-                {{> components/common/login-for-pricing}}
-                {{/or}}
+                <div class="productView-price">
+                    {{> components/products/price price=product.price schema_org=schema}}
             </div>
             {{#if product.brand}}
-            <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
-            <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
-            </h2>
+            <div class="productView-brand-wrapper">
+                <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
+                    <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
+                </h2>
+            </div>
             {{/if}}
             </div>
         </div>

@@ -36,7 +36,9 @@ cite {
 }
 
 .page-heading {
-    margin: 0 spacing("single") (spacing("base") + spacing("half") + spacing("quarter"));
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin: 0 (spacing("base") + spacing("half") + spacing("quarter")) spacing("single");
     text-align: left;
 
 }
