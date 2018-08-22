@@ -8,7 +8,7 @@ $orange: #F39838;
 .circle {
   width: $size;
   height: $size;
-  background: red;
+  background: $green;
   -moz-border-radius: $size / 2;
   -webkit-border-radius: $size / 2;
   border-radius: $size / 2;
@@ -21,7 +21,6 @@ $orange: #F39838;
 .category-dot-selected {
   @extend .circle;
   margin: 1em;
-  background: $green;
   position: absolute;
   top: 7px;
   left: -5px;

@@ -10,17 +10,25 @@ export default class PageManager {
         this.currentUrl = urlUtils.getUrl();
         this.context = context;
         homePageEventRegister = !homePageEventRegister;
+    }
+
+    type() {
+        return this.constructor.name;
+    }
+
+    onReady() {
         if (homePageEventRegister) {
             if (this.currentUrl !== '/') {
-                $('#newArrivals-link')
+                const selector = $('#newArrivals-link');
+                selector
                     .siblings('div.category-dot-selected-orange')
                     .toggleClass('u-hiddenVisually');
-                $('#newArrivals-link')
+                selector
                     .siblings('div.category-dot-unselected-orange')
                     .toggleClass('u-hiddenVisually');
             } else if (this.currentUrl === '/') {
                 $('.navPages-action')
-                    // filter out new category link
+                // filter out new category link
                     .filter('a[id!="newArrivals-link"]')
                     .siblings('div.u-hiddenVisually.category-dot-selected-green')
                     .toggleClass('u-hiddenVisually');
@@ -30,13 +38,6 @@ export default class PageManager {
                 window.location.href = `${url.protocol}//${url.host}/#new`
             });
         }
-    }
-
-    type() {
-        return this.constructor.name;
-    }
-
-    onReady() {
     }
 
     static load(context) {
