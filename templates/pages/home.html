@@ -20,6 +20,8 @@ blog:
 
 {{#partial "page"}}
 
+    <section class="quickSearchResults" data-bind="html: results"></section>
+
     {{#each shipping_messages}}
         {{> components/common/alert-info message}}
     {{/each}}
