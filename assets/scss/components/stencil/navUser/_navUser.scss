@@ -17,9 +17,9 @@
     @include verticalPositionMiddle("absolute");
     right: 0;
     top: 26px; // 2
-    //width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
     margin-right: spacing("quarter");
+    line-height: 0.8em;
 
     @include breakpoint("medium") {
         padding-right: (spacing("base") + spacing("half"));

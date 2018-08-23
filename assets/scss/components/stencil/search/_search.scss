@@ -108,11 +108,16 @@
         border: 0;
         border-bottom: 1px solid #007A51;
         outline: 0;
-        width: 50px;
+        width: 90px;
         background: transparent;
+        @include breakpoint(1024px) {
+            width: 100px;
+        }
+        @include breakpoint(1080px) {
+            width: 120px;
+        }
         @include breakpoint("large") {
             padding-top: 0.3em;
-            width: 80px;
         }
     }
 }
