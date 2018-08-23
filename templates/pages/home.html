@@ -30,7 +30,7 @@ blog:
     <!--{{/if}}-->
 
     {{#if products.new}}
-    {{> components/products/grid-new products=products.new columns=6}}
+    {{> components/products/grid-new products=products.new columns=theme_settings.homepage_new_products_column_count}}
     {{/if}}
     {{#if products.featured}}
     {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}

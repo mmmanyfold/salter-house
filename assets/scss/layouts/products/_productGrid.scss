@@ -28,13 +28,12 @@
         }
 
         @include breakpoint("large") {
-            width: grid-calc(2, $total-columns);
+            width: grid-calc(3, $total-columns);
         }
     }
 }
 
 .related-products {
-    text-align: center;
     h5 {
         font-size: 1.3em;
         margin-bottom: 1.1em;
