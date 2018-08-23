@@ -124,7 +124,7 @@
         }
     }
 
-    @include breakpoint(1326px) {
+    @include breakpoint(1246px) {
         grid-template-rows: 1fr 1fr;
         #filter-item {
             display: block;

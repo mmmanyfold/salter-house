@@ -99,4 +99,18 @@
     .form {
         margin: 0;
     }
+    fieldset {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+    input {
+        border: 0;
+        border-bottom: 1px solid #007A51;
+        outline: 0;
+        width: 80px;
+        @include breakpoint("large") {
+            padding-top: 0.3em;
+        }
+    }
 }
