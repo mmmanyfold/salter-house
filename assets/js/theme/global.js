@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import './common/select-option-plugin';
 import PageManager from './page-manager';
-import quickSearch from './global/quick-search';
+// import quickSearch from './global/quick-search';
 import currencySelector from './global/currency-selector';
 import mobileMenuToggle from './global/mobile-menu-toggle';
 import menu from './global/menu';
@@ -24,7 +24,9 @@ export default class Global extends PageManager {
         window.lazySizesConfig = window.lazySizesConfig || {};
         window.lazySizesConfig.loadMode = 1;
 
-        quickSearch();
+        // NOTE: quickSearch disabled
+        // quickSearch();
+
         currencySelector();
         foundation($(document));
         quickView(this.context);
