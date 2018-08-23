@@ -20,6 +20,8 @@
     z-index: zIndex("lowest"); // 5.
     margin-right: spacing("quarter");
     line-height: 0.8em;
+    flex: 1;
+    text-align: right;
 
     @include breakpoint("medium") {
         padding-right: (spacing("base") + spacing("half"));
