@@ -70,11 +70,14 @@
     font-size: fontSize("smaller");
     margin: 0 0 spacing("half");
     text-transform: uppercase;
-    border: 1px solid #007a51;
-    border-radius: 8px;
-    padding: 2px 4px;
+    border: 1px solid #007A51;
+    border-radius: 0.4em;
+    line-height: 1rem;
+    transition: all 0.15s ease;
+    padding: 0.29em 0.5em 0.34em 0.5em;
+    font-size: 0.7em;
     font-weight: fontWeight("normal");
-    letter-spacing: .1em;
+    letter-spacing: 0.07rem;
 
     @include breakpoint("large") {
         font-size: fontSize("smaller");
@@ -147,6 +150,9 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    .productView-price, .productView-brand-wrapper {
+        width: 50%;
+    }
 }
 
 

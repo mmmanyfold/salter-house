@@ -2,6 +2,10 @@
 // ACTION BAR (CSS)
 // =============================================================================
 
+.actionBar {
+    padding: 0 (spacing("base") + spacing("quarter") + spacing("half"));
+    margin-bottom: 1em;
+}
 
 .actionBar-section {
 
@@ -24,6 +28,7 @@
         line-height: $actionBar-form-label-lineHeight;
         margin-bottom: 0;
         padding-left: $actionBar-form-label-padding;
+        margin-right: 0;
     }
 
     .form-input,

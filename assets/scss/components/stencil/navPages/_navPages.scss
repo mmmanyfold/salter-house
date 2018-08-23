@@ -50,7 +50,6 @@
     @include breakpoint("medium") {
         background: transparent;
         display: block;
-        height: auto;
         padding: 0;
         position: relative;
     }
@@ -227,6 +226,10 @@
                 stroke: stencilColor("navPages-color-hover");
             }
         }
+    }
+
+    @include breakpoint("large") {
+        font-size: fontSize("small");
     }
 
     &:hover {

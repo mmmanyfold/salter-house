@@ -14,7 +14,6 @@ brand:
 {{/partial}}
 
 {{#partial "page"}}
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 {{#if brand.image}}
     <div class="brand-image-container">
         <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage brand.image 'thumb_size'}}">
@@ -23,9 +22,9 @@ brand:
 <h1 class="page-heading">{{brand.name}}</h1>
 {{{snippet 'brand'}}}
 <div class="page">
-    <aside class="page-sidebar" id="faceted-search-container">
-        {{> components/brand/sidebar}}
-    </aside>
+    <!--<aside class="page-sidebar" id="faceted-search-container">-->
+        <!--{{> components/brand/sidebar}}-->
+    <!--</aside>-->
 
     <main class="page-content" id="product-listing-container">
         {{#if brand.products}}
