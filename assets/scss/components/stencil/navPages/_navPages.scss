@@ -50,7 +50,7 @@
     @include breakpoint("medium") {
         background: transparent;
         display: block;
-        padding: 0;
+        padding: 0 1em;
         position: relative;
     }
 
@@ -119,14 +119,14 @@
             padding-right: 1.75em;
         }
         grid-template-rows: 1fr;
-        #filter-item {
+        #filter-item, #shop-all {
             display: none;
         }
     }
 
-    @include breakpoint(1326px) {
+    @include breakpoint(1246px) {
         grid-template-rows: 1fr 1fr;
-        #filter-item {
+        #filter-item, #shop-all {
             display: block;
         }
     }

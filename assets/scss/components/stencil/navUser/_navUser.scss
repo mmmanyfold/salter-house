@@ -17,12 +17,14 @@
     @include verticalPositionMiddle("absolute");
     right: 0;
     top: 26px; // 2
-    //width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
     margin-right: spacing("quarter");
+    line-height: 0.8em;
+    flex: 1;
+    text-align: right;
 
     @include breakpoint("medium") {
-        padding: 0 (spacing("single") + spacing("quarter"));
+        padding-right: (spacing("base") + spacing("half"));
         position: relative;
         right: auto;
         top: auto;
@@ -68,7 +70,7 @@
     color: stencilColor("navUser-color");
     font-size: fontSize("smaller");
     font-weight: fontWeight("normal");
-    padding: 0 spacing("half");
+    padding: 0 spacing("quarter");
     text-decoration: none;
     text-transform: uppercase;
     line-height: 1.2em;
@@ -325,4 +327,9 @@
 .countPill--alt {
     background-color: color("greys", "lighter");
     color: color("greys", "darker");
+}
+
+.cart-link {
+    display: initial;
+    margin-right: 0.2em;
 }
