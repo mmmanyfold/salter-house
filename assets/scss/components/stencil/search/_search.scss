@@ -103,6 +103,7 @@
         border: 0;
         margin: 0;
         padding: 0;
+        display: inline;
     }
     input {
         border: 0;
@@ -110,6 +111,7 @@
         outline: 0;
         width: 50px;
         background: transparent;
+        display: inline;
         @include breakpoint(971px) {
             width: 90px;
         }
@@ -122,5 +124,8 @@
         @include breakpoint("large") {
             padding-top: 0.3em;
         }
+    }
+    button {
+        display: inline;
     }
 }
