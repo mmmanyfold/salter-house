@@ -1,3 +1,5 @@
+@import "./../../globals";
+
 // =============================================================================
 // FOOTER (CSS)
 // =============================================================================
@@ -14,21 +16,14 @@
 
 .footer {
     background-color: $footer-background;
-    padding: spacing("double");
-}
-
-.footer-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
-}
-
-.footer-info-col {
+    padding: spacing("half") spacing("half") spacing("double");
     color: stencilColor("color-textSecondary");
-    font-size: 1.2rem; // 2
-    margin-bottom: spacing("double");
-    text-align: left;
-    vertical-align: top;
+    @include breakpoint("small") {
+        padding: (spacing("single") + spacing("quarter"));
+    }
+    @include breakpoint("medium") {
+        padding: spacing("double");
+    }
 }
 
 .footer-info-col--social {
@@ -58,10 +53,96 @@
 // Content
 // -----------------------------------------------------------------------------
 
-.footer-info-heading {
-    color: $footer-heading-fontColor;
-    font-size: fontSize("base");
-    text-transform: inherit;
+
+.footer-info {
+    width: 100%;
+    @include breakpoint(650px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoint(994px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.footer-links {
+    font-size: 1.3rem; // 2
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    text-align: left;
+    vertical-align: top;
+    @include breakpoint(650px) {
+        margin: 0;
+    }
+}
+
+.footer-links {
+    display: flex;
+    > :not(:last-child) {
+        padding-right: 4.4em;
+    }
+    @include breakpoint(650px) {
+        > :not(:last-child) {
+            padding-right: 2em;
+        }
+    }
+}
+
+.footer-logo {
+    text-align: center;
+    margin-bottom: 3.8em;
+    display: none;
+    img {
+        width: 100px;
+    }
+
+    @include breakpoint(994px) {
+        display: block;
+    }
+}
+
+.footer-logo-medium {
+    text-align: center;
+    margin-bottom: 3.8em;
+    display: block;
+    img {
+        width: 100px;
+    }
+
+    @include breakpoint(994px) {
+        display: none;
+    }
+}
+
+.footer-right-content {
+    font-size: 1.17rem;
+    width: 300px;
+    margin: 0 auto;
+    input {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        background: none;
+    }
+    #nl_label {
+        margin-right: 0.2em;
+    }
+    #nl_email {
+        border-bottom: 1px solid $green;
+        border-radius: 0;
+        width: 94px;
+        height: 20px;
+        padding: 0 0.4em;
+    }
+    .form-prefixPostfix-button--postfix {
+        text-transform: uppercase;
+        margin-left: 0.2em;
+    }
+    @include breakpoint(650px) {
+        float: right;
+    }
 }
 
 .footer-info-list {
@@ -81,28 +162,22 @@
     }
 }
 
+.footer-newsletter-summary {
+    text-align: left;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 2em;
+    letter-spacing: 0.05em;
+}
+
 .footer-copyright {
     text-align: center;
+    width: 100%;
 
-    @include breakpoint("small") {
-        text-align: left;
-    }
-
-    > .powered-by {
-        color: stencilColor("color-textSecondary");
-        font-size: fontSize("smaller");
-        margin: 0;
-    }
-
-    a {
-        color: stencilColor("color-textSecondary");
-        text-decoration: none;
-
-        // scss-lint:disable NestingDepth
-        &:hover {
-            color: stencilColor("color-textSecondary--hover");
-        }
-        // scss-lint:enable NestingDepth
+    @include breakpoint(994px) {
+        text-align: right;
     }
 }
 
@@ -136,35 +211,4 @@
     table {
         margin: auto;
     }
-}
-
-.footer-newsletter-summary {
-    text-align: left;
-}
-
-address {
-    font-style: normal;
-    margin-bottom: 2em;
-}
-
-.footer-links {
-    display: flex;
-    > :not(:last-child) {
-        padding-right: 3em;
-    }
-}
-
-.footer-logo {
-    text-align: center;
-    img {
-        width: 100px;
-    }
-}
-
-.footer-right {
-    float: right;
-}
-
-.form-prefixPostfix .form-input {
-    flex: 0;
 }

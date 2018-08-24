@@ -7,17 +7,8 @@
 {{/if}}
 <footer class="footer" role="contentinfo">
     <div class="container">
-        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
-            <article class="footer-info-col
-                footer-info-col--social
-                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
-                data-section-type="footer-webPages">
-                    <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
-                    {{> components/common/social-links}}
-            </article>
-        {{/if}}
         <section class="footer-info">
-            <div class="footer-info-col footer-links">
+            <div class="footer-links">
                 <article data-section-type="footer-webPages">
                     <ul class="footer-info-list">
                         {{#each pages}}
@@ -56,12 +47,12 @@
                 {{/and}}
             </div>
 
-            <div class="footer-info-col footer-logo">
+            <div class="footer-logo">
                 <img src="{{cdn 'assets/img/logo.svg'}}"/>
             </div>
 
-            <div class="footer-info-col">
-                <div class="footer-right">
+            <div class="footer-right">
+                <div class="footer-right-content">
                     {{#if settings.address}}
                     <article data-section-type="storeInfo">
                         <address>{{nl2br settings.address}}</address>
@@ -86,10 +77,11 @@
                 {{> components/common/geotrust-ssl-seal}}
             </div>
         {{/if}}
-        {{#if theme_settings.show_copyright_footer}}
-            <div class="footer-copyright">
-                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
-            </div>
-        {{/if}}
+    </div>
+    <div class="footer-logo-medium">
+        <img src="{{cdn 'assets/img/logo.svg'}}"/>
+    </div>
+    <div class="footer-copyright">
+        <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
     </div>
 </footer>
