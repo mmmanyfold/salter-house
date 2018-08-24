@@ -1,3 +1,5 @@
+@import "./../../../globals";
+
 // =============================================================================
 // USER NAVIGATION (CSS)
 // =============================================================================
@@ -309,15 +311,17 @@
 .countPill {
     background-color: stencilColor("navUser-indicator-backgroundColor");
     border-radius: 50%;
-    color: color("whites", "bright");
+    color: $green;
+    border: 0.04em solid $green;
     display: none;
-    font-size: fontSize("tiny");
+    font-size: 11px;
     font-weight: fontWeight("normal");
-    height: 20px; // 1
-    line-height: 20px; // 1
+    height: 18px; // 1
+    line-height: 15px; // 1
     margin-left: spacing("eighth");
+    padding-left: 0.1em;
     text-align: center;
-    width: 20px; // 1
+    width: 18px; // 1
 }
 
 .countPill--positive {
