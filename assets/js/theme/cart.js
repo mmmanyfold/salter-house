@@ -353,12 +353,24 @@ export default class Cart extends PageManager {
         toggleViews();
     }
 
+    bindCartBtnClick() {
+        const $cartBtn = $('#_cart-btn');
+        const $cartDiv = $('#_cart');
+        $cartBtn.click(() => {
+            if ($cartDiv.is( ":hidden" )) {
+                $cartDiv.slideDown('fast');
+            } else {
+                $cartDiv.slideUp('fast');
+            }
+        });
+    }
+
     bindEvents() {
         this.bindCartEvents();
         this.bindPromoCodeEvents();
         this.bindGiftWrappingEvents();
         this.bindGiftCertificateEvents();
-
+        this.bindCartBtnClick();
         // initiate shipping estimator module
         this.shippingEstimator = new ShippingEstimator($('[data-shipping-estimator]'));
     }
