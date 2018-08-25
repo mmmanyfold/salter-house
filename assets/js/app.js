@@ -73,6 +73,12 @@ window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null
                 if (typeof pageClassImporter === 'function') {
                     const PageClass = (await pageClassImporter()).default;
                     PageClass.load(context);
+                    if (pageType !== 'cart') {
+                        const cartClassImporter = pageClasses['cart'];
+                        // also call Cart Class on every page, except on /cart.php
+                        const cartClass = (await cartClassImporter()).default;
+                        cartClass.load(context);
+                    }
                 }
             });
         },
