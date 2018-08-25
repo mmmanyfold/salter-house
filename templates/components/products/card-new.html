@@ -18,13 +18,13 @@
         {{/or}}
         {{#if demo}}
             <div class="card-img-container">
-                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
             </div>
         {{else}}
             <a href="{{url}}">
                 <div class="card-img-container">
                     <p class="new-label">NEW</p>
-                    <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                    <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
                 </div>
             </a>
         {{/if}}

@@ -21,11 +21,11 @@
             </div>
             <figure class="account-product-figure">
                 {{#if type '===' 'giftcertificate'}}
-                    <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="Gift Certificate" title="Gift Certificate">
+                    <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="Gift Certificate" title="Gift Certificate">
                 {{else}}
                     <img class="account-product-image lazyload"
                          data-sizes="auto"
-                         src="{{cdn 'img/loading.svg'}}"
+                         src="{{cdn 'img/loading-apples.gif'}}"
                          data-src="{{getImage image 'productthumb_size' (cdn ../../theme_settings.default_image_product)}}"
                          alt="{{image.alt}}"
                          title="{{image.alt}}">
