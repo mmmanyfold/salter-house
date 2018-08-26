@@ -3,6 +3,10 @@ import has from 'lodash.has';
 
 const { env } = process;
 
+const headers = {
+    "Access-Control-Allow-Origin": "*", // Required for CORS support to work
+};
+
 const requestConfig = (page = 1, limit = 12) => ({
     url: `${env['URL']}/v3/catalog/products`,
     headers: {
@@ -25,17 +29,20 @@ export const getProducts = async (event, context, callback) => {
             const { data } = await axios(requestConfig(page, limit));
             response = {
                 statusCode: 200,
+                headers,
                 body: JSON.stringify(data),
             };
         } catch (e) {
             response = {
                 statusCode: 500,
+                headers,
                 body: e.message,
             }
         }
     } else {
         response = {
             statusCode: 400,
+            headers,
             body: JSON.stringify(error('input error: missing limit or page query params.'))
         }
     }
