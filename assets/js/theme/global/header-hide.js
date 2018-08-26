@@ -1,14 +1,15 @@
 import $ from 'jquery';
 import urlUtils from "../common/url-utils";
 
-// Hide Header on on scroll down
-let didScroll;
-let lastScrollTop = 0;
-
 let isHome;
 
+const header = $('header');
+
+// Hide Header on on scroll down
 function hasScrolled() {
     const delta = 5;
+
+    let lastScrollTop = 0;
 
     let headerbarHeight = header.outerHeight();
     let st = window.scrollY;
@@ -37,11 +38,10 @@ function hasScrolled() {
     lastScrollTop = st;
 }
 
-export default function() {
-    const header = $('header');
+export default function () {
+    let didScroll;
 
     isHome = "/" == urlUtils.getUrl();
-
 
     if (isHome) {
         header.addClass('header-home');
