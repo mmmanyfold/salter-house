@@ -12,6 +12,11 @@
     font-size: 1.2em;
     letter-spacing: 0.07rem;
 
+    &:hover {
+        color: white;
+        background-color: #007A51;
+    }
+
     + .button {
         margin-left: 0;
 
@@ -30,4 +35,21 @@
     svg {
         fill: stencilColor("button--icon-svg-color");
     }
+}
+
+.button--secondary {
+    font-size: 0.6em;
+    padding: 0.2em 0.3em 0.1em 0.4em;
+    border-radius: 0.4em;
+    margin-bottom: 0.23em;
+
+    &:hover {
+        background-color: #007A51;
+    }
+}
+
+.button--close {
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
 }

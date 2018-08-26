@@ -2,8 +2,7 @@
 <div class="page">
 
     <main class="page-content" data-cart>
-        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
+        <div class="cart-wrapper">
         {{> components/cart/page-title}}
 
         <div data-cart-status>
@@ -48,6 +47,7 @@
         {{/if}}
 
         {{{snippet 'cart'}}}
+        </div>
     </main>
 </div>
 {{/partial}}
