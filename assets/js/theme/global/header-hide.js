@@ -5,11 +5,11 @@ let isHome;
 
 const header = $('header');
 
+let lastScrollTop = 0;
+
 // Hide Header on on scroll down
 function hasScrolled() {
     const delta = 5;
-
-    let lastScrollTop = 0;
 
     let headerbarHeight = header.outerHeight();
     let st = window.scrollY;
@@ -18,10 +18,10 @@ function hasScrolled() {
     if (Math.abs(lastScrollTop - st) <= delta)
         return;
 
-    if (isHome && st >= 584) {
-        header.removeClass('header-home');
-    } else {
+    if (isHome && st < 584) {
         header.addClass('header-home');
+    } else {
+        header.removeClass('header-home');
     }
     // If they scrolled down and are past the headerbar, add class .header-up.
     // This is necessary so you never see what is "behind" the headerbar.
@@ -41,7 +41,9 @@ function hasScrolled() {
 export default function () {
     let didScroll;
 
-    isHome = "/" == urlUtils.getUrl();
+    isHome = "/" === urlUtils.getUrl();
+
+    console.log(isHome);
 
     if (isHome) {
         header.addClass('header-home');
