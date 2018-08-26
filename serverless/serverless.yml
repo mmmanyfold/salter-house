@@ -34,3 +34,8 @@ functions:
       - http:
           path: products
           method: get
+          request:
+            parameters:
+              querystrings:
+                page: true
+                limit: true
