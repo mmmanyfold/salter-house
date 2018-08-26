@@ -55,13 +55,14 @@
 
 
 .footer-info {
-    @include breakpoint(650px) {
+    @include breakpoint(698px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 50px;
     }
     @include breakpoint(994px) {
         display: grid;
+        grid-gap: 0;
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
@@ -76,10 +77,10 @@
     > :not(:last-child) {
         padding-right: 4.4em;
     }
-    @include breakpoint(650px) {
+    @include breakpoint(698px) {
         width: auto;
         margin: 0;
-        justify-self: end;
+        justify-self: start;
         > :not(:last-child) {
             padding-right: 2em;
         }
@@ -113,8 +114,8 @@
 }
 
 .footer-right {
-    @include breakpoint(650px) {
-        justify-self: start;
+    @include breakpoint(698px) {
+        justify-self: end;
     }
 }
 
@@ -142,7 +143,7 @@
         text-transform: uppercase;
         margin-left: 0.2em;
     }
-    @include breakpoint(650px) {
+    @include breakpoint(698px) {
         float: right;
         width: auto;
     }
@@ -152,7 +153,9 @@
     font-family: MS-PMincho;
     list-style: none;
     margin-left: 0;
+    margin-bottom: 3em;
     text-align: center;
+
     a {
         color: stencilColor("color-textSecondary");
         text-decoration: none;
@@ -163,10 +166,9 @@
         }
         // scss-lint:enable NestingDepth
     }
-    @include breakpoint(650px) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 20px;
+
+    @include breakpoint(698px) {
+        text-align: left;
     }
 }
 
