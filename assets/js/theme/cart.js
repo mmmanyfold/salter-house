@@ -353,12 +353,25 @@ export default class Cart extends PageManager {
         toggleViews();
     }
 
+    bindCartBtnClick() {
+        const $cartBtn = $('#_cart-btn');
+        const $cartDiv = $('#_cart');
+        $cartBtn.click(() => {
+            $cartDiv.slideDown('fast');
+        });
+        const $cartBtnClose = $('#_cart-btn-close');
+        $cartBtnClose.click(() => {
+            $cartDiv.slideUp('fast');
+            $('html,body').animate({scrollTop:0},100);
+        });
+    }
+
     bindEvents() {
         this.bindCartEvents();
         this.bindPromoCodeEvents();
         this.bindGiftWrappingEvents();
         this.bindGiftCertificateEvents();
-
+        this.bindCartBtnClick();
         // initiate shipping estimator module
         this.shippingEstimator = new ShippingEstimator($('[data-shipping-estimator]'));
     }

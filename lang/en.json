@@ -33,7 +33,7 @@
         "title": "Checkout"
     },
     "cart": {
-        "continue_shopping": "Click here to continue shopping",
+        "continue_shopping": "Keep Shopping",
         "items": "{NUM, plural, =0{(0 items)} one {(# item)} other {(# items)}}",
         "checkout": {
             "address": {
@@ -120,7 +120,7 @@
             "your_cart_contains": "Your cart contains {num_products, plural, one {1 item} other {# items}}",
             "proceed_to_checkout": "Proceed to checkout",
             "order_subtotal": "Order subtotal",
-            "continue_shopping": "Continue Shopping",
+            "continue_shopping": "Keep Shopping",
             "view_or_edit_cart": "View or edit your cart",
             "you_might_also_like": "You may also like"
         }
@@ -202,7 +202,7 @@
         "header": "Comparing {products, plural, one {# Product} other {# Products}}",
         "remove": "Remove",
         "no_remove": "At least 2 products are needed to make a valid comparison.",
-        "add_to_cart": "Add to cart"
+        "add_to_cart": "Add to basket"
     },
     "category": {
         "label": "Categories",
@@ -652,7 +652,7 @@
             "hide": "Hide Videos",
             "show": "Show Videos"
         },
-        "add_to_cart": "Add to Cart",
+        "add_to_cart": "Add to Basket",
         "adding_to_cart": "Adding to cart…",
         "options": "Options",
         "none": "None",

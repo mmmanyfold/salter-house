@@ -37,16 +37,15 @@
             </li>
         </ul>
         <div style="text-align: right">
-            <a class="navUser-action cart-link"
-               data-cart-preview
-               data-dropdown="cart-preview-dropdown"
+            <a id="_cart-btn"
+               class="navUser-action cart-link"
                data-options="align:right"
-               href="{{urls.cart}}">
-                <span class="navUser-item-cartLabel"><img width="13px"
-                                                          src="{{cdn 'assets/img/shopping-bag.png'}}"></span>
+               href="#">
+                <span class="navUser-item-cartLabel">
+                    <img width="13px" src="{{cdn 'assets/img/shopping-bag.png'}}">
+                </span>
                 <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
             </a>
         </div>
-        <!--<div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>-->
     </div>
 </nav>
