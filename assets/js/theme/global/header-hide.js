@@ -43,8 +43,6 @@ export default function () {
 
     isHome = "/" === urlUtils.getUrl();
 
-    console.log(isHome);
-
     if (isHome) {
         header.addClass('header-home');
     }

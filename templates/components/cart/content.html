@@ -101,7 +101,8 @@
                                data-quantity-max-error="{{lang 'products.quantity_max' quantity=max_purchase_quantity}}"
                                min="1"
                                pattern="[0-9]*"
-                               aria-live="polite"{{#unless can_modify}} disabled{{/unless}}>
+                               aria-live="polite"
+                               disabled>
                         {{# if can_modify}}
                             <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="inc">
                                 <span class="is-srOnly">{{lang 'products.quantity_increase'}}</span>
