@@ -1,7 +1,7 @@
 <ul class="productGrid">
     {{#each products}}
     <li class="product">
-        {{>components/products/card-new theme_settings=../theme_settings customer=../customer}}
+        {{>components/products/card theme_settings=../theme_settings customer=../customer new=true}}
     </li>
     {{/each}}
 </ul>
