@@ -12,6 +12,11 @@
     font-size: 1.2em;
     letter-spacing: 0.07rem;
 
+    &:hover {
+        color: white;
+        background-color: #007A51;
+    }
+
     + .button {
         margin-left: 0;
 
@@ -41,4 +46,10 @@
     &:hover {
         background-color: #007A51;
     }
+}
+
+.button--close {
+    margin: 0 auto;
+    width: 35px;
+    height: 35px;
 }

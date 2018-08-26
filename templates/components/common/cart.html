@@ -1,13 +1,14 @@
 <div id="_cart" class="page hidden">
     <main class="page-content" data-cart>
         <div class="cart-wrapper">
+
+        {{#if cart.items.length}}
         {{> components/cart/page-title}}
 
         <div data-cart-status>
             {{> components/cart/status-messages}}
         </div>
 
-        {{#if cart.items.length}}
         <div class="loadingOverlay"></div>
 
         <div data-cart-content>
@@ -45,6 +46,12 @@
         {{/if}}
 
         {{{snippet 'cart'}}}
+
+        <div class="button--close" style="margin-top: 4em">
+            <a id="_cart-btn-close" href="#">
+                <svg data-src="{{cdn 'icons/close.svg'}}"/>
+            </a>
+        </div>
         </div>
     </main>
 </div>

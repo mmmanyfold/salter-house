@@ -11,7 +11,7 @@
 // Cart variables
 // -----------------------------------------------------------------------------
 
-$cart-item-spacing:                     (spacing("half") + spacing("quarter"));
+$cart-item-spacing:                     (spacing("half") + spacing("base"));
 
 $cart-thumbnail-maxWidth:               remCalc(100px);
 $cart-thumbnail-height:                 remCalc(100px);
@@ -30,11 +30,15 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 // -----------------------------------------------------------------------------
 
 .cart-wrapper {
-    padding: 0 2.25em;
+    padding: 0 2.25em 13.1em 2.25em;
 
     h1 {
         margin-left: 0;
         margin-bottom: 2em;
+    }
+
+    h3 {
+        text-align: center;
     }
 }
 
@@ -289,6 +293,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-remove {
     cursor: pointer;
+    outline: 0;
     float: right;
     height: remCalc(28px);
     margin-top: remCalc(1px);
@@ -301,10 +306,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     &.cart-remove--spacer {
         visibility: hidden;
-    }
-
-    > svg {
-        fill: stencilColor("icon-color");
     }
 }
 

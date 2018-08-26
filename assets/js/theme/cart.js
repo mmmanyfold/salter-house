@@ -357,11 +357,12 @@ export default class Cart extends PageManager {
         const $cartBtn = $('#_cart-btn');
         const $cartDiv = $('#_cart');
         $cartBtn.click(() => {
-            if ($cartDiv.is( ":hidden" )) {
-                $cartDiv.slideDown('fast');
-            } else {
-                $cartDiv.slideUp('fast');
-            }
+            $cartDiv.slideDown('fast');
+        });
+        const $cartBtnClose = $('#_cart-btn-close');
+        $cartBtnClose.click(() => {
+            $cartDiv.slideUp('fast');
+            $('html,body').animate({scrollTop:0},100);
         });
     }
 
