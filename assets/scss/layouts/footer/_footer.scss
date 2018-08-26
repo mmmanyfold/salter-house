@@ -55,13 +55,14 @@
 
 
 .footer-info {
-    width: 100%;
-    @include breakpoint(650px) {
+    @include breakpoint(698px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-gap: 50px;
     }
     @include breakpoint(994px) {
         display: grid;
+        grid-gap: 0;
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
@@ -73,17 +74,13 @@
     margin-bottom: 1em;
     text-align: left;
     vertical-align: top;
-    @include breakpoint(650px) {
-        margin: 0;
-    }
-}
-
-.footer-links {
-    display: flex;
     > :not(:last-child) {
         padding-right: 4.4em;
     }
-    @include breakpoint(650px) {
+    @include breakpoint(698px) {
+        width: auto;
+        margin: 0;
+        justify-self: start;
         > :not(:last-child) {
             padding-right: 2em;
         }
@@ -116,6 +113,12 @@
     }
 }
 
+.footer-right {
+    @include breakpoint(698px) {
+        justify-self: end;
+    }
+}
+
 .footer-right-content {
     font-size: 1.17rem;
     width: 300px;
@@ -140,8 +143,9 @@
         text-transform: uppercase;
         margin-left: 0.2em;
     }
-    @include breakpoint(650px) {
+    @include breakpoint(698px) {
         float: right;
+        width: auto;
     }
 }
 
@@ -149,6 +153,8 @@
     font-family: MS-PMincho;
     list-style: none;
     margin-left: 0;
+    margin-bottom: 3em;
+    text-align: center;
 
     a {
         color: stencilColor("color-textSecondary");
@@ -159,6 +165,10 @@
             color: stencilColor("color-textSecondary--hover");
         }
         // scss-lint:enable NestingDepth
+    }
+
+    @include breakpoint(698px) {
+        text-align: left;
     }
 }
 
