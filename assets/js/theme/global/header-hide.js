@@ -3,8 +3,10 @@ import urlUtils from "../common/url-utils";
 
 export default function() {
     const header = $('header');
-    const isHome = "/" === urlUtils.getUrl();
     const delta = 5;
+
+    let isHome = "/" == urlUtils.getUrl();
+
     if (isHome) {
         header.addClass('header-home');
     }
@@ -13,6 +15,7 @@ export default function() {
     });
 
     setInterval(function () {
+        isHome = "/" === urlUtils.getUrl();
         if (window.outerWidth > 800) {
             if (didScroll) {
                 hasScrolled();

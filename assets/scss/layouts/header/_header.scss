@@ -33,7 +33,7 @@
     }
 
     @include breakpoint(801px) {
-        height: 73px;
+        height: 79px;
     }
 
     &.is-open {
@@ -50,7 +50,7 @@
 
 .header-up {
     @include breakpoint(801px) {
-        top: -73px;
+        top: -79px;
     }
 }
 
