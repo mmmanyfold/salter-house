@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "@bigcommerce/stencil-utils": "^1.1.2",
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "easyzoom": "^2.5.0",
     "foundation-sites": "^5.5.3",
