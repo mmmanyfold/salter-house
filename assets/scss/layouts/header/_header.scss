@@ -16,18 +16,24 @@
 // -----------------------------------------------------------------------------
 
 .header {
-    background-color: $header-bg;
+    transition: top 0.2s ease-in-out, background-color 0.5s ease-in-out;
+    background-color: white;
+    height: 55px;
+    position: fixed;
     top: 0;
     width: 100%;
-    z-index: zIndex("low");
+    z-index: zIndex("high");
     letter-spacing: 0.1em;
 
     @include breakpoint("medium") {
-        background-color: rgba(0,0,0,0);
         overflow: hidden;
         display: flex;
         justify-content: space-between;
         margin-bottom: 1.5em;
+    }
+
+    @include breakpoint(801px) {
+        height: 73px;
     }
 
     &.is-open {
@@ -36,6 +42,17 @@
         @include breakpoint("medium") {
             height: auto;
         }
+    }
+}
+
+.header-home {
+    background-color: rgba(0,0,0,0);
+}
+
+.header-up {
+    top: -55px;
+    @include breakpoint(801px) {
+        top: -73px;
     }
 }
 

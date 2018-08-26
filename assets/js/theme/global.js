@@ -16,6 +16,7 @@ import 'lazysizes';
 import loadingProgressBar from './global/loading-progress-bar';
 import sweetAlert from './global/sweet-alert';
 import svgInjector from './global/svg-injector';
+import enableScrolling from './global/header-hide';
 
 export default class Global extends PageManager {
     onReady() {
@@ -26,7 +27,7 @@ export default class Global extends PageManager {
 
         // NOTE: quickSearch disabled
         // quickSearch();
-
+        enableScrolling();
         currencySelector();
         foundation($(document));
         quickView(this.context);
