@@ -76,6 +76,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     @include breakpoint("medium") {
         display: table-row-group; // 1
     }
+    input[disabled] {
+        cursor: default;
+        color: black;
+    }
 }
 
 .cart-item {
