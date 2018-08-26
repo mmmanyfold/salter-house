@@ -2,7 +2,6 @@ import axios from 'axios';
 import has from 'lodash.has';
 
 const { env } = process;
-const { log } = console;
 
 const requestConfig = (page = 1, limit = 12) => ({
     url: `${env['URL']}/v3/catalog/products`,
@@ -22,11 +21,18 @@ export const getProducts = async (event, context, callback) => {
     const { queryStringParameters } = event;
     if (has(queryStringParameters, 'page') && has(queryStringParameters, 'limit')) {
         const { page, limit } = queryStringParameters;
-        const { data } = await axios(requestConfig(page, limit));
-        response = {
-            statusCode: 200,
-            body: data,
-        };
+        try {
+            const { data } = await axios(requestConfig(page, limit));
+            response = {
+                statusCode: 200,
+                body: JSON.stringify(data),
+            };
+        } catch (e) {
+            response = {
+                statusCode: 500,
+                body: e.message,
+            }
+        }
     } else {
         response = {
             statusCode: 400,
