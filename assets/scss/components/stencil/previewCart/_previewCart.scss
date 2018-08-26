@@ -50,9 +50,8 @@
     }
 
     .button {
-        display: block;
         margin: 0;
-        width: 100%;
+        width: 50%;
 
         // scss-lint:disable NestingDepth
         + .button,
