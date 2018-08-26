@@ -4,6 +4,7 @@ import urlUtils from "../common/url-utils";
 export default function() {
     const header = $('header');
     const isHome = "/" === urlUtils.getUrl();
+    const delta = 5;
     if (isHome) {
         header.addClass('header-home');
     }
@@ -25,7 +26,6 @@ export default function() {
 // Hide Header on on scroll down
     let didScroll;
     let lastScrollTop = 0;
-    let delta = 5;
 
     function hasScrolled() {
         let headerbarHeight = header.outerHeight();
