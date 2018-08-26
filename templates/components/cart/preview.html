@@ -30,13 +30,13 @@
             <div class="previewCartCheckout-subtotal">
                 {{lang 'cart.added_to_cart.order_subtotal'}}
 
-                <strong class="previewCartCheckout-price">
+                <span class="previewCartCheckout-price">
                     {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
                         {{cart.sub_total.formatted}}
                     {{else}}
                         {{> components/common/login-for-pricing}}
                     {{/or}}
-                </strong>
+                </span>
             </div>
 
             <p data-cart-quantity="{{cart.quantity}}">
