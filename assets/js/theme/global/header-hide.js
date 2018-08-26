@@ -2,7 +2,7 @@ import $ from 'jquery';
 import urlUtils from "../common/url-utils";
 
 export default function() {
-    let isHome = "/" === urlUtils.getUrl();
+    const isHome = "/" === urlUtils.getUrl();
     if (isHome) {
         $('header').addClass('header-home');
     }
@@ -17,7 +17,7 @@ export default function() {
                 didScroll = false;
             }
         } else {
-            $('header').removeClass('header-up').removeClass('header-home').addClass('header-down');
+            $('header').removeClass('header-up header-home').addClass('header-down');
         }
 
     }, 250);
