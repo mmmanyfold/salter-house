@@ -237,7 +237,9 @@
 .form-increment {
     .button {
         margin: 0;
-        padding: remCalc(3px) remCalc(5px);
+        padding: remCalc(3px);
+        line-height: 0.75rem;
+        border-radius: 50%;
     }
 }
 
