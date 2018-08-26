@@ -17,7 +17,7 @@ export default function() {
                 didScroll = false;
             }
         } else {
-            $('header').removeClass('header-up').addClass('header-down');
+            $('header').removeClass('header-up').removeClass('header-home').addClass('header-down');
         }
 
     }, 250);
