@@ -44,6 +44,8 @@
     background: container("fill", "dark");
     padding: spacing("base");
     text-align: center;
+    margin: 0 auto;
+    width: 50%;
 
     @include breakpoint("medium") {
         padding: spacing("single");
@@ -51,7 +53,7 @@
 
     .button {
         margin: 0;
-        width: 50%;
+        width: 100%;
 
         // scss-lint:disable NestingDepth
         + .button,
