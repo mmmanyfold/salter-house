@@ -2,9 +2,10 @@ import $ from 'jquery';
 import urlUtils from "../common/url-utils";
 
 export default function() {
+    const header = $('header');
     const isHome = "/" === urlUtils.getUrl();
     if (isHome) {
-        $('header').addClass('header-home');
+        header.addClass('header-home');
     }
     $(window).scroll(function (event) {
         didScroll = true;
@@ -17,7 +18,7 @@ export default function() {
                 didScroll = false;
             }
         } else {
-            $('header').removeClass('header-up header-home').addClass('header-down');
+            header.removeClass('header-up header-home').addClass('header-down');
         }
 
     }, 250);
@@ -27,7 +28,7 @@ export default function() {
     let delta = 5;
 
     function hasScrolled() {
-        let headerbarHeight = $('header').outerHeight();
+        let headerbarHeight = header.outerHeight();
         let st = window.scrollY;
 
         // Make sure they scroll more than delta
@@ -35,19 +36,19 @@ export default function() {
             return;
 
         if (isHome && st >= 584) {
-            $('header').removeClass('header-home');
+            header.removeClass('header-home');
         } else {
-            $('header').addClass('header-home');
+            header.addClass('header-home');
         }
         // If they scrolled down and are past the headerbar, add class .header-up.
         // This is necessary so you never see what is "behind" the headerbar.
         if (st > lastScrollTop && st > headerbarHeight) {
             // Scroll Down
-            $('header').removeClass('header-down').addClass('header-up');
+            header.removeClass('header-down').addClass('header-up');
         } else {
             // Scroll Up
             if (st + $(window).height() < $(document).height()) {
-                $('header').removeClass('header-up').addClass('header-down');
+                header.removeClass('header-up').addClass('header-down');
             }
         }
 
