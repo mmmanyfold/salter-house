@@ -60,7 +60,8 @@
 .productView-description {
     @include grid-column(12);
     font-family: fontFamily("serif");
-    font-size: fontSize("smaller");
+    font-size: 1.25em;
+    line-height: 1.25em;
     padding: 0;
     display: inline-block;
     width: 100%;
