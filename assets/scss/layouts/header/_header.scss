@@ -176,6 +176,8 @@
 
 .header-logo-image-container {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .header-logo-image-container:after {
@@ -189,10 +191,11 @@
 }
 
 .header-logo-image {
-    @include lazy-loaded-img;
     max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
 
     @include breakpoint("medium") {
+        position: absolute;
+        top: 0;
         max-height: none;
         margin: remCalc($header-toggle-width * 0.45) 0;
         width: 100%;

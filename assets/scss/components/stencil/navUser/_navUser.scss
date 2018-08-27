@@ -18,7 +18,7 @@
     @include nav($style: "navBar", $wrapper: "nav");
     @include verticalPositionMiddle("absolute");
     right: 0;
-    top: 26px; // 2
+    top: 21px; // 2
     z-index: zIndex("lowest"); // 5.
     margin-right: spacing("quarter");
     line-height: 0.8em;
@@ -325,7 +325,11 @@
 }
 
 .countPill--positive {
-    display: inline-block;
+    display: none;
+
+    @include breakpoint("medium") {
+        display: inline-block;
+    }
 }
 
 .countPill--alt {
