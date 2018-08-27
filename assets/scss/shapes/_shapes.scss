@@ -27,6 +27,13 @@ $orange: #F39838;
   position: relative;
 }
 
+.category-dot-selected, .category-dot-unselected, .circle {
+  display: none;
+  @include breakpoint("medium") {
+    display: block;
+  }
+}
+
 .category-dot-selected {
   @extend .circle;
   margin: 1em;

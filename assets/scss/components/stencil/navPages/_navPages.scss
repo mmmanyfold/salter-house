@@ -61,6 +61,12 @@
     }
 }
 
+.navPages-wrapper {
+    @include breakpoint("medium") {
+        display: flex;
+    }
+}
+
 //
 // Top level Pages navigation list styles
 // -----------------------------------------------------------------------------
@@ -113,6 +119,9 @@
 }
 
 .navPages-list-left {
+    margin-left: 0;
+    margin-bottom: 0;
+
     @include breakpoint("medium") {
         display: grid;
         .navPages-action {
@@ -125,9 +134,17 @@
     }
 
     @include breakpoint(1246px) {
-        grid-template-rows: 1fr 1fr;
         #filter-item, #shop-all {
             display: block;
+        }
+        #shop-all {
+            width: 7.5em;
+        }
+    }
+
+    @include breakpoint("large") {
+        #shop-all {
+            width: 6.5em;
         }
     }
 
@@ -432,8 +449,7 @@
 // -----------------------------------------------------------------------------
 
 .navPages-quickSearch {
-    border-bottom: container("border");
-    margin-bottom: spacing("half");
+    margin-bottom: spacing("single");
 
     @include breakpoint("medium") {
         display: none;
@@ -445,7 +461,22 @@
 
     .form {
         margin: 0;
+        display: flex;
     }
+
+    fieldset {
+        border: none;
+        border-bottom: 0.1rem solid #007A51;
+        margin: 0;
+        padding: 0;
+        flex: 1;
+
+        input {
+            width: 100%;
+            outline: 0;
+        }
+    }
+
 
     .form-field {
         margin-bottom: 0;
