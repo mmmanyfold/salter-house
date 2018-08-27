@@ -69,17 +69,17 @@ export default class Category extends CatalogPage {
         const $seeMoreBtn = $('#_see-more-btn');
         const $productGrid = $('.productGrid');
         const limit = this.context.categoryProductsPerPage;
-        let page = 1; // assumes page one has been loaded by handlebars template
+        let page = 2; // assumes page one has been loaded by handlebars template
         $seeMoreBtn.click(async () => {
             const sort = $('#sort').find(":selected").text().toLowerCase();
-            page += 1;
             const nextPage = await this.getNextPage(window.location.pathname, {
                 sort,
-                page: page,
+                page,
                 limit,
             });
             const liNodes = this.processRawHtml(nextPage);
             $productGrid.append(liNodes);
+            page += 1;
         })
     }
 
