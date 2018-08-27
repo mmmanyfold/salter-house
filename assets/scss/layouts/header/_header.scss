@@ -68,7 +68,7 @@
     @include breakpoint("medium") {
         padding: 0;
         margin-left: (spacing("single") + spacing("half"));
-        margin-right: spacing("single");
+        margin-right: 2.75rem;
         width: 264px;
 
         .header.fixed & {
@@ -81,8 +81,16 @@
         }
     }
 
-    @include breakpoint("large") {
-        width: 345px;
+    @include breakpoint(1010px) {
+        margin-right: spacing("single");
+    }
+
+    @include breakpoint(1225px) {
+        width: 290px;
+    }
+
+    @include breakpoint(1300px) {
+        width: 355px;
     }
 
     > a {
@@ -178,6 +186,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .header-logo-image-container:after {

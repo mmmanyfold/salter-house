@@ -70,14 +70,18 @@
 
 .navUser-action {
     color: stencilColor("navUser-color");
-    font-size: fontSize("smaller");
+    font-size: 1.1rem;
     font-weight: fontWeight("normal");
     padding: 0 spacing("quarter");
     text-decoration: none;
     text-transform: uppercase;
     line-height: 1.2em;
 
-    @include breakpoint("large") {
+    @include breakpoint(1225px) {
+        font-size: 1.3rem;
+    }
+
+    @include breakpoint(1300px) {
         font-size: fontSize("small");
     }
 

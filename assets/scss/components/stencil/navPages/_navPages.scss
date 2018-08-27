@@ -50,7 +50,7 @@
     @include breakpoint("medium") {
         background: transparent;
         display: block;
-        padding: 0 1em;
+        padding: 0 1em 0 0;
         position: relative;
     }
 
@@ -122,29 +122,20 @@
     margin-left: 0;
     margin-bottom: 0;
 
+    #shop-all {
+        display: none;
+    }
+
     @include breakpoint("medium") {
-        display: grid;
         .navPages-action {
-            padding-right: 1.75em;
-        }
-        grid-template-rows: 1fr;
-        #filter-item, #shop-all {
-            display: none;
+            padding-right: 1.5em;
         }
     }
 
-    @include breakpoint(1246px) {
-        #filter-item, #shop-all {
+    @include breakpoint(1010px) {
+        #shop-all {
             display: block;
-        }
-        #shop-all {
-            width: 7.5em;
-        }
-    }
-
-    @include breakpoint("large") {
-        #shop-all {
-            width: 6.5em;
+            width: 5.5em;
         }
     }
 
@@ -223,7 +214,7 @@
 .navPages-action {
     color: stencilColor("navPages-color");
     display: block;
-    font-size: fontSize("smaller");
+    font-size: 1.1rem;
     font-weight: fontWeight("normal");
     padding: spacing("half") 0;
     text-decoration: none;
@@ -245,7 +236,11 @@
         }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint(1225px) {
+        font-size: 1.3rem;
+    }
+
+    @include breakpoint(1300px) {
         font-size: fontSize("small");
     }
 

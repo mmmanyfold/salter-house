@@ -16,7 +16,7 @@
 
 .footer {
     background-color: $footer-background;
-    padding: spacing("half") spacing("half") spacing("double");
+    padding: spacing("half") spacing("half") spacing("single");
     color: stencilColor("color-textSecondary");
     @include breakpoint("small") {
         padding: (spacing("single") + spacing("quarter"));
@@ -55,12 +55,12 @@
 
 
 .footer-info {
-    @include breakpoint(698px) {
+    @include breakpoint(700px) {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 50px;
+        grid-gap: 0;
+        grid-template-columns: 2fr 1fr 2fr;
     }
-    @include breakpoint(994px) {
+    @include breakpoint(925px) {
         display: grid;
         grid-gap: 0;
         grid-template-columns: 1fr 1fr 1fr;
@@ -68,7 +68,7 @@
 }
 
 .footer-links {
-    font-size: 1.3rem; // 2
+    font-size: 1.35rem; // 2
     width: 300px;
     margin: 0 auto;
     margin-bottom: 1em;
@@ -77,13 +77,24 @@
     > :not(:last-child) {
         padding-right: 4.4em;
     }
-    @include breakpoint(698px) {
+
+    @include breakpoint(700px) {
+        font-size: 1.1rem;
         width: auto;
         margin: 0;
+        float: right;
         justify-self: start;
         > :not(:last-child) {
             padding-right: 2em;
         }
+    }
+
+    @include breakpoint(925px) {
+        font-size: 1.2rem;
+    }
+
+    @include breakpoint(994px) {
+        font-size: 1.4rem;
     }
 }
 
@@ -92,37 +103,44 @@
     margin-bottom: 3.8em;
     display: none;
     img {
-        width: 100px;
+        width: 60px;
+
+        @include breakpoint(925px) {
+            width: 80px;
+        }
     }
 
-    @include breakpoint(994px) {
+    @include breakpoint(700px) {
         display: block;
     }
 }
 
 .footer-logo-medium {
     text-align: center;
-    margin-bottom: 3.8em;
+    margin-bottom: 3em;
     display: block;
     img {
-        width: 100px;
+        width: 80px;
     }
 
-    @include breakpoint(994px) {
+    @include breakpoint(700px) {
         display: none;
     }
 }
 
 .footer-right {
-    @include breakpoint(698px) {
+    @include breakpoint(700px) {
         justify-self: end;
     }
 }
 
 .footer-right-content {
-    font-size: 1.17rem;
+    font-size: 1.1rem;
     width: 300px;
     margin: 0 auto;
+    article {
+        padding: 0 0.64em;
+    }
     input {
         border: 0;
         padding: 0;
@@ -143,17 +161,30 @@
         text-transform: uppercase;
         margin-left: 0.2em;
     }
-    @include breakpoint(698px) {
+
+    @include breakpoint(700px) {
         float: right;
         width: auto;
+        font-size: 0.9rem;
+        article {
+            padding: 0;
+        }
     }
+
+    @include breakpoint(925px) {
+        font-size: 1.1rem;
+    }
+
+    @include breakpoint(994px) {
+             font-size: 1.17rem;
+         }
 }
 
 .footer-info-list {
     font-family: MS-PMincho;
     list-style: none;
     margin-left: 0;
-    margin-bottom: 3em;
+    margin-bottom: 2.5em;
     text-align: center;
 
     a {
@@ -167,7 +198,7 @@
         // scss-lint:enable NestingDepth
     }
 
-    @include breakpoint(698px) {
+    @include breakpoint(700px) {
         text-align: left;
     }
 }
@@ -186,7 +217,7 @@ address {
     text-align: center;
     width: 100%;
 
-    @include breakpoint(994px) {
+    @include breakpoint(700px) {
         text-align: right;
     }
 }
