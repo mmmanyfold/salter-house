@@ -113,19 +113,11 @@
         width: 50px;
         background: transparent;
         display: inline;
-        @include breakpoint(971px) {
+        @include breakpoint(1060px) {
             width: 90px;
         }
-        @include breakpoint(1024px) {
-            width: 100px;
-        }
-        @include breakpoint(1080px) {
-            width: 120px;
-        }
-        @include breakpoint(1200px) {
-            width: 150px;
-        }
         @include breakpoint("large") {
+            width: 150px;
             padding-top: 0.3em;
         }
     }

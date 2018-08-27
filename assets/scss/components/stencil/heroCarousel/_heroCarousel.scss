@@ -116,15 +116,24 @@
     bottom: 1.75em;
     padding: 0 spacing("double");
     .heroCarousel-action.button.button--primary.button--large {
-        transform: translateY(-5%);
+        transform: translateY(-6%);
         margin-top: 0;
-        margin-left: 0.4rem;
+        margin-left: 0.45rem;
         font-size: 1em;
         font-family: $fontFamily-sans;
-        padding: 0.35rem;
+        padding: 0.35rem 0.35rem 0.38rem 0.35rem;
         text-transform: capitalize;
         border-width: 0.07em;
         border-radius: 0.3em;
+        &.button--primary {
+            background-color: transparent;
+            border-color: $carousel-title-color;
+            color: $carousel-title-color;
+            &:hover {
+                background-color: $carousel-title-color;
+                color: white;
+            }
+        }
     }
 }
 
@@ -154,10 +163,4 @@
 
 .heroCarousel-action {
     margin: 0;
-
-    &.button--primary {
-        background-color: transparent;
-        border-color: $carousel-title-color;
-        color: $carousel-title-color;
-    }
 }
