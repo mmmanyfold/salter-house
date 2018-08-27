@@ -69,28 +69,30 @@ export default class Category extends CatalogPage {
         const $seeMoreBtn = $('#_see-more-btn');
         const $productGrid = $('.productGrid');
         const limit = this.context.categoryProductsPerPage;
-        let page = 1;
+        let page = 1; // assumes page one has been loaded by handlebars template
         $seeMoreBtn.click(async () => {
-            const sort = $('#_sort-opt').find(":selected").text().toLowerCase();
-            const nextPage = await this.getNextPage(urlUtils.getUrl(), {
+            const sort = $('#sort').find(":selected").text().toLowerCase();
+            page += 1;
+            const nextPage = await this.getNextPage(window.location.pathname, {
                 sort,
-                page,
+                page: page,
                 limit,
             });
             const liNodes = this.processRawHtml(nextPage);
             $productGrid.append(liNodes);
-            page++;
         })
     }
 
     async getNextPage(url, params) {
         return new Promise((resolve, reject) =>
-            api.getPage(window.location.pathname, params, (err, response) => {
+            api.getPage(url, {
+                params: params
+            }, (err, res) => {
                 if (err) {
                     throw new Error(err);
                     return reject(err);
                 }
-                resolve(response)
+                return resolve(res);
             }));
     }
 
@@ -98,6 +100,9 @@ export default class Category extends CatalogPage {
         const template = document.createElement('div');
         template.innerHTML = html;
         const productGrid = template.querySelectorAll('.productGrid li');
+        if (productGrid.length < this.context.categoryProductsPerPage) {
+            $('#_see-more-btn').hide();
+        }
         return productGrid;
     }
 
