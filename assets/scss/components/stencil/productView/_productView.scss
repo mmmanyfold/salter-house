@@ -61,7 +61,7 @@
     font-family: fontFamily("headingSans");
     text-transform: uppercase;
     font-weight: fontWeight("normal");
-    font-size: 1.25em;
+    font-size: 2.25em;
 }
 
 .productView-brand {
@@ -100,18 +100,18 @@
 // -----------------------------------------------------------------------------
 
 .productView-price {
-    font-size: fontSize("smaller");
+    font-size: 1em;
     font-family: fontFamily("serif");
     margin-bottom: spacing("third");
     display: inline-block;
 
     @include breakpoint("medium") {
-        font-size: fontSize("smaller");
+        font-size: 1em;
         margin-bottom: spacing("base");
     }
 
     .price-section--saving {
-        font-size: fontSize("smaller");
+        font-size: 1em;
     }
 
     abbr {
@@ -150,6 +150,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-top: 1.25em;
     .productView-price, .productView-brand-wrapper {
         width: 50%;
     }

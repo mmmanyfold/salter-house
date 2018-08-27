@@ -123,16 +123,19 @@
                     {{else}}
                         {{> components/common/login-for-pricing}}
                     {{/or}}
+                </td>
+
+                <td class="cart-item-block cart-item-info cart-item-remove">
                     {{# if can_modify}}
-                        <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
-                            <svg data-src="{{cdn 'icons/close.svg'}}"/>
-                        </a>
+                    <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
+                        <img src="{{cdn 'img/close.png'}}"/>
+                    </a>
                     {{else}}
-                        {{#if type '==' 'GiftCertificate'}}
-                            <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
-                                <svg data-src="{{cdn 'icons/close.svg'}}"/>
-                            </a>
-                        {{/if}}
+                    {{#if type '==' 'GiftCertificate'}}
+                    <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
+                        <img src="{{cdn 'img/close.png'}}"/>
+                    </a>
+                    {{/if}}
                     {{/if}}
                 </td>
             </tr>

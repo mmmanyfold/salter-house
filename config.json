@@ -151,7 +151,7 @@
     "button--disabled-backgroundColor": "#cccccc",
     "button--disabled-borderColor": "transparent",
     "icon-color": "#007A51",
-    "icon-color-hover": "#007A51",
+    "icon-color-hover": "#ffffff",
     "button--icon-svg-color": "#007A51",
     "icon-ratingEmpty": "#cccccc",
     "icon-ratingFull": "#757575",
