@@ -1,13 +1,10 @@
 {{#if show_gift_wrapping}}
     <dl class="cart-item-options cart-item-options--giftWrapping">
-        <dt class="cart-item-option-title">
-            {{lang 'cart.gift_wrapping.title'}}:
-        </dt>
         {{#if gift_wrapping}}
             <dd class="cart-item-option-description">
                 {{gift_wrapping.name}}
                 <span class="cart-item-option-actions">
-                    (<a href="" data-item-giftwrap="{{id}}">{{lang 'cart.gift_wrapping.change'}}</a> or <a href="{{gift_wrapping.remove_url}}" onclick="return confirm('{{lang 'cart.gift_wrapping.remove_confirm'}}')">{{lang 'cart.gift_wrapping.remove'}}</a>)
+                    (<a class="button button--secondary" href="" data-item-giftwrap="{{id}}">{{lang 'cart.gift_wrapping.change'}}</a> or <a href="{{gift_wrapping.remove_url}}" onclick="return confirm('{{lang 'cart.gift_wrapping.remove_confirm'}}')">{{lang 'cart.gift_wrapping.remove'}}</a>)
                 </span>
             </dd>
             {{#if gift_wrapping.message}}
@@ -20,7 +17,7 @@
             {{/if}}
         {{else}}
             <dd class="cart-item-option-description">
-                <a href="" data-item-giftwrap="{{id}}">{{lang 'cart.gift_wrapping.add'}}</a>
+                <a class="button button--secondary" href="" data-item-giftwrap="{{id}}">{{lang 'cart.gift_wrapping.add'}}</a>
             </dd>
         {{/if}}
     </dl>

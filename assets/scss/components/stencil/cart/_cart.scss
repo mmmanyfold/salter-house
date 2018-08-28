@@ -13,8 +13,8 @@
 
 $cart-item-spacing:                     (spacing("half") + spacing("base"));
 
-$cart-thumbnail-maxWidth:               remCalc(100px);
-$cart-thumbnail-height:                 remCalc(100px);
+$cart-thumbnail-maxWidth:               remCalc(150px);
+$cart-thumbnail-height:                 remCalc(150px);
 
 $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-spacing;
 
@@ -31,15 +31,29 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-wrapper {
     h1 {
-        margin-left: 0;
-        margin-bottom: 2em;
+        font-size: 1.25em;
+        margin-bottom: 1.5em;
+        text-align: center;
+
+        @include breakpoint("small") {
+            font-size: 1.5em;
+        }
+
+        @include breakpoint("medium") {
+            margin-left: 0;
+            text-align: left;
+            margin-bottom: 2em;
+        }
     }
 
     h3 {
         text-align: center;
     }
 
+    margin-top: 6em;
+
     @include breakpoint("medium") {
+        margin-top: 0;
         padding: 9.25em 2.25em 6em 2.25em;
     }
 }
@@ -74,9 +88,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-list {
     display: block; // 1
     border-bottom: 0.15rem solid $green;
+    padding: 0 1.2em;
 
     @include breakpoint("medium") {
         display: table-row-group; // 1
+        padding: 0;
     }
     input[disabled] {
         cursor: default;
@@ -87,16 +103,20 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item {
     clear: both;
     display: block; // 1
-    padding: $cart-item-spacing 0;
+    height: $cart-thumbnail-height * 1.75;
+    border-top: 0.15rem solid $green;
 
     @include breakpoint("small") {
         @include clearfix;
-        padding-left: grid-calc(3, $total-columns);
+        height: $cart-thumbnail-height * 1.4;
     }
 
     @include breakpoint("medium") {
         display: table-row; // 1
         padding-left: 0;
+        padding-bottom: 0;
+        height: auto;
+        border-top: 0;
 
         &:before,
         &:after {
@@ -121,24 +141,25 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     .definitionList {
         margin-bottom: 0;
+        line-height: 1.65em;
     }
 }
 
 .cart-item-figure {
+    text-align: center;
     float: left;
     height: $cart-thumbnail-height;
     margin-bottom: $cart-item-spacing;
-    width: grid-calc(4, $total-columns);
+    width: grid-calc(3, $total-columns);
     position: relative;
 
     @include breakpoint("small") {
         // height: auto;
         margin-bottom: 0;
-        margin-left: -(grid-calc(4, $total-columns));
-        width: grid-calc(4, $total-columns);
     }
 
     @include breakpoint("medium") {
+        margin-right: 0;
         float: none;
         width: grid-calc(1, $total-columns);
     }
@@ -147,27 +168,28 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-item-fixed-image {
-    width: 100%;
+    width: $cart-thumbnail-maxWidth;
+    height: $cart-thumbnail-height;
+    background-color: white;
 }
 
 .cart-item-image {
-    margin-top: -0.15em;
     @include lazy-loaded-img;
 
     @include breakpoint("medium") {
-        margin-left:0;
+        margin-left: 0;
+        margin-top: -0.05em;
     }
 }
 
 .cart-item-title {
-    display: table-cell;
-    height: $cart-thumbnail-height;
+    padding-top: 1.25em;
+    display: block;
+    height: auto;
+    overflow: hidden;
 
-    @include breakpoint("small") {
-        display: block;
-        height: auto;
-        margin-bottom: $cart-item-spacing;
-        overflow: hidden;
+    @include breakpoint("medium") {
+        border-top: 0.15rem solid $green;
     }
 
     @include breakpoint("medium") {
@@ -177,25 +199,62 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-item-spacer {
-    width: 2em;
+    width: 1em;
+
+    @include breakpoint("medium") {
+        width: 2em;
+    }
+}
+
+.cart-item-price, .cart-item-quantity {
+    width: grid-calc(5, $total-columns);
+
+    @include breakpoint("small") {
+        text-align: right;
+        width: grid-calc(4, $total-columns);
+        margin-left: 0;
+    }
+}
+
+.cart-item-total {
+    font-weight: bold;
+    width: grid-calc(9, $total-columns);
+    margin-left: grid-calc(3, $total-columns);
+
+    @include breakpoint("small") {
+        margin-left: 0;
+        width: grid-calc(10, $total-columns);
+        text-align: right;
+        margin-top: 0 !important;
+    }
+}
+
+.cart-item-option {
+    width: 50%;
+    font-weight: bold;
+    @include breakpoint("small") {
+        width: grid-calc(3, $total-columns);
+    }
+}
+
+.cart-item-option-title {
+    font-weight: normal;
+    font-size: 0.9em;
 }
 
 .cart-item-info {
     clear: both;
-    width: 100%;
     font-family: "MS-PMincho";
-    font-size: fontSize("small");
+    font-size: 1.2rem;
 
-    @include breakpoint("small") {
+
         clear: none;
         float: left;
         overflow: hidden;
-        width: grid-calc(4, $total-columns);
-
+        //width: grid-calc(4, $total-columns);
         + .cart-item-info {
             margin-top: 0;
         }
-    }
 
     @include breakpoint("medium") {
         float: none;
@@ -205,6 +264,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         &:last-child {
             text-align: right;
         }
+    }
+
+    @include breakpoint(1080px) {
+        font-size: fontSize("small");
     }
 
     + .cart-item-info {
@@ -218,8 +281,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 
 .cart-item-price {
-    text-align: right;
-    width: grid-calc(1, $total-columns);;
+    @include breakpoint("medium") {
+        text-align: right;
+        width: grid-calc(1, $total-columns);
+    }
 }
 
 .cart-header-quantity,
@@ -235,8 +300,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     .form-increment {
         display: inline-block;
-        margin: 0 spacing("eighth") 1px spacing("single");
-        vertical-align: middle;
+        vertical-align: top;
 
         @include breakpoint("medium") {
             margin-left: 0;
@@ -264,23 +328,23 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 }
 
-.cart-item-value {
-    padding-left: $cart-item-spacing;
-
-    @include breakpoint("medium") {
-        padding-left: 0;
-    }
-}
-
 .cart-item-brand {
     color: color("greys", "light");
     margin-bottom: spacing("eighth");
 }
 
 .cart-item-name {
-    font-size: fontSize("small");
+    font-size: 1.2rem;
     text-transform: uppercase;
     margin: 0;
+
+    @include breakpoint("small") {
+        font-size: 1.4rem;
+    }
+
+    @include breakpoint(1080px) {
+        font-size: 22px;
+    }
 
     > a {
         text-decoration: none;
@@ -293,28 +357,49 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-item-options--giftWrapping {
-    margin-top: spacing("half") + spacing("quarter");
+    margin-top: spacing("half");
+    margin-bottom: 0;
+    display: inline-block;
 
     .cart-item-option-description {
         color: $body-font-color;
+        margin-bottom: 0;
+    }
+
+    @include breakpoint("medium") {
+        margin-top: 0.3em;
     }
 }
 
 .cart-item-remove {
-    width: grid-calc(1, $total-columns);
+    float: right;
+    margin-top: 0 !important;
+    margin-bottom: 1em;
+
+    @include breakpoint("small") {
+        width: grid-calc(1, $total-columns);
+        margin-bottom: 0;
+    }
+
+    @include breakpoint("medium") {
+        float: none;
+    }
 }
 
 .cart-remove {
     cursor: pointer;
     outline: 0;
     float: right;
-    height: remCalc(35px);
-    margin-top: remCalc(1px);
+    height: remCalc(33px);
     transition: background-color 0.15s ease;
-    width: remCalc(35px);
+    width: remCalc(33px);
 
     @include breakpoint("small") {
         margin-left: spacing("base");
+    }
+
+    @include breakpoint("medium") {
+        margin-top: remCalc(1px);
     }
 
     &.cart-remove--spacer {

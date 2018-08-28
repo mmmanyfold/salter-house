@@ -38,10 +38,12 @@
 }
 
 .button--secondary {
-    font-size: 0.6em;
+    font-weight: bold;
+    font-size: 10.5px;
+    line-height: 14px;
     padding: 0.2em 0.3em 0.1em 0.4em;
     border-radius: 0.4em;
-    margin-bottom: 0.23em;
+    margin-bottom: 1em;
 
     &:hover {
         background-color: #007A51;
@@ -50,6 +52,6 @@
 
 .button--close {
     margin: 0 auto;
-    width: remCalc(35px);
-    height: remCalc(35px);
+    width: remCalc(33px);
+    height: remCalc(33px);
 }
