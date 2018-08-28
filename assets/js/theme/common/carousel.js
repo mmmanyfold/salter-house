@@ -5,7 +5,29 @@ export default function () {
     const $carousel = $('[data-slick]');
 
     if ($carousel.length) {
-        $carousel.slick();
+        $carousel.slick({
+            dots: true,
+            mobileFirst: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: false,
+            vertical: false,
+            verticalSwiping: true,
+            autoplaySpeed: 5000,
+            lazyLoad: "anticipated",
+            responsive: [{
+                breakpoint: 501,
+                settings: {
+                    vertical: true,
+                },
+            }, {
+                breakpoint: 801,
+                settings: {
+                    vertical: false,
+                },
+            }]
+        });
     }
 
     // Alternative image styling for IE, which doesn't support objectfit
