@@ -51,6 +51,7 @@
                 </td>
                 <td class="cart-item-block cart-item-info cart-item-option">
                     {{#if options}}
+                    <span class="cart-item-options-wrapper">
                     <dl class="definitionList">
                         {{#each options}}
                         <dd class="definitionList-value">
@@ -63,10 +64,10 @@
                         {{/each}}
                     </dl>
                     {{/if}}
-
                     {{#or options configurable_fields}}
                     <a class="button button--secondary" href="#" data-item-edit="{{id}}">{{lang 'cart.checkout.change'}}</a>
                     {{/or}}
+                    </span>
                     {{> components/cart/item-giftwrap this}}
                 </td>
                 <td class="cart-item-block cart-item-info cart-item-price">

@@ -31,17 +31,9 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-wrapper {
     h1 {
-        font-size: 1.25em;
         margin-bottom: 1.5em;
-        text-align: center;
-
-        @include breakpoint("small") {
-            font-size: 1.5em;
-        }
 
         @include breakpoint("medium") {
-            margin-left: 0;
-            text-align: left;
             margin-bottom: 2em;
         }
     }
@@ -103,12 +95,12 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item {
     clear: both;
     display: block; // 1
-    height: $cart-thumbnail-height * 1.75;
+    height: $cart-thumbnail-height * 1.6;
     border-top: 0.15rem solid $green;
 
-    @include breakpoint("small") {
+    @include breakpoint(520px) {
         @include clearfix;
-        height: $cart-thumbnail-height * 1.4;
+        height: $cart-thumbnail-height * 1.75;
     }
 
     @include breakpoint("medium") {
@@ -141,20 +133,17 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     .definitionList {
         margin-bottom: 0;
-        line-height: 1.65em;
     }
 }
 
 .cart-item-figure {
     text-align: center;
     float: left;
-    height: $cart-thumbnail-height;
     margin-bottom: $cart-item-spacing;
     width: grid-calc(3, $total-columns);
     position: relative;
 
-    @include breakpoint("small") {
-        // height: auto;
+    @include breakpoint(520px) {
         margin-bottom: 0;
     }
 
@@ -183,10 +172,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-item-title {
-    padding-top: 1.25em;
+    padding-top: 1em;
     display: block;
     height: auto;
     overflow: hidden;
+    line-height: 1.7em;
 
     @include breakpoint("medium") {
         border-top: 0.15rem solid $green;
@@ -206,34 +196,30 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 }
 
-.cart-item-price, .cart-item-quantity {
-    width: grid-calc(5, $total-columns);
-
-    @include breakpoint("small") {
-        text-align: right;
-        width: grid-calc(4, $total-columns);
-        margin-left: 0;
-    }
-}
-
 .cart-item-total {
     font-weight: bold;
-    width: grid-calc(9, $total-columns);
-    margin-left: grid-calc(3, $total-columns);
 
     @include breakpoint("small") {
         margin-left: 0;
-        width: grid-calc(10, $total-columns);
-        text-align: right;
+        margin-top: -1em !important;
+    }
+
+    @include breakpoint("medium") {
         margin-top: 0 !important;
     }
 }
 
 .cart-item-option {
-    width: 50%;
-    font-weight: bold;
-    @include breakpoint("small") {
-        width: grid-calc(3, $total-columns);
+    margin-top: 0.5em;
+
+    @include breakpoint(843px) {
+        margin-top: 0;
+        font-size: 1.3em !important;
+    }
+
+    @include breakpoint(1200px) {
+        margin-top: 0;
+        font-size: 1.4em !important;
     }
 }
 
@@ -243,27 +229,27 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-item-title, .cart-item-option, .cart-item-price, .cart-item-quantity, .cart-item-total {
-    padding-left: 1em;
+    padding-left: 13px;
+
+    @include breakpoint("medium") {
+        padding-left: 0;
+    }
 }
 
 .cart-item-info {
-    clear: both;
     font-family: "MS-PMincho";
     font-size: 1.2rem;
-
-
-        clear: none;
-        float: left;
-        overflow: hidden;
-        //width: grid-calc(4, $total-columns);
-        + .cart-item-info {
-            margin-top: 0;
-        }
+    clear: none;
+    overflow: hidden;
+    + .cart-item-info {
+        margin-top: 0;
+    }
 
     @include breakpoint("medium") {
+        font-size: 1.2rem;
         float: none;
         width: grid-calc(2, $total-columns);
-        padding: $cart-item-spacing 0 $cart-item-spacing $cart-item-spacing;
+        padding: spacing("single") 0 $cart-item-spacing $cart-item-spacing;
 
         &:last-child {
             text-align: right;
@@ -275,8 +261,27 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 
     + .cart-item-info {
-        margin-top: spacing("half");
+        @include breakpoint(520px) {
+            margin-top: spacing("half");
+        }
     }
+}
+
+.cart-item-price, .cart-item-quantity, .cart-item-total {
+    margin-left: grid-calc(3, $total-columns);
+    clear: none;
+}
+
+.cart-item-options-wrapper, .cart-item-options {
+    display: inline-block;
+
+    @include breakpoint("medium") {
+        display: block;
+    }
+}
+
+.cart-item-options-wrapper {
+    margin-right: 0.75em;
 }
 
 
@@ -285,7 +290,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 
 .cart-item-price {
+    margin-bottom: 0.28em;
+    margin-top: 0.2em !important;
+
     @include breakpoint("medium") {
+        margin-bottom: 0;
         text-align: right;
         width: grid-calc(1, $total-columns);
     }
@@ -320,7 +329,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     text-align: right;
     width: grid-calc(4, $total-columns);
 
-    @include breakpoint("small") {
+    @include breakpoint(520px) {
         display: block;
         padding-left: $cart-item-spacing;
         text-align: left;
@@ -342,12 +351,12 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     text-transform: uppercase;
     margin: 0;
 
-    @include breakpoint("small") {
-        font-size: 1.4rem;
+    @include breakpoint(520px) {
+        font-size: 1.35rem;
     }
 
-    @include breakpoint(1080px) {
-        font-size: 22px;
+    @include breakpoint(1200px) {
+        font-size: 21px;
     }
 
     > a {
@@ -361,9 +370,8 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-item-options--giftWrapping {
-    margin-top: spacing("half");
+    margin-top: 0;
     margin-bottom: 0;
-    display: inline-block;
 
     .cart-item-option-description {
         color: $body-font-color;
@@ -371,7 +379,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 
     @include breakpoint("medium") {
-        margin-top: 0.3em;
+        margin-top: 0;
     }
 }
 
@@ -380,7 +388,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     margin-top: 0 !important;
     margin-bottom: 1em;
 
-    @include breakpoint("small") {
+    @include breakpoint(520px) {
         width: grid-calc(1, $total-columns);
         margin-bottom: 0;
     }
@@ -398,7 +406,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     height: remCalc(25px);
     width: remCalc(25px);
 
-    @include breakpoint("small") {
+    @include breakpoint(520px) {
         margin-left: spacing("base");
     }
 
@@ -413,6 +421,18 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 }
 
+.cart-item-total {
+    margin-top: 0.7em !important;
+
+    @include breakpoint("small") {
+        margin-top: 1.15em !important;
+    }
+
+    @include breakpoint("medium") {
+        margin-top: 0 !important;
+    }
+}
+
 
 // Cart totals
 // -----------------------------------------------------------------------------
@@ -423,7 +443,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     text-align: right;
     width: 100%;
 
-    @include breakpoint("small") {
+    @include breakpoint(520px) {
         float: right;
         width: grid-calc(9, $total-columns);
     }
@@ -473,7 +493,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     color: stencilColor("color-textSecondary");
     width: grid-calc(4, $total-columns);
 
-    @include breakpoint("small") {
+    @include breakpoint(520px) {
         width: grid-calc(6, $total-columns);
     }
 
@@ -487,7 +507,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-total-value {
     text-align: left;
 
-    @include breakpoint("small") {
+    @include breakpoint(520px) {
         text-align: right;
     }
 
@@ -628,7 +648,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         display: block;
         margin-bottom: 0;
 
-        @include breakpoint("small") {
+        @include breakpoint(520px) {
             display: inline-block;
             float: right;
         }

@@ -4,17 +4,21 @@
 
 .alertBox {
     border-radius: $alert-radius;
-    color: stencilColor("alert-color");
+    background-color: white;
 }
 
 .alertBox-icon {
     .icon {
         @include square(25px);
+
+        svg {
+            fill: #007A51;
+        }
     }
 }
 
 .alertBox--info {
-    color: stencilColor("alert-color-alt");
+    color: #007A51;
 
     .alertBox-close {
 

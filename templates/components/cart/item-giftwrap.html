@@ -3,8 +3,10 @@
         {{#if gift_wrapping}}
             <dd class="cart-item-option-description">
                 {{gift_wrapping.name}}
+                <br>
                 <span class="cart-item-option-actions">
-                    (<a class="button button--secondary" href="" data-item-giftwrap="{{id}}">{{lang 'cart.gift_wrapping.change'}}</a> or <a href="{{gift_wrapping.remove_url}}" onclick="return confirm('{{lang 'cart.gift_wrapping.remove_confirm'}}')">{{lang 'cart.gift_wrapping.remove'}}</a>)
+                    <a class="button button--secondary" href="" data-item-giftwrap="{{id}}">{{lang 'cart.gift_wrapping.change'}}</a>
+                    <a class="button button--secondary" href="{{gift_wrapping.remove_url}}" onclick="return confirm('{{lang 'cart.gift_wrapping.remove_confirm'}}')">{{lang 'cart.gift_wrapping.remove'}}</a>
                 </span>
             </dd>
             {{#if gift_wrapping.message}}

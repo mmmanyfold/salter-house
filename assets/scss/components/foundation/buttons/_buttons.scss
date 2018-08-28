@@ -19,10 +19,6 @@
 
     + .button {
         margin-left: 0;
-
-        @include breakpoint("medium") {
-            margin-left: spacing("half");
-        }
     }
 }
 
