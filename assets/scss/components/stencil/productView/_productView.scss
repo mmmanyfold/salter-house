@@ -61,8 +61,9 @@
     font-family: fontFamily("headingSans");
     text-transform: uppercase;
     font-weight: fontWeight("normal");
+    font-size: 1.5em;
     @include breakpoint("medium") {
-        font-size: 2.25em;
+        font-size: 2em;
     }
 }
 
@@ -192,15 +193,11 @@
 }
 
 .productView-info-name {
+    font-family: "MS-PMincho";
     clear: both;
     margin-bottom: spacing("eighth");
     margin-right: spacing("quarter");
-
-    @include breakpoint("small") {
-        font-family: fontFamily("headingSans");
-        font-size: fontSize("smallest");
-        font-weight: fontWeight("normal");
-    }
+    font-weight: fontWeight("normal");
 }
 
 .productView-info-value {
@@ -246,7 +243,6 @@
 
     .form-field {
         font-size: 0; // 2
-        margin-bottom: 2rem;
 
         // scss-lint:disable SelectorDepth, NestingDepth
         > .form-checkbox + .form-label,
@@ -264,6 +260,11 @@
         > .form-label:nth-of-type(2) {
             margin-left: 0;
         }
+    }
+
+    .form-increment {
+        color: #007A51;
+        margin: 0.5rem 0;
     }
 
     .form-action {

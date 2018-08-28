@@ -2,6 +2,15 @@
 // SEARCH
 // =============================================================================
 
+
+#search-results-heading {
+    margin-top: 2.5em;
+
+    @include breakpoint("small") {
+        margin-top: 0;
+    }
+}
+
 .search-suggestion {
     margin-bottom: spacing("single") + spacing("third");
 

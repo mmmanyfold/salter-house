@@ -96,7 +96,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
     input[disabled] {
         cursor: default;
-        color: black;
+        color: #007A51;
     }
 }
 
@@ -240,6 +240,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item-option-title {
     font-weight: normal;
     font-size: 0.9em;
+}
+
+.cart-item-title, .cart-item-option, .cart-item-price, .cart-item-quantity, .cart-item-total {
+    padding-left: 1em;
 }
 
 .cart-item-info {
@@ -390,9 +394,9 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     cursor: pointer;
     outline: 0;
     float: right;
-    height: remCalc(33px);
     transition: background-color 0.15s ease;
-    width: remCalc(33px);
+    height: remCalc(25px);
+    width: remCalc(25px);
 
     @include breakpoint("small") {
         margin-left: spacing("base");
@@ -400,6 +404,8 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     @include breakpoint("medium") {
         margin-top: remCalc(1px);
+        height: remCalc(33px);
+        width: remCalc(33px);
     }
 
     &.cart-remove--spacer {
