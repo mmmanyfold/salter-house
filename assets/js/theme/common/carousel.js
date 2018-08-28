@@ -18,7 +18,7 @@ export default function () {
             autoplaySpeed,
             lazyLoad: "anticipated",
             responsive: [{
-                breakpoint: 501,
+                breakpoint: 301,
                 settings: {
                     vertical: true,
                 },
