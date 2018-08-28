@@ -3,6 +3,7 @@ import 'slick-carousel';
 
 export default function () {
     const $carousel = $('[data-slick]');
+    const autoplaySpeed = +$('[data-carousel-swap-frequency]');
 
     if ($carousel.length) {
         $carousel.slick({
@@ -14,7 +15,7 @@ export default function () {
             arrows: false,
             vertical: false,
             verticalSwiping: true,
-            autoplaySpeed: 5000,
+            autoplaySpeed,
             lazyLoad: "anticipated",
             responsive: [{
                 breakpoint: 501,
