@@ -14,18 +14,20 @@ export default function () {
             autoplay: true,
             arrows: false,
             vertical: false,
-            verticalSwiping: true,
+            verticalSwiping: false,
             autoplaySpeed,
             lazyLoad: "anticipated",
             responsive: [{
                 breakpoint: 301,
                 settings: {
                     vertical: true,
+                    verticalSwiping: false,
                 },
             }, {
                 breakpoint: 801,
                 settings: {
                     vertical: false,
+                    verticalSwiping: false,
                 },
             }]
         });
