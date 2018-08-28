@@ -43,6 +43,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 
     margin-top: 6em;
+    padding-bottom: 2.5em;
+
+    @include breakpoint("small") {
+        padding-bottom: 0;
+    }
 
     @include breakpoint("medium") {
         margin-top: 0;
@@ -95,12 +100,13 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item {
     clear: both;
     display: block; // 1
-    height: $cart-thumbnail-height * 1.6;
+    height: auto;
     border-top: 0.15rem solid $green;
+    padding-bottom: 1em;
 
-    @include breakpoint(520px) {
+    @include breakpoint(486px) {
         @include clearfix;
-        height: $cart-thumbnail-height * 1.75;
+        padding-bottom: 2em;
     }
 
     @include breakpoint("medium") {
@@ -143,7 +149,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     width: grid-calc(3, $total-columns);
     position: relative;
 
-    @include breakpoint(520px) {
+    @include breakpoint(486px) {
         margin-bottom: 0;
     }
 
@@ -199,13 +205,21 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item-total {
     font-weight: bold;
 
-    @include breakpoint("small") {
+    @include breakpoint(486px) {
         margin-left: 0;
         margin-top: -1em !important;
     }
 
     @include breakpoint("medium") {
         margin-top: 0 !important;
+    }
+}
+
+.cart-item-total, .cart-item-remove {
+    display: inline-block;
+
+    @include breakpoint(486px) {
+        display: table-cell;
     }
 }
 
@@ -241,6 +255,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     font-size: 1.2rem;
     clear: none;
     overflow: hidden;
+
     + .cart-item-info {
         margin-top: 0;
     }
@@ -261,7 +276,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 
     + .cart-item-info {
-        @include breakpoint(520px) {
+        @include breakpoint(486px) {
             margin-top: spacing("half");
         }
     }
@@ -329,7 +344,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     text-align: right;
     width: grid-calc(4, $total-columns);
 
-    @include breakpoint(520px) {
+    @include breakpoint(486px) {
         display: block;
         padding-left: $cart-item-spacing;
         text-align: left;
@@ -351,7 +366,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     text-transform: uppercase;
     margin: 0;
 
-    @include breakpoint(520px) {
+    @include breakpoint(486px) {
         font-size: 1.35rem;
     }
 
@@ -385,12 +400,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-item-remove {
     float: right;
-    margin-top: 0 !important;
-    margin-bottom: 1em;
+    margin-top: 0.4em !important;
 
-    @include breakpoint(520px) {
+    @include breakpoint(486px) {
         width: grid-calc(1, $total-columns);
-        margin-bottom: 0;
     }
 
     @include breakpoint("medium") {
@@ -406,7 +419,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     height: remCalc(25px);
     width: remCalc(25px);
 
-    @include breakpoint(520px) {
+    @include breakpoint(486px) {
         margin-left: spacing("base");
     }
 
@@ -424,7 +437,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item-total {
     margin-top: 0.7em !important;
 
-    @include breakpoint("small") {
+    @include breakpoint(486px) {
         margin-top: 1.15em !important;
     }
 
@@ -443,7 +456,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     text-align: right;
     width: 100%;
 
-    @include breakpoint(520px) {
+    @include breakpoint(486px) {
         float: right;
         width: grid-calc(9, $total-columns);
     }
@@ -493,7 +506,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     color: stencilColor("color-textSecondary");
     width: grid-calc(4, $total-columns);
 
-    @include breakpoint(520px) {
+    @include breakpoint(486px) {
         width: grid-calc(6, $total-columns);
     }
 
@@ -507,7 +520,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-total-value {
     text-align: left;
 
-    @include breakpoint(520px) {
+    @include breakpoint(486px) {
         text-align: right;
     }
 
@@ -648,7 +661,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         display: block;
         margin-bottom: 0;
 
-        @include breakpoint(520px) {
+        @include breakpoint(486px) {
             display: inline-block;
             float: right;
         }
