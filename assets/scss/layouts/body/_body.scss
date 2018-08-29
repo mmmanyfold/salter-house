@@ -47,3 +47,26 @@
         }
     }
 }
+
+.static-page {
+    font-family: "MS-PMincho";
+    font-size: 1.2em;
+    padding: 1em;
+
+    @include breakpoint("small") {
+        font-size: 1.4em;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 1em;
+
+        @include breakpoint("small") {
+            font-size: 1.2em;
+        }
+
+        @include breakpoint("medium") {
+            font-size: 1.4em;
+        }
+    }
+}
