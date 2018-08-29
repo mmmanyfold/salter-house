@@ -75,7 +75,7 @@
     background-color: $navPages-backgroundColor;
     height: 100%;
     overflow-y: auto;
-    padding: spacing("single");
+    padding: 1.25rem 3.5rem;
 
     @include breakpoint("medium") {
         @include grid-row(); // 1
@@ -118,18 +118,20 @@
     }
 }
 
+.mobileMenu-info {
+    display: block;
+
+    @include breakpoint("medium") {
+        display: none;
+    }
+}
+
 .navPages-list-left {
     margin-left: 0;
     margin-bottom: 0;
 
     #shop-all {
         display: none;
-    }
-
-    @include breakpoint("medium") {
-        .navPages-action {
-            padding-right: 1.5em;
-        }
     }
 
     @include breakpoint(1010px) {
@@ -141,6 +143,10 @@
 
     .navPages-action {
         color: black;
+
+        @include breakpoint("medium") {
+            padding-right: 1.5em;
+        }
     }
 }
 
@@ -214,14 +220,15 @@
 .navPages-action {
     color: stencilColor("navPages-color");
     display: block;
-    font-size: 1.1rem;
-    font-weight: fontWeight("normal");
+    font-size: 1.5rem;
     padding: spacing("half") 0;
+    font-weight: fontWeight("normal");
     text-decoration: none;
     text-transform: uppercase;
     line-height: 1.2em;
 
     @include breakpoint("medium") {
+        font-size: 1.1rem;
         display: inline-block;
         padding: 0 (spacing("single") + spacing("quarter")) 0 (spacing("half") + spacing("quarter"));
 
@@ -465,10 +472,12 @@
         margin: 0;
         padding: 0;
         flex: 1;
+        outline: 0;
 
         input {
             width: 100%;
             outline: 0;
+            border: none;
         }
     }
 

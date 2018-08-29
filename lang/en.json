@@ -102,7 +102,7 @@
         },
         "gift_wrapping": {
             "title": "Gift Wrapping",
-            "add": "Add",
+            "add": "Gift Wrap",
             "change": "Change",
             "remove": "Remove",
             "choose_how": "Please choose how you'd like to have this item gift wrapped.",
@@ -306,7 +306,7 @@
                 "action": "Return Action",
                 "comments": "Comments"
             },
-            "gift_wrapping": "Gift wrapping:",
+            "gift_wrapping": "Gift wrapping",
             "refunded": "(Refunded)",
             "refunded_quantity": "({qty} refunded)",
             "return_item": "Return",
@@ -688,7 +688,7 @@
         },
         "you_save_opening_text": "(You save",
         "you_save_closing_bracket": ")",
-        "gift_wrapping": "Gift wrapping:",
+        "gift_wrapping": "Gift wrapping available",
         "gift_wrapping_available": "Options available",
         "quantity_min": "The minimum purchasable quantity is {quantity}",
         "quantity_max": "The maximum purchasable quantity is {quantity}",

@@ -29,8 +29,18 @@
     }
 }
 
+#form-action-addToCart {
+    margin-bottom: 2em;
+    padding-bottom: 0.41em;
+
+    @include breakpoint("medium") {
+        padding-bottom: 0.34em;
+    }
+}
+
 .productView-images {
     width: 100%;
+
     @include breakpoint("small") {
         width: grid-calc(6, $total-columns);
     }

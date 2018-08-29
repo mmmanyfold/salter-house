@@ -343,5 +343,8 @@
 
 .cart-link {
     display: initial;
-    margin-right: 0.2em;
+    margin-right: 0.8em;
+    @include breakpoint("medium") {
+        margin-right: 0.2em;
+    }
 }
