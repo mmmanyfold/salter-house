@@ -241,6 +241,12 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     font-weight: bold;
     font-size: 1.1rem !important;
 
+    .button {
+        + .button {
+            margin-left: 0;
+        }
+    }
+
     @include breakpoint("medium") {
         margin-top: 0;
     }

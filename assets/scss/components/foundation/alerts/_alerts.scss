@@ -12,7 +12,7 @@
         @include square(25px);
 
         svg {
-            fill: #007A51;
+            fill: #F39838;
         }
     }
 }
@@ -27,4 +27,12 @@
             fill: $color-infoLight;
         }
     }
+}
+
+.alertBox--error {
+    color: #F39838;
+}
+
+.alertBox-message {
+    color: #F39838;
 }

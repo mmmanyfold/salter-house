@@ -4,7 +4,7 @@ import $ from 'jquery';
 import axios from 'axios';
 import _ from 'lodash';
 
-const loadingGif = '/stencil/00000000-0000-0000-0000-000000000001//img/loading-apples.gif';
+const loadingGif = 'https://s3.us-east-2.amazonaws.com/salter-house-images/loading-apples.gif';
 
 const cartTemplate = ({ id, custom_url: { url }, imageUrl, name }) => `
 <article class="card">
