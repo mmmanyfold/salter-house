@@ -78,6 +78,7 @@
 
         &::after {
             top: $form-checkRadio-labelAfter-top;
+            background: #007A51;
         }
 
         &::before {
@@ -248,7 +249,7 @@
     border: 0;
     display: inline-block;
     font-size: fontSize("smaller");
-    font-weight: fontWeight("normal");
+    font-weight: bold;
     height: auto;
     padding: 0;
     text-align: center;
