@@ -80,7 +80,7 @@ export default class Category extends CatalogPage {
             const liNodes = this.processRawHtml(nextPage);
             $productGrid.append(liNodes);
             page += 1;
-        })
+        });
     }
 
     async getNextPage(url, params) {

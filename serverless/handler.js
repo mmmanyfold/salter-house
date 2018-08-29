@@ -16,6 +16,7 @@ const productRequestConfig = (page = 1, limit = 12) => ({
     params: {
         page,
         limit,
+        is_visible: 1,
     },
     responseType: 'json',
 });
@@ -39,15 +40,24 @@ async function getImageData(id) {
     }
 }
 
+function processFilterParam(items) {
+    return JSON.parse(items);
+}
+
 export const getProducts = async (event, context, callback) => {
     let response;
+    let filterItems = [];
     const { queryStringParameters } = event;
     if (has(queryStringParameters, 'page') && has(queryStringParameters, 'limit')) {
-        const { page, limit } = queryStringParameters;
+        const { page, limit, filter } = queryStringParameters;
+        if (filter) {
+            filterItems = filter ? processFilterParam(filter) : [];
+        }
         try {
             const { data: { data, meta } } = await axios(productRequestConfig(page, limit));
             return Promise.all(
-                data.map(async ({ id }) => await getImageData(id)))
+                data.filter(p => !filterItems.some(id => id === p.id))
+                    .map(async ({ id }) => await getImageData(id)))
                 .catch(errors => {
                     console.log(errors);
                     return {

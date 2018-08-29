@@ -19,6 +19,7 @@ provider:
   name: aws
   runtime: nodejs8.10
   stage: dev
+  timeout: 10
   region: us-east-1
   # To load environment variables externally
   # rename env.example to env.yml and uncomment
@@ -40,3 +41,4 @@ functions:
               querystrings:
                 page: true
                 limit: true
+                filter: true

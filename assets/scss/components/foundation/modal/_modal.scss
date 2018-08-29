@@ -53,10 +53,6 @@
     @include breakpoint("medium") {
         font-size: 32px;
     }
-
-    &:hover {
-        color: stencilColor("icon-color-hover");
-    }
 }
 
 .modal-body {
