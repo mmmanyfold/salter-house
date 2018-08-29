@@ -37,18 +37,36 @@
 }
 
 .blog-title {
-    font-size: fontSize("large");
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5em;
     margin: 0 spacing("single") spacing("quarter");
 
     a {
         text-decoration: none;
     }
+
+    @include breakpoint("small") {
+        font-size: 1.75em;
+    }
+
+    @include breakpoint("medium") {
+        font-size: 2.25em;
+    }
+}
+
+.blog-posted-by {
+    font-family: "Plaids";
+}
+
+.author-name {
+    text-transform: uppercase;
 }
 
 .blog-date,
 .blog-author {
     color: stencilColor("color-textSecondary");
-    text-align: center;
+    font-size: 0.75em;
 }
 
 .blog-author {
@@ -56,8 +74,14 @@
 }
 
 .blog-post {
-    font-size: fontSize("smaller");
-    text-align: left;
+    font-family: "MS-PMincho";
+    font-size: 1.2em;
+    padding: 1em;
+    line-height: 1.2em;
+
+    @include breakpoint("small") {
+        font-size: 1.4em;
+    }
 }
 
 .blog-thumbnail {
@@ -85,18 +109,13 @@
 .blog-post-body {
     display: block;
     margin: 0 auto;
-    text-align: center;
     width: 100%;
 
     @include breakpoint("small") {
-        width: grid-calc(10, $total-columns);
+        width: grid-calc(12, $total-columns);
     }
 
     @include breakpoint("medium") {
-        width: grid-calc(8, $total-columns);
-    }
-
-    @include breakpoint("large") {
-        width: grid-calc(6, $total-columns);
+        max-width: 850px;
     }
 }
