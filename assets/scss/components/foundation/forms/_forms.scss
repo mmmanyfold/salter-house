@@ -19,8 +19,6 @@
 }
 
 #sort {
-    width: 100%;
-
     @include breakpoint("small") {
         width: initial;
     }

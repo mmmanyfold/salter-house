@@ -2,14 +2,14 @@
 <div class="page">
 
     <main class="page-content" data-cart>
-        <div class="cart-wrapper">
-        {{> components/cart/page-title}}
+        <div class="cart-wrapper cart-page">
 
         <div data-cart-status>
             {{> components/cart/status-messages}}
         </div>
 
         {{#if cart.items.length}}
+            {{> components/cart/page-title}}
             <div class="loadingOverlay"></div>
 
             <div data-cart-content>
@@ -29,21 +29,19 @@
                         </a>
                     {{/if}}
                 </div>
-            {{else}}
+
                 <div class="cart-actions">
                     <a class="button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
                 </div>
             {{/if}}
 
-            {{#if cart.additional_checkout_buttons}}
-                <div class="cart-additionalCheckoutButtons">
-                    {{#each cart.additional_checkout_buttons}}
-                        {{{this}}}
-                    {{/each}}
-                </div>
-            {{/if}}
         {{else}}
             <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
+            <center>
+                <a style="margin-top: 2em" href="#" class="button button--primary" role="button">
+                    {{lang 'cart.continue_shopping'}}
+                </a>
+            </center>
         {{/if}}
 
         {{{snippet 'cart'}}}

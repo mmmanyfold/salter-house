@@ -1,6 +1,6 @@
 <div id="_cart" class="page hidden">
     <main class="page-content" data-cart>
-        <div class="cart-wrapper">
+        <div class="cart-wrapper cart-panel">
 
         {{#if cart.items.length}}
         {{> components/cart/page-title}}
@@ -28,13 +28,6 @@
             {{/if}}
         </div>
 
-        {{#if cart.additional_checkout_buttons}}
-        <div class="cart-additionalCheckoutButtons">
-            {{#each cart.additional_checkout_buttons}}
-            {{{this}}}
-            {{/each}}
-        </div>
-        {{/if}}
         {{else}}
         <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
         {{/if}}

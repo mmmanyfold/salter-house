@@ -4,7 +4,7 @@
             <tr class="cart-item" data-item-row>
                 <td class="cart-item-block cart-item-figure">
                     {{#if type '==' 'GiftCertificate'}}
-                        <img class="cart-item-fixed-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="GiftCertificate" title="GiftCertificate">
+                        <img class="cart-item-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="GiftCertificate" title="GiftCertificate">
                     {{else}}
                         <img class="cart-item-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{getImage image 'productthumb_size' (cdn ../../theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
                     {{/if}}
@@ -35,7 +35,7 @@
                     {{/if}}
 
                     {{#if type '==' 'GiftCertificate'}}
-                        <a class="button button--secondary" href="{{edit_url}}">{{lang 'cart.checkout.change'}}</a>
+                        <a style="margin-top: 0.5em" class="button button--secondary" href="{{edit_url}}">{{lang 'cart.checkout.change'}}</a>
                     {{/if}}
                     {{#if event_date}}
                         <dl class="cart-item-options">
