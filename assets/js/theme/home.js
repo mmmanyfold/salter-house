@@ -51,9 +51,8 @@ export default class Home extends PageManager {
     }
 
     async fetchProductsRequest(page, limit) {
-        // const baseAPIUrl = 'https://atvef3doab.execute-api.us-east-1.amazonaws.com/dev'
-        const baseAPIUrl = 'http://localhost:4000'
-        const endpoint = `${baseAPIUrl}/products?page=${page}&limit=${32}&filter=[${this.filterNewItems}]`;
+        const baseAPIUrl = 'https://atvef3doab.execute-api.us-east-1.amazonaws.com/dev';
+        const endpoint = `${baseAPIUrl}/products?page=${page}&limit=${limit}&filter=[${this.filterNewItems}]`;
         try {
             const productDataResponse = await axios(endpoint, {
                 crossdomain: true,
@@ -74,7 +73,7 @@ export default class Home extends PageManager {
     bindEvents() {
         const $seeMoreBtn = $('#_see-more-btn');
         const $productGrid = $('.productGrid');
-        const limit = 24;
+        const limit = 36;
         let page = 2; // assumes page one has been loaded by handlebars template
         $seeMoreBtn.click(async () => {
             const moreProducts = await this.fetchProductsRequest(page, limit);
