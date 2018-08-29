@@ -110,10 +110,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     display: block; // 1
     height: auto;
     border-top: 0.15rem solid $green;
-    padding-bottom: 1em;
+    padding-bottom: 1.1em;
     padding-top: 1.25em;
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         @include clearfix;
         padding-bottom: 1.5em;
     }
@@ -160,7 +160,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     width: grid-calc(3, $total-columns);
     position: relative;
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         margin-bottom: 0;
     }
 
@@ -214,7 +214,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item-total {
     font-weight: bold;
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         margin-left: 0;
         margin-top: -1em !important;
     }
@@ -227,7 +227,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item-total, .cart-item-remove {
     display: inline-block;
 
-    @include breakpoint(484px) {
+    @include breakpoint(432px) {
         display: block;
     }
 
@@ -290,7 +290,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 
     + .cart-item-info {
-        @include breakpoint(486px) {
+        @include breakpoint(432px) {
             margin-top: spacing("half");
         }
     }
@@ -347,7 +347,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     text-align: right;
     width: grid-calc(4, $total-columns);
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         display: block;
         padding-left: $cart-item-spacing;
         text-align: left;
@@ -402,7 +402,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     float: right;
     margin-top: 0.4em !important;
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         width: grid-calc(1, $total-columns);
     }
 
@@ -419,7 +419,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     height: remCalc(25px);
     width: remCalc(25px);
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         margin-left: spacing("base");
     }
 
@@ -437,7 +437,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item-total {
     margin-top: 0.7em !important;
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         margin-top: 1.15em !important;
     }
 
@@ -456,7 +456,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     text-align: right;
     width: 100%;
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         float: right;
         width: grid-calc(9, $total-columns);
     }
@@ -506,7 +506,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     color: stencilColor("color-textSecondary");
     width: grid-calc(4, $total-columns);
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         width: grid-calc(6, $total-columns);
     }
 
@@ -520,7 +520,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-total-value {
     text-align: left;
 
-    @include breakpoint(486px) {
+    @include breakpoint(432px) {
         text-align: right;
     }
 
@@ -661,7 +661,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         display: block;
         margin-bottom: 0;
 
-        @include breakpoint(486px) {
+        @include breakpoint(432px) {
             display: inline-block;
             float: right;
         }
