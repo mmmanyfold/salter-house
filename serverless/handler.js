@@ -47,7 +47,8 @@ export const getProducts = async (event, context, callback) => {
         try {
             const { data: { data, meta } } = await axios(productRequestConfig(page, limit));
             return Promise.all(
-                data.map(async ({ id }) => await getImageData(id)))
+                data.filter(({ is_visible }) => is_visible)
+                    .map(async ({ id }) => await getImageData(id)))
                 .catch(errors => {
                     console.log(errors);
                     return {
