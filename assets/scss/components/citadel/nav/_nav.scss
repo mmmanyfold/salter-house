@@ -114,8 +114,10 @@
 
         // scss-lint:disable SelectorDepth, NestingDepth
         &.is-active {
+            color: #007A51;
+            text-transform: uppercase;
             @include breakpoint("medium") {
-                border-bottom: 1px solid stencilColor("color-textBase");
+                border-bottom: 1px solid #007A51;
             }
 
             > .navBar-action {
@@ -133,6 +135,7 @@
     }
 
     .navBar-action {
+        text-transform: uppercase;
         color: stencilColor("color-textSecondary");
         font-size: fontSize("base");
         padding: 0;

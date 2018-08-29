@@ -29,6 +29,7 @@
 
     .form-input {
         float: none;
+        letter-spacing: 0.05em;
     }
 
     .form-inlineMessage {
@@ -52,6 +53,7 @@
 .form-field--success {
 
     .form-input[type="text"] {
+        letter-spacing: 0.05em;
         background: {
             image: $form-success-icon;
             position: right $form-success-icon-right center;
@@ -78,7 +80,6 @@
 
         &::after {
             top: $form-checkRadio-labelAfter-top;
-            background: #007A51;
         }
 
         &::before {
@@ -392,4 +393,9 @@
         opacity: $productOptions-disable-opacity * 2;
         text-decoration: line-through;
     }
+}
+
+.form-input {
+    letter-spacing: 0.05em;
+    color: black;
 }

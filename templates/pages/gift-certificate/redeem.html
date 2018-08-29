@@ -3,14 +3,12 @@
 <h1 style="text-align: center" class="page-heading">{{lang 'gift_certificate.heading' }}</h1>
 {{> components/gift-certificate/navigation gift_page='redeem'}}
 
-<main class="account account--fixed">
-    <h3>{{lang 'gift_certificate.redeem.heading'}}</h3>
+<main class="account account--fixed gift-certificate-text">
     <p><strong>{{lang 'gift_certificate.redeem.intro' store_name=settings.store_name }}</strong></p>
     <ol>
         <li>{{lang 'gift_certificate.redeem.item1' }}</li>
         <li>{{lang 'gift_certificate.redeem.item2' }}</li>
-        <li>{{{lang 'gift_certificate.redeem.item3' cart_url=urls.cart }}}</li>
-        <li>{{lang 'gift_certificate.redeem.item4' }}</li>
+        <li>At checkout, type your gift certificate code in to the 'Promo/Gift Certificate' box and click 'Apply'.</li>
     </ol>
 </main>
 {{/partial}}
