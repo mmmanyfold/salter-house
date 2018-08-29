@@ -2,6 +2,7 @@ import PageManager from './page-manager';
 import urlUtils from "./common/url-utils";
 import $ from 'jquery';
 import axios from 'axios';
+import _ from 'lodash';
 
 const loadingGif = '/stencil/00000000-0000-0000-0000-000000000001//img/loading-apples.gif';
 
@@ -40,29 +41,31 @@ export default class Home extends PageManager {
     constructor(context) {
         super(context);
         this.currentUrl = urlUtils.getUrl();
+        this.filterNewItems = null;
     }
 
     onReady() {
+        const items = $('[data-filter-product-ids-from-api]').data('filterProductIdsFromApi');
+        this.filterNewItems = items.split(',').filter(e => e).map(e => +e);
         this.bindEvents();
     }
 
-    shouldLoadMore({ current_page, total_pages }) {
-        return current_page <= total_pages
-    }
-
     async fetchProductsRequest(page, limit) {
-        const baseAPIUrl = 'https://atvef3doab.execute-api.us-east-1.amazonaws.com/dev'
-        const endpoint = `${baseAPIUrl}/products?page=${page}&limit=${limit}`;
+        // const baseAPIUrl = 'https://atvef3doab.execute-api.us-east-1.amazonaws.com/dev'
+        const baseAPIUrl = 'http://localhost:4000'
+        const endpoint = `${baseAPIUrl}/products?page=${page}&limit=${32}&filter=[${this.filterNewItems}]`;
         try {
-            const { data: { data, meta } } = await axios(endpoint, {
+            const productDataResponse = await axios(endpoint, {
                 crossdomain: true,
-            });
-            console.log(meta);
-            // check metadata for number of pages
-            if (this.shouldLoadMore(meta)) {
-                $('#_see-more-btn').hide();
+                });
+
+            if (productDataResponse.status === 200) {
+                const { data: { data } } = productDataResponse;
+                if (_.isEmpty(data)) {
+                    $('#_see-more-btn').hide();
+                }
+                return data;
             }
-            return data;
         } catch (e) {
             console.log(e);
         }
@@ -75,8 +78,10 @@ export default class Home extends PageManager {
         let page = 2; // assumes page one has been loaded by handlebars template
         $seeMoreBtn.click(async () => {
             const moreProducts = await this.fetchProductsRequest(page, limit);
-            $productGrid.append(productItemTemplate(moreProducts));
-            page += 1;
+            if (!_.isEmpty(moreProducts)) {
+                $productGrid.append(productItemTemplate(moreProducts));
+                page += 1;
+            }
         });
     }
 
