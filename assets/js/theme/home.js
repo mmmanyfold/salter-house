@@ -1,5 +1,6 @@
 import PageManager from './page-manager';
 import urlUtils from "./common/url-utils";
+import navUtils from "./common/nav-utils";
 import $ from 'jquery';
 import axios from 'axios';
 import _ from 'lodash';
@@ -45,6 +46,8 @@ export default class Home extends PageManager {
     }
 
     onReady() {
+        navUtils(this.currentUrl);
+
         const items = $('[data-filter-product-ids-from-api]').data('filterProductIdsFromApi');
         this.filterNewItems = items.split(',').filter(e => e).map(e => +e);
         this.bindEvents();

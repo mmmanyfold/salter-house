@@ -6,6 +6,7 @@ import utils from '@bigcommerce/stencil-utils';
 import ShippingEstimator from './cart/shipping-estimator';
 import { defaultModal } from './global/modal';
 import swal from 'sweetalert2';
+import urlUtils from "./common/url-utils";
 
 export default class Cart extends PageManager {
     onReady() {
@@ -357,7 +358,10 @@ export default class Cart extends PageManager {
         const $cartBtn = $('#_cart-btn');
         const $cartDiv = $('#_cart');
         $cartBtn.click(() => {
-            $cartDiv.slideDown('fast');
+            if(urlUtils.getUrl() !== '/cart.php') {
+                $cartDiv.slideToggle('fast');
+                $('html,body').animate({ scrollTop: 0 }, 100);
+            }
         });
         const $cartBtnClose = $('#_cart-btn-close');
         $cartBtnClose.click(() => {

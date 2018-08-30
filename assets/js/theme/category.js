@@ -3,6 +3,7 @@ import CatalogPage from './catalog';
 import $ from 'jquery';
 import FacetedSearch from './common/faceted-search';
 import urlUtils from "./common/url-utils";
+import navUtils from "./common/nav-utils";
 
 export default class Category extends CatalogPage {
 
@@ -12,10 +13,10 @@ export default class Category extends CatalogPage {
     }
 
     onReady() {
-        const currentUrl = this.currentUrl;
+        navUtils(this.currentUrl)
         const currentCategoryNode = $('.navPages-action').filter((index, elem) => {
             const url = $(elem).attr('href');
-            return !!url && url.includes(currentUrl);
+            return !!url && url.includes(this.currentUrl);
         });
 
         $(currentCategoryNode)
@@ -105,5 +106,4 @@ export default class Category extends CatalogPage {
         }
         return productGrid;
     }
-
 }
