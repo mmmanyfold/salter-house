@@ -90,7 +90,7 @@
             "remove": "Remove"
         },
         "shipping_estimator": {
-            "add_info": "Add Info",
+            "add_info": "Calculate Shipping",
             "select_a_country": "Country",
             "select_a_state": "State/province",
             "estimate_shipping": "Estimate Shipping",

@@ -1,33 +1,33 @@
-<ul class="cart-totals">
-    {{#if cart.gift_wrapping_cost.amount}}
-        <li class="cart-total">
+<div class="cart-totals">
+    {{#if cart.gift_wrapping_cost.value }}
+        <div class="cart-total">
             <div class="cart-total-label">
                 <strong>{{lang 'cart.checkout.gift_wrapping'}}:</strong>
             </div>
             <div class="cart-total-value">
                 <span>{{cart.gift_wrapping_cost.formatted}}</span>
             </div>
-        </li>
-    {{/if}}
-    {{#if cart.shipping_handling.show_estimator}}
-        <li class="cart-total">
-            <div class="cart-total-label">
-                <strong>{{lang 'cart.checkout.shipping'}}:</strong>
-            </div>
-            {{> components/cart/shipping-estimator cart.shipping_handling}}
-        </li>
+        </div>
     {{/if}}
     {{#each cart.taxes}}
-        <li class="cart-total">
+        <div class="cart-total">
             <div class="cart-total-label">
                 <strong>{{name}}:</strong>
             </div>
             <div class="cart-total-value">
                 <span>{{cost.formatted}}</span>
             </div>
-        </li>
+        </div>
     {{/each}}
-    <li class="cart-total">
+    {{#if cart.shipping_handling.show_estimator}}
+    <div class="cart-total">
+        <div class="cart-total-label">
+            <strong>{{lang 'cart.checkout.shipping'}}:</strong>
+        </div>
+        {{> components/cart/shipping-estimator cart.shipping_handling}}
+    </div>
+    {{/if}}
+    <div class="cart-total">
         <div class="cart-total-label">
             <strong>{{lang 'cart.checkout.grand_total'}}:</strong>
         </div>
@@ -38,5 +38,5 @@
                 {{> components/common/login-for-pricing}}
             {{/or}}
         </div>
-    </li>
-</ul>
+    </div>
+</div>

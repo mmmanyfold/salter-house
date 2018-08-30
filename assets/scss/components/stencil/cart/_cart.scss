@@ -69,7 +69,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart {
     display: block; // 1
-    margin-bottom: spacing("single");
     width: 100%;
 
     @include breakpoint("medium") {
@@ -461,42 +460,22 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 // -----------------------------------------------------------------------------
 
 .cart-totals {
-    @include u-listBullets("none");
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-family: "MS-PMincho";
+    color: black;
+    border-bottom: 0.15rem solid #007A51;
     margin-bottom: $cart-item-spacing;
-    text-align: right;
     width: 100%;
-
-    @include breakpoint(432px) {
-        float: right;
-        width: grid-calc(9, $total-columns);
-    }
-
-    @include breakpoint("medium") {
-        margin-bottom: spacing("base");
-        width: grid-calc(7, $total-columns);
-    }
-
-    @include breakpoint("large") {
-        width: grid-calc(5, $total-columns);
-    }
 }
 
 .cart-total {
-    @include clearfix;
-    border-bottom: 0;
-
-    @include breakpoint("medium") {
-        + .cart-total {
-            border-top: container("border");
-        }
-    }
-
     .form-input {
         display: inline-block;
         height: remCalc(32px);
         padding: spacing("third");
         vertical-align: top;
-        width: grid-calc(9, $total-columns);
     }
 
     .form-select {
@@ -509,17 +488,13 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     .form-inlineMessage {
         text-align: left;
+        font-family: "Plaids";
+        line-height: 1.1em;
+        text-transform: none;
     }
 }
 
 .cart-total-label {
-    color: stencilColor("color-textSecondary");
-    width: grid-calc(4, $total-columns);
-
-    @include breakpoint(432px) {
-        width: grid-calc(6, $total-columns);
-    }
-
     @include breakpoint("medium") {
         display: block;
         padding-left: 0;
@@ -533,33 +508,20 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     @include breakpoint(432px) {
         text-align: right;
     }
-
-    @include breakpoint("medium") {
-        width: grid-calc(6, $total-columns);
-    }
 }
 
 .cart-total-label,
 .cart-total-value {
     float: left;
-    padding: spacing("third") 0 spacing("third") $cart-item-spacing;
+    padding: spacing("third") $cart-item-spacing;
 
     @include breakpoint("medium") {
         padding: spacing("base") 0;
     }
 }
 
-.cart-total-grandTotal {
-    font-family: fontFamily("headingSans");
-    font-size: fontSize("small");
-    padding-bottom: spacing("eighth");
-    padding-top: spacing("eighth");
-    position: relative;
-
-    @include breakpoint("medium") {
-        padding: spacing("base") 0;
-        top: -(spacing("sixth"));
-    }
+.shipping-estimator {
+    clear: both;
 }
 
 
@@ -617,10 +579,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         margin-bottom: spacing("half");
         width: 100%;
     }
-
-    .button--primary {
-        width: 60%;
-    }
 }
 
 .estimator-form-label {
@@ -640,9 +598,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .estimator-form-input {
-    float: right;
+    float: left;
     margin-bottom: 1em;
-    width: 60%;
+    width: 180px;
+    clear: both;
 
     .form-input,
     .form-select {
