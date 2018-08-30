@@ -246,7 +246,8 @@
 }
 
 .form-input--incrementTotal {
-    color: #007A51;
+    color: #007A51 !important;
+    font-family: "MS-PMincho";
     border: 0;
     display: inline-block;
     font-size: fontSize("smaller");

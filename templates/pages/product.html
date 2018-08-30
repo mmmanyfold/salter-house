@@ -25,10 +25,12 @@ product:
         {{#all settings.show_product_reviews (if theme_settings.show_product_reviews_tabs '!==' true)}}
             {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
         {{/all}}
-        <div class="related-products">
-            <h5>Related Products</h5>
-            {{> components/products/grid products=product.related_products}}
-        </div>
+        {{#if product.related_products}}
+            <div class="related-products">
+                <h5>Related Products</h5>
+                {{> components/products/grid products=product.related_products}}
+            </div>
+        {{/if}}
 
     </div>
 
