@@ -80,16 +80,20 @@
     }
 
     .heroCarousel-image {
+        object-fit: cover; // 1
+        width: 100%;
+        min-height: remCalc(475px);
+
         @include breakpoint("medium") {
-            object-fit: cover; // 1
-            width: 100%;
-            min-height: remCalc(700px);
+            min-height: remCalc(815px);
         }
     }
 
     .heroCarousel-image-wrapper {
+        min-height: remCalc(475px);
+
         @include breakpoint("medium") {
-            max-height: remCalc(700px);
+            max-height: remCalc(815px);
         }
     }
 
