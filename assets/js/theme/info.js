@@ -7,7 +7,7 @@ export default class Info extends PageManager {
         super(context);
         this.bindEvents();
     }
-    
+
     async onReady() {
         const $injectedTxt = $('#_injected-page-content-txt');
         const $injectedImg1 = $('#_injected-page-content-img-1');
@@ -26,6 +26,7 @@ export default class Info extends PageManager {
             throw e;
         }
     }
+
     bindEvents() {
         const $infoBtn = $('#_info-btn');
         const $infoDiv = $('#_info');
@@ -33,7 +34,7 @@ export default class Info extends PageManager {
             $infoDiv.slideToggle('fast');
         });
     }
-    
+
     async getInfoPage() {
         const { data, status } = await axios('/info');
         if (status !== 200) {
@@ -41,7 +42,7 @@ export default class Info extends PageManager {
         }
         return { data, err: false };
     }
-    
+
     processAsHtml(htmlStr) {
         const template = document.createElement('div');
         template.innerHTML = htmlStr;
