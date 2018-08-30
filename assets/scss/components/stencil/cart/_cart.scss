@@ -45,6 +45,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-panel {
     margin-top: 6em;
 
+    @include breakpoint("small") {
+        margin-top: 7em;
+    }
+
     @include breakpoint("medium") {
         margin-top: 0;
         padding: 9em 2.25em 6em 2.25em;
@@ -52,15 +56,15 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-page {
-  padding-bottom: 2.5em;
+    padding-bottom: 2.5em;
 
-  @include breakpoint("small") {
-    padding-bottom: 0;
-  }
+    @include breakpoint("small") {
+      padding-bottom: 0;
+    }
 
-  @include breakpoint("medium") {
-    padding: 0 2.25em 6em 2.25em;
-  }
+    @include breakpoint("medium") {
+      padding: 0 2.25em 6em 2.25em;
+    }
 }
 
 .cart {

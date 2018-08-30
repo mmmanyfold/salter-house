@@ -202,13 +202,13 @@
     }
 
     .form-input {
-        @include breakpoint("large") {
+        @include breakpoint("medium") {
             width: auto;
         }
     }
 
     .button {
-        @include breakpoint("large") {
+        @include breakpoint("medium") {
             width: auto;
         }
     }
@@ -226,7 +226,7 @@
     margin: spacing("half") 0 0;
     order: 1; // 1
 
-    @include breakpoint("large") {
+    @include breakpoint("medium") {
         margin: 0 0 0 spacing("half");
         order: 0; // 1
     }
