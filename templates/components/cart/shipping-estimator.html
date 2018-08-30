@@ -6,7 +6,7 @@
     </div>
 {{else}}
     <div class="cart-total-value">
-        <button class="shipping-estimate-show">{{lang 'cart.shipping_estimator.add_info'}}</button>
+        <button class="shipping-estimate-show button cart-total-button">{{lang 'cart.shipping_estimator.add_info'}}</button>
         <button class="shipping-estimate-hide" style="display: none;">Cancel</button>
     </div>
 {{/if}}
@@ -48,7 +48,7 @@
                 <input class="form-input" type="text" id="shipping-zip" name="shipping-zip" value="{{selected_zip}}" placeholder="{{lang 'cart.shipping_estimator.zip_postal_code'}}">
             </dd>
             <dd>
-                <button class="button button--primary button--small shipping-estimate-submit">{{lang 'cart.shipping_estimator.estimate_shipping'}}</button>
+                <button class="button cart-total-button shipping-estimate-submit">{{lang 'cart.shipping_estimator.estimate_shipping'}}</button>
             </dd>
         </dl>
     </form>

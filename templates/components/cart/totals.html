@@ -2,34 +2,16 @@
     {{#if cart.gift_wrapping_cost.value }}
         <div class="cart-total">
             <div class="cart-total-label">
-                <strong>{{lang 'cart.checkout.gift_wrapping'}}:</strong>
+                {{lang 'cart.checkout.gift_wrapping'}}
             </div>
             <div class="cart-total-value">
                 <span>{{cart.gift_wrapping_cost.formatted}}</span>
             </div>
         </div>
     {{/if}}
-    {{#each cart.taxes}}
-        <div class="cart-total">
-            <div class="cart-total-label">
-                <strong>{{name}}:</strong>
-            </div>
-            <div class="cart-total-value">
-                <span>{{cost.formatted}}</span>
-            </div>
-        </div>
-    {{/each}}
-    {{#if cart.shipping_handling.show_estimator}}
     <div class="cart-total">
         <div class="cart-total-label">
-            <strong>{{lang 'cart.checkout.shipping'}}:</strong>
-        </div>
-        {{> components/cart/shipping-estimator cart.shipping_handling}}
-    </div>
-    {{/if}}
-    <div class="cart-total">
-        <div class="cart-total-label">
-            <strong>{{lang 'cart.checkout.grand_total'}}:</strong>
+            {{lang 'cart.checkout.grand_total'}}
         </div>
         <div class="cart-total-value cart-total-grandTotal">
             {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
@@ -37,6 +19,11 @@
             {{else}}
                 {{> components/common/login-for-pricing}}
             {{/or}}
+        </div>
+    </div>
+    <div class="cart-total cart-total-checkout">
+        <div class="cart-total-value">
+            <a class="button cart-total-button" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">{{lang 'cart.checkout.button'}}</a>
         </div>
     </div>
 </div>
