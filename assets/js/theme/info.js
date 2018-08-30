@@ -36,7 +36,7 @@ export default class Info extends PageManager {
     }
 
     async getInfoPage() {
-        const { data, status } = await axios('/info');
+        const { data, status } = await axios('/hidden');
         if (status !== 200) {
             return { data: null, err: true };
         }
