@@ -1,12 +1,28 @@
 <div id="_info" class="page hidden">
     <main class="page">
-        <div class="static-page">
+        <div class="info-page">
             <div class="page-content page-content--centered">
                 <p>{{{page.content}}}</p>
                 <div id="_injected-page-content-txt"></div>
-                <div id="_injected-page-content-img-1"></div>
-                <div id="_injected-page-content-img-2"></div>
+                <svg class="checker" data-src="{{cdn 'img/checker.svg'}}"/>
+                <div class="info-img-wrapper">
+                    <div id="_injected-page-content-img-1"></div>
+                    <div id="_injected-page-content-img-2"></div>
+                    <div class="info-footer">
+                        <div>{{nl2br settings.address}}</div>
+                        <div>STORE: {{settings.phone_number}}<br>
+                            EMAIL: info@salter.house<br>
+                            INSTAGRAM: salter.house
+                        </div>
+                        <div class="info-newsletter">newsletter ______________ subscribe</div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
+    <div class="button--close">
+        <a id="_info-btn-close" href="#">
+            <svg data-src="{{cdn 'icons/close.svg'}}"/>
+        </a>
+    </div>
 </div>
