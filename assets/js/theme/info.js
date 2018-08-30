@@ -45,7 +45,6 @@ export default class Info extends PageManager {
         });
         const $infoBtnFooter = $('#_info-btn-footer');
         $infoBtnFooter.click(() => {
-            // TODO: Toggle mobile navigation
             $infoDiv.slideDown('fast');
             $('html,body').animate({scrollTop:0},100);
         });
