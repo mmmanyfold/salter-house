@@ -15,6 +15,7 @@
     @include clearfix;
 
     font-size: 0; // 1
+    margin-top: spacing("double");
     margin-bottom: spacing("single");
     text-align: center;
 
@@ -32,6 +33,7 @@
 // -----------------------------------------------------------------------------
 
 .pagination-item {
+    letter-spacing: 0.02em;
     border: $pagination-item-border;
     line-height: 1;
 
@@ -46,8 +48,8 @@
     }
 
     &.pagination-item--current { // 1
-        border-color: $pagination-link-current-borderColor;
-        border-radius: $pagination-link-current-borderRadius;
+        border-color: #007A51;
+        border-radius: 50%;
         margin: $pagination-link-current-margin;
     }
 
@@ -71,6 +73,7 @@
 
 .pagination-item--previous,
 .pagination-item--next {
+    float: none;
 
     .icon {
         height: remCalc(20px);
@@ -81,6 +84,7 @@
 
 .pagination-item--previous {
     float: left;
+    padding-left: 2em;
 
     .icon {
         margin-left: -(remCalc(12px));
@@ -89,6 +93,7 @@
 
 .pagination-item--next {
     float: right;
+    padding-right: 2em;
 
     .icon {
         margin-right: -(remCalc(12px));

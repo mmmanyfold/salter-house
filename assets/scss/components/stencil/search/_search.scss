@@ -9,6 +9,10 @@
     @include breakpoint("small") {
         margin-top: 0;
     }
+
+    @include breakpoint("medium") {
+        margin-left: 2.2em;
+    }
 }
 
 .search-suggestion {
@@ -130,9 +134,14 @@
         @include breakpoint(1060px) {
             width: 90px;
         }
+
+        @include breakpoint(1300px) {
+            font-size: 1.1em;
+            padding-top: 0.2em;
+        }
+
         @include breakpoint("large") {
             width: 150px;
-            padding-top: 0.3em;
         }
     }
     button {
