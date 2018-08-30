@@ -10,11 +10,29 @@
     margin-bottom: spacing("single");
 }
 
-.account--fixed {
+.gift-certificate-text {
+    font-family: "MS-PMincho";
+    font-size: 1.2em;
+    //padding: 0 2em;
+
+    @include breakpoint("small") {
+        font-size: 1.3em;
+    }
+}
+
+.gift-certificate-wrapper {
     padding: 0 2em;
+    margin-top: 5em;
+
+    @include breakpoint("medium") {
+        margin-top: 0;
+    }
+}
+
+.account--fixed {
     @include breakpoint("medium") {
         margin: 0 auto;
-        width: grid-calc(8, $total-columns);
+        max-width: 850px;
     }
 }
 

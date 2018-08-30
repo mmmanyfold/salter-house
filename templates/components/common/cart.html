@@ -5,10 +5,6 @@
         {{#if cart.items.length}}
         {{> components/cart/page-title}}
 
-        <div data-cart-status>
-            {{> components/cart/status-messages}}
-        </div>
-
         <div class="loadingOverlay"></div>
 
         <div data-cart-content>
@@ -19,22 +15,13 @@
             {{> components/cart/totals}}
         </div>
 
-        <div class="cart-actions">
-            <a class="button button--primary" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">{{lang 'cart.checkout.button'}}</a>
-            {{#if cart.show_multiple_address_shipping}}
-            <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
-                {{lang 'cart.preview.checkout_multiple'}}
-            </a>
-            {{/if}}
-        </div>
-
         {{else}}
         <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
         {{/if}}
 
         {{{snippet 'cart'}}}
 
-        <div class="button--close" style="margin-top: 4em">
+        <div class="button--close" style="margin-top: 3em">
             <a id="_cart-btn-close" href="#">
                 <svg data-src="{{cdn 'icons/close.svg'}}"/>
             </a>

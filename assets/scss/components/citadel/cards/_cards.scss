@@ -25,8 +25,6 @@
 }
 
 .card-img-container {
-    max-width: get-width(stencilString('productgallery_size'));
-
     @include lazy-loaded-padding('productgallery_size');
 }
 

@@ -16,6 +16,13 @@
 // -----------------------------------------------------------------------------
 
 .header {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                          supported by Chrome and Opera */
     transition: top 0.2s ease-in-out, background-color 0.5s ease-in-out;
     background-color: white;
     height: 55px;
@@ -33,7 +40,7 @@
     }
 
     @include breakpoint(801px) {
-        height: 79px;
+        height: 86px;
     }
 
     &.is-open {
