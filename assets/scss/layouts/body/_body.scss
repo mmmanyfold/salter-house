@@ -162,6 +162,12 @@
         }
     }
 
+    #_injected-page-content-txt p {
+        @include breakpoint("medium") {
+            margin-bottom: 0.8em;
+        }
+    }
+
     .checker {
         width: 30px;
     }
@@ -188,6 +194,7 @@
 
         @include breakpoint("medium") {
             width: 90%;
+            margin-top: 0.3em;
         }
 
         .info-footer {

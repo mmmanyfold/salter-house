@@ -33,6 +33,22 @@ export default class Info extends PageManager {
         $infoBtn.click(() => {
             $infoDiv.slideToggle('fast');
         });
+        const $infoBtnMobile = $('#_info-btn-mobile');
+        $infoBtnMobile.click(() => {
+            $infoDiv.slideDown('fast');
+            $('html,body').animate({scrollTop:0},100);
+        });
+        const $infoBtnClose = $('#_info-btn-close');
+        $infoBtnClose.click(() => {
+            $infoDiv.slideUp('fast');
+            $('html,body').animate({scrollTop:0},100);
+        });
+        const $infoBtnFooter = $('#_info-btn-footer');
+        $infoBtnFooter.click(() => {
+            // TODO: Toggle mobile navigation
+            $infoDiv.slideDown('fast');
+            $('html,body').animate({scrollTop:0},100);
+        });
     }
 
     async getInfoPage() {
