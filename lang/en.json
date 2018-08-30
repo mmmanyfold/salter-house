@@ -52,7 +52,7 @@
             "enter_code": "Coupon code / Gift certificate",
             "gift_wrapping": "Gift wrapping",
             "shipping": "Shipping",
-            "grand_total": "Grand total",
+            "grand_total": "Subtotal",
             "select": "Select",
             "update": "Update shipping cost"
         },
@@ -90,7 +90,7 @@
             "remove": "Remove"
         },
         "shipping_estimator": {
-            "add_info": "Add Info",
+            "add_info": "Estimate Shipping ↓",
             "select_a_country": "Country",
             "select_a_state": "State/province",
             "estimate_shipping": "Estimate Shipping",
@@ -219,10 +219,10 @@
     "gift_certificate": {
         "heading": "Gift Certificates",
         "purchase": {
-            "heading": "Purchase Gift Certificate"
+            "heading": "Purchase"
         },
         "redeem": {
-            "heading": "Redeem Gift Certificate",
+            "heading": "Redeem",
             "intro": "To redeem a gift certificate at {store_name}, follow the simple steps below.",
             "item1": "You need your unique gift certificate code, which is part of the gift certificate that was emailed to you as an attachment. It will look something like Z50-Y6K-COS-402.",
             "item2": "Browse the store and add items to your cart as you normally would.",
@@ -230,7 +230,7 @@
             "item4": "Type your gift certificate code in to the 'Redeem Gift Certificate' box and click 'Go'."
         },
         "balance": {
-            "heading": "Check Gift Certificate Balance",
+            "heading": "Check Balance",
             "intro": "You can check the balance of a gift certificate by typing the code in to the box below."
         }
     },
@@ -509,7 +509,7 @@
                 "agree2": "I agree that Gift Certificates are nonrefundable",
                 "preview": "Preview",
                 "preview_error": "There was a problem loading the preview. Please try again later.",
-                "submit_value": "Add Gift Certificate to Cart"
+                "submit_value": "Add to Basket"
             },
             "balance": {
                 "code": "Gift Certificate Code",

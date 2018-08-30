@@ -30,20 +30,32 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 // -----------------------------------------------------------------------------
 
 .cart-wrapper {
+    padding: 0 1.2em;
+
+    @include breakpoint("medium") {
+        padding: 0;
+    }
+
     h1 {
-        margin-bottom: 1.5em;
+        margin-bottom: 0.85em;
+        margin-left: 0;
 
         @include breakpoint("medium") {
-            margin-bottom: 2em;
+            margin-bottom: 1.1em;
         }
     }
+
     h3 {
         text-align: center;
     }
 }
 
 .cart-panel {
-    margin-top: 6em;
+    margin-top: 5.5em;
+
+    @include breakpoint("small") {
+        margin-top: 7em;
+    }
 
     @include breakpoint("medium") {
         margin-top: 0;
@@ -52,24 +64,25 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-page {
-  padding-bottom: 2.5em;
+    padding-bottom: 2.5em;
 
-  @include breakpoint("small") {
-    padding-bottom: 0;
-  }
+    @include breakpoint("small") {
+      padding-bottom: 0;
+    }
 
-  @include breakpoint("medium") {
-    padding: 0 2.25em 6em 2.25em;
-  }
+    @include breakpoint("medium") {
+      padding: 0 2.25em 6em 2.25em;
+    }
 }
 
 .cart {
     display: block; // 1
-    margin-bottom: spacing("single");
     width: 100%;
+    margin-top: 1.3em;
 
     @include breakpoint("medium") {
         display: table; // 1
+        margin-top: 2.2em;
     }
 }
 
@@ -93,12 +106,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-list {
     display: block; // 1
     border-bottom: 0.15rem solid $green;
-    padding: 0 1.2em;
 
     @include breakpoint("medium") {
         display: table-row-group; // 1
-        padding: 0;
     }
+
     input[disabled] {
         cursor: default;
         color: #007A51;
@@ -179,6 +191,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-item-image {
     @include lazy-loaded-img;
+    width: 100%;
 
     @include breakpoint("medium") {
         margin-left: 0;
@@ -190,14 +203,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     display: block;
     height: auto;
     overflow: hidden;
-    line-height: 1.3rem;
+    line-height: 1.4rem;
 
     @include breakpoint("medium") {
         border-top: 0.15rem solid $green;
         line-height: 1.7em;
-    }
-
-    @include breakpoint("medium") {
         display: table-cell;
         padding: $cart-item-spacing $cart-item-spacing $cart-item-spacing 0.1em;
     }
@@ -207,7 +217,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     width: 1em;
 
     @include breakpoint("medium") {
-        width: 2em;
+        width: 1.75em;
     }
 }
 
@@ -397,6 +407,9 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         color: $body-font-color;
         margin-bottom: 0;
         margin-top: 0.3em;
+        .button {
+            margin-bottom: 0;
+        }
     }
 
     @include breakpoint("medium") {
@@ -458,33 +471,44 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-totals {
     @include u-listBullets("none");
+    font-size: 1.28em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    font-family: "MS-PMincho";
+    color: black;
     margin-bottom: $cart-item-spacing;
-    text-align: right;
+    padding-top: 0.8em;
+    padding-bottom: 0.3em;
     width: 100%;
 
-    @include breakpoint(432px) {
-        float: right;
-        width: grid-calc(9, $total-columns);
-    }
-
     @include breakpoint("medium") {
-        margin-bottom: spacing("base");
-        width: grid-calc(7, $total-columns);
+        font-size: 1.4em;
     }
+}
 
-    @include breakpoint("large") {
-        width: grid-calc(5, $total-columns);
+.estimator-form--default {
+    ul {
+        font-family: "Plaids";
+        text-transform: none;
+        margin-left: 0;
+        font-size: 0.9em;
     }
 }
 
 .cart-total {
-    @include clearfix;
-    border-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    @include breakpoint(432px) {
+        width: 195px;
+    }
 
     @include breakpoint("medium") {
-        + .cart-total {
-            border-top: container("border");
-        }
+        width: 250px;
     }
 
     .form-input {
@@ -492,7 +516,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         height: remCalc(32px);
         padding: spacing("third");
         vertical-align: top;
-        width: grid-calc(9, $total-columns);
     }
 
     .form-select {
@@ -505,17 +528,13 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     .form-inlineMessage {
         text-align: left;
+        font-family: "Plaids";
+        line-height: 1.1em;
+        text-transform: none;
     }
 }
 
 .cart-total-label {
-    color: stencilColor("color-textSecondary");
-    width: grid-calc(4, $total-columns);
-
-    @include breakpoint(432px) {
-        width: grid-calc(6, $total-columns);
-    }
-
     @include breakpoint("medium") {
         display: block;
         padding-left: 0;
@@ -525,37 +544,57 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-total-value {
     text-align: left;
+    margin-left: 1em;
 
     @include breakpoint(432px) {
         text-align: right;
     }
+}
 
-    @include breakpoint("medium") {
-        width: grid-calc(6, $total-columns);
+.cart-total-button {
+    border-radius: 7px;
+    padding: 0.37em 0.45em 0.4em 0.5em;
+    font-size: 1.1em;
+    margin-bottom: 0.12em;
+}
+
+.cart-total-checkout {
+    margin-top: 1em;
+
+    .cart-total-value {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .button {
+        width: 100%;
+        font-size: 0.85em;
+        background-color: #007A51;
+        color: white;
+    }
+
+    @include breakpoint(432px) {
+        width: 140px;
+        margin-top: 0;
+
+        .button {
+            width: initial;
+        }
     }
 }
 
 .cart-total-label,
 .cart-total-value {
     float: left;
-    padding: spacing("third") 0 spacing("third") $cart-item-spacing;
+    padding: spacing("eighth") 0;
 
-    @include breakpoint("medium") {
+    @include breakpoint(432px) {
         padding: spacing("base") 0;
     }
 }
 
-.cart-total-grandTotal {
-    font-family: fontFamily("headingSans");
-    font-size: fontSize("small");
-    padding-bottom: spacing("eighth");
-    padding-top: spacing("eighth");
-    position: relative;
-
-    @include breakpoint("medium") {
-        padding: spacing("base") 0;
-        top: -(spacing("sixth"));
-    }
+.shipping-estimator {
+    clear: both;
 }
 
 
@@ -564,7 +603,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .coupon-code-add,
 .coupon-code-cancel,
-.shipping-estimate-show,
 .shipping-estimate-hide,
 .gift-certificate-add,
 .gift-certificate-cancel {
@@ -613,10 +651,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         margin-bottom: spacing("half");
         width: 100%;
     }
-
-    .button--primary {
-        width: 60%;
-    }
 }
 
 .estimator-form-label {
@@ -636,9 +670,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .estimator-form-input {
-    float: right;
-    margin-bottom: 1em;
-    width: 60%;
+    font-family: "Plaids";
+    float: left;
+    margin-bottom: 0.5em;
+    width: 200px;
+    clear: both;
 
     .form-input,
     .form-select {

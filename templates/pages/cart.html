@@ -4,10 +4,6 @@
     <main class="page-content" data-cart>
         <div class="cart-wrapper cart-page">
 
-        <div data-cart-status>
-            {{> components/cart/status-messages}}
-        </div>
-
         {{#if cart.items.length}}
             {{> components/cart/page-title}}
             <div class="loadingOverlay"></div>
@@ -22,16 +18,7 @@
 
             {{#if cart.show_primary_checkout_button}}
                 <div class="cart-actions">
-                    <a class="button button--primary" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">{{lang 'cart.checkout.button'}}</a>
-                    {{#if cart.show_multiple_address_shipping}}
-                        <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
-                            {{lang 'cart.preview.checkout_multiple'}}
-                        </a>
-                    {{/if}}
-                </div>
-
-                <div class="cart-actions">
-                    <a class="button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
+                    <a class="button cart-total-button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
                 </div>
             {{/if}}
 
