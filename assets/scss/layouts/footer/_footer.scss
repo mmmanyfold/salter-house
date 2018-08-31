@@ -141,6 +141,7 @@
     font-size: 1.1rem;
     width: 300px;
     margin: 0 auto;
+
     article {
         padding: 0 0.64em;
     }
@@ -152,17 +153,29 @@
     }
     #nl_label {
         margin-right: 0.2em;
+        letter-spacing: 0.05em;
     }
-    #nl_email {
+    #mce-EMAIL {
         border-bottom: 1px solid $green;
         border-radius: 0;
         width: 94px;
         height: 20px;
         padding: 0 0.4em;
     }
+    .response {
+        text-transform: none;
+        color: #F39838;
+        a {
+            color: #F39838;
+        }
+    }
+    .form-prefixPostfix, #mce-responses, .response {
+        margin-bottom: 0.5em;
+    }
     .form-prefixPostfix-button--postfix {
         text-transform: uppercase;
         margin-left: 0.2em;
+        letter-spacing: 0.05em;
     }
 
     @include breakpoint(700px) {
@@ -173,14 +186,12 @@
             padding: 0;
         }
     }
-
     @include breakpoint(925px) {
         font-size: 1.1rem;
     }
-
     @include breakpoint(994px) {
-             font-size: 1.17rem;
-         }
+        font-size: 1.17rem;
+    }
 }
 
 .footer-info-list {
