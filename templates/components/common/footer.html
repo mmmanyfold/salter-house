@@ -10,16 +10,20 @@
         <div class="footer-links">
             <article data-section-type="footer-webPages">
                 <ul class="footer-info-list">
-                    {{#each pages}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
                     {{#if settings.gift_certificates_enabled}}
-                        <li>
-                            <a href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
-                        </li>
+                    <li>
+                        <a href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
+                    </li>
                     {{/if}}
+                    <li>
+                        <a href="../shipping-returns">Shipping & Returns</a>
+                    </li>
+                    <li>
+                        <a id="_info-btn-footer" href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/salter.house/">Instagram</a>
+                    </li>
                 </ul>
             </article>
 
@@ -45,9 +49,6 @@
                 {{#if settings.address}}
                 <article data-section-type="storeInfo">
                     <address>{{nl2br settings.address}}</address>
-                    <!--{{#if settings.phone_number}}-->
-                    <!--<strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>-->
-                    <!--{{/if}}-->
                 </article>
                 {{/if}}
 

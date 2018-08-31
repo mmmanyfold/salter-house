@@ -18,7 +18,8 @@
 // -----------------------------------------------------------------------------
 
 .heroCarousel {
-    margin-top: 2.25em;
+    margin-top: 1.6em;
+
     @include breakpoint("medium") {
         margin-top: -9.2em;
     }
@@ -26,6 +27,7 @@
     &.slick-dotted.slick-slider {
         margin-bottom: 0;
     }
+
     &.slick-initialized { // 2
         max-height: remCalc(1000);
         opacity: 1;
