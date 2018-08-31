@@ -14,8 +14,8 @@ const productRequestConfig = (page = 1, limit = 12) => ({
     'X-Auth-Token': env['X_AUTH_TOKEN'],
   },
   params: {
-        page,
-        limit,
+    page,
+    limit,
     is_visible: 1,
   },
   responseType: 'json',
@@ -60,11 +60,12 @@ export const getProducts = async (event, context, callback) => {
         .map(async ({ id }) => await getImageData(id)))
         .catch(errors => {
           console.log(errors);
-          return {
+          response = {
             statusCode: 500,
             headers,
             body: 'Failed to retrieve images and/or products from API',
           };
+          return callback(null, response);
         })
         .then(productImages => {
           const mergeData = productImages.map(productImage => {
@@ -74,7 +75,7 @@ export const getProducts = async (event, context, callback) => {
               ...productImage,
             }
           });
-          return response = {
+          response = {
             statusCode: 200,
             headers,
             body: JSON.stringify({
@@ -82,6 +83,7 @@ export const getProducts = async (event, context, callback) => {
               meta,
             }),
           };
+          return callback(null, response);
         });
     } catch (e) {
       response = {
@@ -89,6 +91,7 @@ export const getProducts = async (event, context, callback) => {
         headers,
         body: e.message,
       }
+      return callback(null, response);
     }
   } else {
     response = {
@@ -96,8 +99,8 @@ export const getProducts = async (event, context, callback) => {
       headers,
       body: JSON.stringify(error('input error: missing limit or page query params.'))
     }
+    return callback(null, response);
   }
-  callback(null, response);
 };
 
 //
