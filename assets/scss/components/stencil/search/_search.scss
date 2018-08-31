@@ -7,11 +7,16 @@
     margin-top: 2.5em;
 
     @include breakpoint("small") {
-        margin-top: 0;
+        margin-top: 5em;
+        margin-left: 2.2em;
+
+        .page-heading {
+            text-align: left;
+        }
     }
 
     @include breakpoint("medium") {
-        margin-left: 2.2em;
+        margin-top: 0;
     }
 }
 

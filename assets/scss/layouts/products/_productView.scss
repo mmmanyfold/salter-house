@@ -130,7 +130,12 @@
         margin-bottom: 0;
     }
     &.slick-initialized { // 2
+        max-height: auto;
         opacity: 1;
+
+        @include breakpoint(1000px) {
+            max-height: auto;
+        }
     }
 
     &:not(.slick-initialized) :not(.productView-carousel-slide--first).productView-carousel-slide {
