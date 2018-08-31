@@ -70,11 +70,33 @@
     }
 }
 
+.footer-info-list {
+  list-style: none;
+  margin-left: 0;
+  text-align: left;
+
+  a {
+    color: stencilColor("color-textSecondary");
+    text-decoration: none;
+
+    // scss-lint:disable NestingDepth
+    &:hover {
+      color: stencilColor("color-textSecondary--hover");
+    }
+    // scss-lint:enable NestingDepth
+  }
+
+  @include breakpoint(700px) {
+    text-align: left;
+  }
+}
+
 .footer-links {
-    font-size: 1.35rem; // 2
-    width: 300px;
+    font-family: MS-PMincho;
+    font-size: 1.25rem; // 2
+    width: 280px;
     margin: 0 auto;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     text-align: left;
     vertical-align: top;
     > :not(:last-child) {
@@ -139,11 +161,11 @@
 
 .footer-right-content {
     font-size: 1.1rem;
-    width: 300px;
+    width: 280px;
     margin: 0 auto;
 
     article {
-        padding: 0 0.64em;
+        //padding: 0 0.64em;
     }
     input {
         border: 0;
@@ -191,29 +213,6 @@
     }
     @include breakpoint(994px) {
         font-size: 1.17rem;
-    }
-}
-
-.footer-info-list {
-    font-family: MS-PMincho;
-    list-style: none;
-    margin-left: 0;
-    margin-bottom: 2.5em;
-    text-align: center;
-
-    a {
-        color: stencilColor("color-textSecondary");
-        text-decoration: none;
-
-        // scss-lint:disable NestingDepth
-        &:hover {
-            color: stencilColor("color-textSecondary--hover");
-        }
-        // scss-lint:enable NestingDepth
-    }
-
-    @include breakpoint(700px) {
-        text-align: left;
     }
 }
 
