@@ -148,7 +148,7 @@
     "button--primary-backgroundColorHover": "#007A51",
     "button--primary-backgroundColorActive": "#007A51",
     "button--disabled-color": "#ffffff",
-    "button--disabled-backgroundColor": "#cccccc",
+    "button--disabled-backgroundColor": "#dddddd",
     "button--disabled-borderColor": "transparent",
     "icon-color": "#007A51",
     "icon-color-hover": "#ffffff",
