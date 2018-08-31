@@ -1,10 +1,12 @@
 import PageManager from './page-manager';
 import $ from 'jquery';
 import * as axios from "axios";
+import Global from './global';
 
 export default class Info extends PageManager {
     constructor(context) {
         super(context);
+        this.mobileMenu = null;
         this.bindEvents();
     }
 
@@ -25,6 +27,8 @@ export default class Info extends PageManager {
         } catch (e) {
             throw e;
         }
+
+        this.mobileMenu = Global.mobileMenuGetter();
     }
 
     bindEvents() {
@@ -32,21 +36,24 @@ export default class Info extends PageManager {
         const $infoDiv = $('#_info');
         $infoBtn.click(() => {
             $infoDiv.slideToggle('fast');
+            $('#_cart').hide();
         });
         const $infoBtnMobile = $('#_info-btn-mobile');
         $infoBtnMobile.click(() => {
-            $infoDiv.slideDown('fast');
-            $('html,body').animate({scrollTop:0},100);
+            $infoDiv.show();
+            this.mobileMenu.hide();
+            $('#_cart').hide();
         });
         const $infoBtnClose = $('#_info-btn-close');
         $infoBtnClose.click(() => {
             $infoDiv.slideUp('fast');
-            $('html,body').animate({scrollTop:0},100);
+            $('html,body').animate({ scrollTop: 0 }, 100);
         });
         const $infoBtnFooter = $('#_info-btn-footer');
         $infoBtnFooter.click(() => {
             $infoDiv.slideDown('fast');
-            $('html,body').animate({scrollTop:0},100);
+            $('html,body').animate({ scrollTop: 0 }, 100);
+            $('#_cart').hide();
         });
     }
 
@@ -61,6 +68,6 @@ export default class Info extends PageManager {
     processAsHtml(htmlStr) {
         const template = document.createElement('div');
         template.innerHTML = htmlStr;
-        return template.querySelector('.static-page');
+        return template.querySelector('.Info');
     }
 }
