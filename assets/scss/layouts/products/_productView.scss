@@ -174,11 +174,11 @@
     }
 
     .productView-carousel-image {
-        @include breakpoint("medium") {
-            object-fit: cover; // 1
-            height: 100%;
-            width: 100%;
-        }
+      width: 100%;
+      @include breakpoint("medium") {
+          object-fit: cover; // 1
+          height: 100%;
+      }
     }
 
     .productView-carousel-image-wrapper {

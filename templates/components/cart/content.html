@@ -6,7 +6,9 @@
                     {{#if type '==' 'GiftCertificate'}}
                         <img class="cart-item-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="GiftCertificate" title="GiftCertificate">
                     {{else}}
-                        <img class="cart-item-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{getImage image 'productthumb_size' (cdn ../../theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                        <a href="{{url}}">
+                            <img class="cart-item-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{getImage image 'productthumb_size' (cdn ../../theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                        </a>
                     {{/if}}
                 </td>
                 <td class="cart-item-spacer"></td>
