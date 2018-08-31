@@ -361,12 +361,13 @@ export default class Cart extends PageManager {
             if(urlUtils.getUrl() !== '/cart.php') {
                 $cartDiv.slideToggle('fast');
                 $('html,body').animate({ scrollTop: 0 }, 100);
+                $('#_info').hide();
             }
         });
         const $cartBtnClose = $('#_cart-btn-close');
         $cartBtnClose.click(() => {
             $cartDiv.slideUp('fast');
-            $('html,body').animate({scrollTop:0},100);
+            $('html,body').animate({ scrollTop: 0 }, 100);
         });
     }
 
