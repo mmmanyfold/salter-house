@@ -30,6 +30,7 @@ const pageClasses = {
     brand: () => import('./theme/brand'),
     brands: () => import('./theme/brands'),
     cart: () => import('./theme/cart'),
+    info: () => import('./theme/info'),
     category: () => import('./theme/category'),
     compare: () => import('./theme/compare'),
     page_contact_form: () => import('./theme/contact-us'),
@@ -73,11 +74,14 @@ window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null
                 if (typeof pageClassImporter === 'function') {
                     const PageClass = (await pageClassImporter()).default;
                     PageClass.load(context);
-                    if (pageType !== 'cart') {
+                    if (pageType !== 'cart' || pageType !== 'info') {
                         const cartClassImporter = pageClasses['cart'];
+                        const infoClassImporter = pageClasses['info'];
                         // also call Cart Class on every page, except on /cart.php
                         const cartClass = (await cartClassImporter()).default;
+                        const infoClass = (await infoClassImporter()).default;
                         cartClass.load(context);
+                        infoClass.load(context);
                     }
                 }
             });

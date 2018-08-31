@@ -96,3 +96,151 @@
     }
 }
 
+#_info {
+
+    @include breakpoint("medium") {
+        margin-bottom: 4.5em;
+    }
+}
+
+.info-page {
+    font-family: "MS-PMincho";
+    font-size: 1.2em;
+    line-height: 1.2em;
+    text-align: center;
+    padding: 0.01em 1em 0.12em 1em;
+
+    @include breakpoint("medium") {
+        margin-top: 5.5em;
+        padding-bottom: 1.1em;
+    }
+
+    .page-content--centered {
+        width: 100%;
+
+        @include breakpoint(704px) {
+            padding-top: 0.5em;
+            @include grid-column(
+                $columns: 11,
+                $center: true
+            );
+        }
+
+        @include breakpoint(769px) {
+            font-size: 1.1em;
+            line-height: 1.15em;
+        }
+
+        @include breakpoint(963px) {
+            font-size: 1.4em;
+            padding-top: 0.15em;
+        }
+
+        @include breakpoint(1091px) {
+            font-size: 1.45em;
+            line-height: 1.15em;
+
+            @include grid-column(
+                $columns: 10,
+                $center: true
+            );
+        }
+
+        @include breakpoint(1225px) {
+            padding-top: 0.45em;
+        }
+
+        @include breakpoint(1300px) {
+            padding-top: 1.2em;
+            font-size: 1.6em;
+            max-width: 1030px;
+
+            @include grid-column(
+                $columns: 10,
+                $center: true
+            );
+        }
+    }
+
+    #_injected-page-content-txt p {
+        @include breakpoint("medium") {
+            margin-bottom: 0.8em;
+        }
+    }
+
+    .checker {
+        width: 30px;
+    }
+
+    .info-img-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 1.3em;
+
+        div {
+            margin-top: 0.6em;
+        }
+
+        @include breakpoint("small") {
+            margin-top: 0.55em;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            div {
+                width: 49.5%;
+            }
+        }
+
+        @include breakpoint("medium") {
+            width: 90%;
+            margin-top: 0.3em;
+        }
+
+        .info-footer {
+            letter-spacing: 0.05em;
+            margin-top: 2.1em;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-family: "Plaids";
+            font-size: 0.8em;
+            line-height: 1.4em;
+            color: #007A51;
+            text-align: center;
+            text-transform: uppercase;
+
+            div {
+                margin: 0 auto;
+                margin-bottom: 1.5em;
+                width: 100%;
+            }
+
+            .info-newsletter {
+                margin-top: 1em;
+            }
+
+            @include breakpoint("medium") {
+                font-size: 0.6em;
+
+                div {
+                    width: auto;
+                    margin: 0 5em 0 0;
+                    text-align: left;
+                }
+
+                .info-newsletter {
+                    flex: 1;
+                    margin-top: 0;
+                    margin-right: 0;
+                    text-align: right;
+                }
+            }
+
+            @include breakpoint(963px) {
+                font-size: 0.51em;
+            }
+        }
+    }
+}
