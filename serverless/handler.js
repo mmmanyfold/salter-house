@@ -7,7 +7,7 @@ const headers = {
   "Access-Control-Allow-Origin": "*", // Required for CORS support to work
 };
 
-const productRequestConfig = (page = 1, limit = 12) => ({
+const productRequestConfig = (page = 1, limit = 50) => ({
   url: `${env['URL']}/v3/catalog/products`,
   headers: {
     'X-Auth-Client': env['X_AUTH_CLIENT'],
@@ -54,7 +54,7 @@ export const getProducts = (event, context, callback) => {
   let filterItems = [];
   const { queryStringParameters } = event;
 
-  if (has(queryStringParameters, 'page') && has(queryStringParameters, 'limit')) {
+  if (has(queryStringParameters, 'page')) {
 
     const { page, limit, filter } = queryStringParameters;
 
@@ -129,7 +129,7 @@ export const getProducts = (event, context, callback) => {
     response = {
       statusCode: 400,
       headers,
-      body: JSON.stringify(error('input error: missing limit or page query params.'))
+      body: JSON.stringify(error('input error: missing page query param.'))
     }
     return callback(null, response);
   }
