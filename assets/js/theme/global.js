@@ -18,7 +18,14 @@ import sweetAlert from './global/sweet-alert';
 import svgInjector from './global/svg-injector';
 import enableScrolling from './global/header-hide';
 
+let mobileMenu = null;
+
 export default class Global extends PageManager {
+
+    constructor(context) {
+        super(context);
+    }
+
     onReady() {
         // Only load visible elements until the onload event fires,
         // after which preload nearby elements.
@@ -35,11 +42,15 @@ export default class Global extends PageManager {
         compareProducts(this.context.urls);
         carousel();
         menu();
-        mobileMenuToggle();
+        mobileMenu = mobileMenuToggle();
         privacyCookieNotification();
         maintenanceMode(this.context.maintenanceMode);
         loadingProgressBar();
         sweetAlert();
         svgInjector();
+    }
+
+    static mobileMenuGetter() {
+        return mobileMenu;
     }
 }
