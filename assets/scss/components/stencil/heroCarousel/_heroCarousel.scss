@@ -51,7 +51,7 @@
         }
 
         @include breakpoint("large") {
-            left: 0;
+            left: 1px;
         }
 
         // scss-lint:disable SelectorDepth, NestingDepth
@@ -106,15 +106,23 @@
     position: absolute;
     background-color: transparent;
     left: 0;
-    bottom: 1.75em;
-    padding: 0 spacing("double");
+    bottom: 1.25em;
+    padding: 0 spacing("single");
+    font-size: 0.9em;
+
+    @include breakpoint("medium") {
+        bottom: 1.85em;
+        padding: 0 spacing("double");
+        font-size: 1em;
+    }
+
     .heroCarousel-action.button.button--primary.button--large {
         transform: translateY(-6%);
         margin-top: 0;
         margin-left: 0.45rem;
-        font-size: 1em;
+        font-size: 0.9em;
         font-family: $fontFamily-sans;
-        padding: 0.35rem 0.35rem 0.38rem 0.35rem;
+        padding: 0.38rem 0.33rem 0.33rem 0.35rem;
         text-transform: capitalize;
         border-width: 0.07em;
         border-radius: 0.3em;
@@ -136,21 +144,8 @@
     margin-top: 0;
     margin-bottom: 0;
     .heroCarousel-description {
-        font-size: fontSize("small");
+        font-size: 1.1em;
         font-family: "MS-PMincho";
-    }
-}
-
-.heroCarousel-description {
-    color: $carousel-description-color;
-    font-size: fontSize("tiny");
-
-    @include breakpoint("small") {
-        font-size: fontSize("smallest");
-    }
-
-    @include breakpoint("medium") {
-        font-size: fontSize("smaller");
     }
 }
 
