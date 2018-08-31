@@ -23,39 +23,15 @@
     @include breakpoint("medium") {
         margin-top: -9.2em;
     }
-
     &.slick-dotted.slick-slider {
         margin-bottom: 0;
     }
-
     &.slick-initialized { // 2
         max-height: remCalc(1000);
         opacity: 1;
     }
-
     &:not(.slick-initialized) :not(.heroCarousel-slide--first).heroCarousel-slide {
         display: none;
-    }
-
-    .slick-next,
-    .slick-prev {
-        top: 50%;
-    }
-
-    .slick-next {
-        right: 15px;
-
-        @include breakpoint("medium") {
-            right: 25px;
-        }
-    }
-
-    .slick-prev {
-        left: 15px;
-
-        @include breakpoint("medium") {
-            left: 25px;
-        }
     }
 
     .slick-dots {

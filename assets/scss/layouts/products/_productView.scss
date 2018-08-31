@@ -126,6 +126,7 @@
 
 .productView-carousel {
     height: 100%;
+
     &.slick-dotted.slick-slider {
         margin-bottom: 0;
     }
@@ -137,40 +138,25 @@
             max-height: auto;
         }
     }
-
     &:not(.slick-initialized) :not(.productView-carousel-slide--first).productView-carousel-slide {
         display: none;
     }
 
-    .slick-next,
-    .slick-prev {
-        top: 50%;
-    }
-
-    .slick-next {
-        right: 15px;
-
-        @include breakpoint("medium") {
-            right: 25px;
-        }
-    }
-
-    .slick-prev {
-        left: 15px;
-
-        @include breakpoint("medium") {
-            left: 25px;
-        }
-    }
-
     .slick-dots {
-        left: 0;
-        top: 45%;
         width: 0;
         height: 100%;
 
+        right: 39px;
+        top: 18px;
+
+        @include breakpoint("small") {
+            right: 23px;
+            top: 5px;
+        }
+
         @include breakpoint("medium") {
-            bottom: spacing("single");
+            right: 40px;
+            top: 8px;
         }
 
         // scss-lint:disable SelectorDepth, NestingDepth
