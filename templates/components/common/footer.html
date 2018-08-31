@@ -1,10 +1,3 @@
-{{#if banners.bottom}}
-<div class="banners" data-banner-location="bottom">
-    <div class="banner">
-        {{{limit banners.bottom 1}}}
-    </div>
-</div>
-{{/if}}
 <footer class="footer" role="contentinfo">
     <section class="footer-info">
         <div class="footer-links">
@@ -52,11 +45,10 @@
                 </article>
                 {{/if}}
 
-                <article data-section-type="newsletterSubscription">
+                <article>
                     {{#if settings.show_newsletter_box}}
                     {{> components/common/subscription-form}}
                     {{/if}}
-                    {{> components/common/payment-icons}}
                 </article>
             </div>
         </div>

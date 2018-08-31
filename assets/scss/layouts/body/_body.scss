@@ -206,28 +206,89 @@
             text-transform: uppercase;
 
             div {
-                margin: 0 auto;
+                margin: 0;
                 margin-bottom: 1.5em;
                 width: 100%;
             }
 
             .info-newsletter {
+                margin: 0 auto;
                 margin-top: 1em;
+
+                .response {
+                    text-transform: none;
+                    color: #F39838;
+                    a {
+                      color: #F39838;
+                    }
+                }
+                #mc_embed_signup {
+                    width: 240px;
+                    margin: 0 auto;
+                    @include breakpoint("medium") {
+                        width: 210px;
+                        float: right;
+                    }
+                    @include breakpoint(900px) {
+                        width: 260px;
+                    }
+                }
+                .form, .form-field {
+                    margin-bottom: 0;
+                }
+                .form-prefixPostfix, #mce-responses, .response {
+                    margin-bottom: 0.5em;
+                }
+                input {
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    background: none;
+                }
+                #nl_label {
+                    margin-right: 0.15em;
+                }
+                #mce-EMAIL {
+                    border-bottom: 1px solid $green;
+                    border-radius: 0;
+                    padding: 0 0.4em;
+                    font-size: 0.9em;
+                    width: 60px;
+                    height: 16px;
+                    @include breakpoint("medium") {
+                        height: 14px;
+                    }
+                    @include breakpoint(950px) {
+                        //width: 75px;
+                        height: 16px;
+                    }
+                }
+                .form-prefixPostfix-button--postfix {
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    margin-left: 0.2em;
+                    margin-bottom: 0.2em;
+                    @include breakpoint(950px) {
+                        margin-bottom: 0.1em;
+                    }
+                }
             }
 
             @include breakpoint("medium") {
                 font-size: 0.6em;
 
-                div {
+                .info-footer-item {
                     width: auto;
-                    margin: 0 5em 0 0;
+                    margin: 0 2em 0 0;
                     text-align: left;
+                    @include breakpoint(963px) {
+                        margin-right: 3em;
+                    }
                 }
-
                 .info-newsletter {
+                    width: auto;
                     flex: 1;
-                    margin-top: 0;
-                    margin-right: 0;
+                    margin: 0;
                     text-align: right;
                 }
             }

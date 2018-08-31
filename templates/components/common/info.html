@@ -9,12 +9,19 @@
                     <div id="_injected-page-content-img-1"></div>
                     <div id="_injected-page-content-img-2"></div>
                     <div class="info-footer">
-                        <div>{{nl2br settings.address}}</div>
-                        <div>STORE: {{settings.phone_number}}<br>
+                        <div class="info-footer-item">
+                          {{nl2br settings.address}}
+                        </div>
+                        <div class="info-footer-item">
+                            STORE: {{settings.phone_number}}<br>
                             EMAIL: info@salter.house<br>
                             INSTAGRAM: salter.house
                         </div>
-                        <div class="info-newsletter">newsletter ______________ subscribe</div>
+                        <div class="info-newsletter">
+                          {{#if settings.show_newsletter_box}}
+                          {{> components/common/subscription-form}}
+                          {{/if}}
+                        </div>
                     </div>
                 </div>
             </div>
