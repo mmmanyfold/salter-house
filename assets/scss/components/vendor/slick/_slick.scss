@@ -99,15 +99,40 @@
     }
 
     li {
-        @include square(29px);
         margin: 0;
-        padding: remCalc(5px);
+        padding: 0;
 
+        &:only-child {
+            display: none;
+        }
+
+        @include square(24px);
         // scss-lint:disable SelectorDepth, NestingDepth
         button,
         button::before {
-            @include square(15px);
+            @include square(12px);
             border-radius: 50%;
+        }
+
+        @include breakpoint("small") {
+            @include square(10px);
+            // scss-lint:disable SelectorDepth, NestingDepth
+            button,
+            button::before {
+                @include square(10px);
+                border-radius: 50%;
+            }
+        }
+
+        @include breakpoint("medium") {
+            @include square(28px);
+            padding: remCalc(5px);
+            // scss-lint:disable SelectorDepth, NestingDepth
+            button,
+            button::before {
+                @include square(14px);
+                border-radius: 50%;
+            }
         }
 
         button {

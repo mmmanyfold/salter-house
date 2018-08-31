@@ -8,6 +8,22 @@ export default function () {
         $carousel.slick();
     }
 
+    const $carouselProduct = $('.productView-carousel');
+
+    if ($carouselProduct.length) {
+        $carouselProduct.slick({
+            dots: true,
+            mobileFirst: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: false,
+            vertical: false,
+            verticalSwiping: false,
+            lazyLoad: "anticipated"
+        });
+    }
+
     // Alternative image styling for IE, which doesn't support objectfit
     if (typeof document.documentElement.style.objectFit === 'undefined') {
         $('.heroCarousel-slide').each(() => {

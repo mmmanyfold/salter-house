@@ -9,12 +9,17 @@
 }
 
 .actionBar-section {
-
     .form-field {
         background-color: $input-bg-color;
         border: $actionBar-form-field-border;
         border-radius: $actionBar-form-field-radius;
         overflow: hidden;
+        display: flex;
+
+        .form-select--small {
+            flex: 1;
+            padding-left: 0.5em;
+        }
 
         // scss-lint:disable NestingDepth
         &:hover {

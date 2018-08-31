@@ -10,20 +10,7 @@
 
     <section class="productView-images" data-image-gallery>
         <div class="productView-img-container">
-        <section class="productView-carousel"
-            data-slick='{
-                "dots": true,
-                "mobileFirst": true,
-                "slidesToShow": 1,
-                "slidesToScroll": 1,
-                "autoplay": true,
-                "arrows": false,
-                "vertical": false,
-                "verticalSwiping": true,
-                "autoplaySpeed": {{carousel.swap_frequency}},
-                "lazyLoad": "anticipated"
-            }'>
-
+        <section class="productView-carousel">
             {{#each product.images}}
             <div class="productView-carousel-slide {{#if @first}}productView-carousel-slide--first{{/if}}">
                 <div class="productView-carousel-image-wrapper">
