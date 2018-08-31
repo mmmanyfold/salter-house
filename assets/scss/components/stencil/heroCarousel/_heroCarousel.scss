@@ -35,13 +35,23 @@
     }
 
     .slick-dots {
-        left: 0;
-        top: 45%;
         width: 0;
         height: 100%;
 
+        top: 40%;
+        left: 15px;
+
+        @include breakpoint("small") {
+            left: 25px;
+        }
+
         @include breakpoint("medium") {
-            bottom: spacing("single");
+            top: 45%;
+            left: -5px;
+        }
+
+        @include breakpoint("large") {
+            left: 0;
         }
 
         // scss-lint:disable SelectorDepth, NestingDepth
