@@ -26,4 +26,4 @@ logs:
 
 .PHONY: offline
 offline:
-	serverless offline start
+	serverless offline start  --noTimeout

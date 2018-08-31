@@ -3,8 +3,8 @@ service: serverless
 
 # Use the serverless-webpack plugin to transpile ES6
 plugins:
-  - serverless-webpack
-  - serverless-offline
+- serverless-webpack
+- serverless-offline
 
 # serverless-webpack configuration
 # Enable auto-packing of external modules
@@ -32,13 +32,13 @@ functions:
   getProducts:
     handler: handler.getProducts
     events:
-      - http:
-          path: products
-          method: get
-          cors: true
-          request:
-            parameters:
-              querystrings:
-                page: true
-                limit: true
-                filter: true
+    - http:
+        path: products
+        method: get
+        cors: true
+        request:
+          parameters:
+            querystrings:
+              page: true
+              limit: true
+              filter: true
