@@ -47,6 +47,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     h3 {
         text-align: center;
+        margin-top: 0;
     }
 }
 
@@ -59,7 +60,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     @include breakpoint("medium") {
         margin-top: 0;
-        padding: 9em 2.25em 4.5em 2.25em;
+        padding: 9em 2.25em 3.65em 2.25em;
     }
 }
 
@@ -480,7 +481,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     color: black;
     margin-bottom: $cart-item-spacing;
     padding-top: 0.8em;
-    padding-bottom: 0.3em;
     width: 100%;
 
     @include breakpoint(1200px) {

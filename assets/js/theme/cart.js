@@ -7,8 +7,15 @@ import ShippingEstimator from './cart/shipping-estimator';
 import { defaultModal } from './global/modal';
 import swal from 'sweetalert2';
 import urlUtils from "./common/url-utils";
+import Global from "./global";
 
 export default class Cart extends PageManager {
+    constructor(context) {
+      super(context);
+      this.mobileMenu = null;
+      this.bindEvents();
+    }
+
     onReady() {
         this.$cartContent = $('[data-cart-content]');
         this.$cartMessages = $('[data-cart-status]');
@@ -16,7 +23,7 @@ export default class Cart extends PageManager {
         this.$overlay = $('[data-cart] .loadingOverlay')
             .hide(); // TODO: temporary until roper pulls in his cart components
 
-        this.bindEvents();
+        this.mobileMenu = Global.mobileMenuGetter();
     }
 
     cartUpdate($target) {
@@ -362,6 +369,7 @@ export default class Cart extends PageManager {
                 $cartDiv.slideToggle('fast');
                 $('html,body').animate({ scrollTop: 0 }, 100);
                 $('#_info').hide();
+                this.mobileMenu.hide();
             }
         });
         const $cartBtnClose = $('#_cart-btn-close');
