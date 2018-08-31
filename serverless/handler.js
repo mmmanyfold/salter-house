@@ -32,8 +32,12 @@ const productImageRequestConfig = (id) => ({
 
 async function getImageData(id) {
   try {
-    const { data: { data: [images] } } = await axios(productImageRequestConfig(id));
-    return { id, imageUrl: images['url_standard'] };
+    const imgDataResponse = await axios(productImageRequestConfig(id));
+    if (imgDataResponse.status === 200) {
+      const { data: { data: [images] } } = imgDataResponse;
+      return { id, imageUrl: images['url_standard'] };
+    }
+    return imgDataResponse.error;
   } catch (e) {
     console.log(`Unable to retrieve image for product: ${id}`);
     return null;
@@ -44,55 +48,83 @@ function processFilterParam(items) {
   return JSON.parse(items);
 }
 
-export const getProducts = async (event, context, callback) => {
-  let response;
+export const getProducts = (event, context, callback) => {
+
+  let response = {};
   let filterItems = [];
   const { queryStringParameters } = event;
+
   if (has(queryStringParameters, 'page') && has(queryStringParameters, 'limit')) {
+
     const { page, limit, filter } = queryStringParameters;
+
     if (filter) {
       filterItems = filter ? processFilterParam(filter) : [];
     }
-    try {
-      const { data: { data, meta } } = await axios(productRequestConfig(page, limit));
-      return Promise.all(data
-        .filter(p => !filterItems.some(id => id === p.id))
-        .map(async ({ id }) => await getImageData(id)))
-        .catch(errors => {
-          console.log(errors);
+
+    (async () => {
+
+      try {
+
+        const productResponse = await axios(productRequestConfig(page, limit));
+
+        if (productResponse.status === 200) {
+
+          const { data: { data, meta } } = productResponse;
+
+          return Promise.all(data
+            .filter(p => !filterItems.some(id => id === p.id))
+            .map(async ({ id }) => {
+              try {
+                return await getImageData(id);
+              } catch (e) {
+                throw e;
+              }
+            }))
+            .catch(errors => {
+              console.log(errors);
+              response = {
+                statusCode: 500,
+                headers,
+                body: 'Failed to retrieve images and/or products from API',
+              };
+              return callback(null, response);
+            })
+            .then(productImages => {
+              const mergeData = productImages.map(productImage => {
+                const product = data.find(product => productImage.id === product.id);
+                return {
+                  ...product,
+                  ...productImage,
+                }
+              });
+              response = {
+                statusCode: 200,
+                headers,
+                body: JSON.stringify({
+                  data: mergeData,
+                  meta,
+                }),
+              };
+              return callback(null, response);
+            });
+        } else {
           response = {
             statusCode: 500,
             headers,
-            body: 'Failed to retrieve images and/or products from API',
-          };
+            body: productResponse.error,
+          }
           return callback(null, response);
-        })
-        .then(productImages => {
-          const mergeData = productImages.map(productImage => {
-            const product = data.find(product => productImage.id === product.id);
-            return {
-              ...product,
-              ...productImage,
-            }
-          });
-          response = {
-            statusCode: 200,
-            headers,
-            body: JSON.stringify({
-              data: mergeData,
-              meta,
-            }),
-          };
-          return callback(null, response);
-        });
-    } catch (e) {
-      response = {
-        statusCode: 500,
-        headers,
-        body: e.message,
+        }
+      } catch (e) {
+        response = {
+          statusCode: 500,
+          headers,
+          body: e.message,
+        }
+        return callback(null, response);
       }
-      return callback(null, response);
-    }
+    })();
   } else {
     response = {
       statusCode: 400,

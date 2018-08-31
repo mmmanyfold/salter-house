@@ -30,61 +30,69 @@ const cartTemplate = ({ id, custom_url: { url }, imageUrl, name }) => `
 </article>`;
 
 const productItemTemplate = (products) =>
-    products.map(product => {
-        return `
+  products.map(product => {
+    return `
               <li class="product">
                     ${cartTemplate(product)} 
               </li>
        `;
-    });
+  });
 
 export default class Home extends PageManager {
-    constructor(context) {
-        super(context);
-        this.currentUrl = urlUtils.getUrl();
-        this.filterNewItems = null;
-    }
+  constructor(context) {
+    super(context);
+    this.currentUrl = urlUtils.getUrl();
+    this.filterNewItems = null;
+  }
 
-    onReady() {
-        navUtils(this.currentUrl);
+  onReady() {
+    navUtils(this.currentUrl);
 
-        const items = $('[data-filter-product-ids-from-api]').data('filterProductIdsFromApi');
-        this.filterNewItems = items.split(',').filter(e => e).map(e => +e);
-        this.bindEvents();
-    }
+    const items = $('[data-filter-product-ids-from-api]').data('filterProductIdsFromApi');
+    this.filterNewItems = items.split(',').filter(e => e).map(e => +e);
+    this.bindEvents();
+  }
 
-    async fetchProductsRequest(page, limit) {
-        const baseAPIUrl = 'https://atvef3doab.execute-api.us-east-1.amazonaws.com/dev';
-        const endpoint = `${baseAPIUrl}/products?page=${page}&limit=${limit}&filter=[${this.filterNewItems}]`;
-        try {
-            const productDataResponse = await axios(endpoint, {
-                crossdomain: true,
-                });
+  async fetchProductsRequest(page, limit) {
+    const baseAPIUrl = 'https://atvef3doab.execute-api.us-east-1.amazonaws.com/dev';
+    // const baseAPIUrl = 'http://localhost:4000';
+    const endpoint = `${baseAPIUrl}/products?page=${page}&limit=${limit}&filter=[${this.filterNewItems}]`;
+    try {
+      const productDataResponse = await axios(endpoint, {
+        crossdomain: true,
+      });
 
-            if (productDataResponse.status === 200) {
-                const { data: { data } } = productDataResponse;
-                if (_.isEmpty(data)) {
-                    $('#_see-more-btn').hide();
-                }
-                return data;
-            }
-        } catch (e) {
-            console.log(e);
+      if (productDataResponse.status === 200) {
+        const {
+          data: {
+            data,
+            meta: { pagination: { current_page, total_pages } }
+          }
+        } = productDataResponse;
+
+        if (_.isEmpty(data) || current_page === total_pages) {
+          $('#_see-more-btn').hide();
         }
-    }
 
-    bindEvents() {
-        const $seeMoreBtn = $('#_see-more-btn');
-        const $productGrid = $('.productGrid');
-        const limit = 36;
-        let page = 2; // assumes page one has been loaded by handlebars template
-        $seeMoreBtn.click(async () => {
-            const moreProducts = await this.fetchProductsRequest(page, limit);
-            if (!_.isEmpty(moreProducts)) {
-                $productGrid.append(productItemTemplate(moreProducts));
-                page += 1;
-            }
-        });
+        return data;
+      }
+    } catch (e) {
+      throw e;
     }
+  }
+
+  bindEvents() {
+    const $seeMoreBtn = $('#_see-more-btn');
+    const $productGrid = $('.productGrid');
+    const limit = 36;
+    let page = 2; // assumes page one has been loaded by handlebars template
+    $seeMoreBtn.click(async () => {
+      const moreProducts = await this.fetchProductsRequest(page, limit);
+      if (!_.isEmpty(moreProducts)) {
+        $productGrid.append(productItemTemplate(moreProducts));
+        page += 1;
+      }
+    });
+  }
 
 }
