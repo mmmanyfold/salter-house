@@ -168,7 +168,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-item-figure {
     text-align: center;
     float: left;
-    margin-bottom: $cart-item-spacing;
     width: grid-calc(3, $total-columns);
     position: relative;
 
