@@ -10,6 +10,15 @@
 //
 // -----------------------------------------------------------------------------
 
+#new {
+    padding-top: 3.9em;
+    margin-top: -3.9em;
+    @include breakpoint("medium") {
+        padding-top: 10em;
+        margin-top: -10em;
+    }
+}
+
 .productGrid {
 
     @include u-listBullets("none");
