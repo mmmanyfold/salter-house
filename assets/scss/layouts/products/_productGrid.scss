@@ -153,14 +153,17 @@
 }
 
 .new-label {
+    display: none;
     color: #F39838;
     z-index: 20;
     position: absolute;
     font-weight: 300;
     font-size: 1.1em;
     margin: 0.5em 1.3em;
+
     @include breakpoint("medium") {
         font-size: 1.3em;
+        display: block;
     }
     @include breakpoint("large") {
         font-size: 1em;

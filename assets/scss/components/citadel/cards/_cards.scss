@@ -16,17 +16,26 @@
     margin-top: $card-figure-marginTop;
     position: relative;
 
-    &:hover {
-        // scss-lint:disable NestingDepth
+    .card-figcaption {
+        opacity: 1;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    @include breakpoint("medium") {
         .card-figcaption {
-            opacity: 1;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            opacity: 0;
         }
-        .new-label {
-            display: none;
+        &:hover {
+            // scss-lint:disable NestingDepth
+            .card-figcaption {
+                opacity: 1;
+            }
+            .new-label {
+                display: none;
+            }
         }
     }
 }
@@ -41,7 +50,11 @@ h5.overlay-text {
     color: #007A51;
     text-align: left;
     letter-spacing: 0.07rem;
-    margin: 18px 21px;
+    margin: 8px 8.5px;
+
+    @include breakpoint("medium") {
+        margin: 18px 21px;
+    }
 }
 
 h5.overlay-text, .card-figcaption-button {
@@ -119,6 +132,7 @@ h5.overlay-text, .card-figcaption-button {
 }
 
 .card-figcaption-button {
+    display: none;
     border: $card-figcaption-button-border;
     border-radius: 5px;
     margin: 18px;
@@ -129,6 +143,10 @@ h5.overlay-text, .card-figcaption-button {
     &:active {
         background-color: $card-figcaption-button-backgroundHover;
         border: $card-figcaption-button-border;
+    }
+
+    @include breakpoint("medium") {
+        display: block;
     }
 }
 
