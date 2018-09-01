@@ -460,12 +460,10 @@
     > .container {
         padding: 0;
     }
-
     .form {
         margin: 0;
         display: flex;
     }
-
     fieldset {
         border: none;
         border-bottom: 0.1rem solid #007A51;
@@ -480,12 +478,15 @@
             border: none;
             letter-spacing: 0.03em;
             font-size: 1.1em;
+            padding: 0 0.3em;
         }
     }
-
-
     .form-field {
         margin-bottom: 0;
+    }
+    input[type="button"] {
+        -webkit-appearance: none;
+        border-radius: 0;
     }
 }
 

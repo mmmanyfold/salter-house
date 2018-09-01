@@ -246,6 +246,20 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 }
 
+.configure-product {
+    .form-field {
+        text-align: center;
+    }
+    .form-select--small {
+        max-width: 100%;
+
+        @include breakpoint("small") {
+            max-width: 20em;
+            margin: auto;
+        }
+    }
+}
+
 .cart-item-option {
     margin-top: 0.5em;
     font-weight: bold;
@@ -324,7 +338,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-item-price {
     margin-bottom: 0.28em;
-    margin-top: 0.3em !important;
+    margin-top: 0.7em !important;
 
     @include breakpoint("medium") {
         margin-top: 0 !important;
@@ -406,9 +420,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     .cart-item-option-description {
         color: $body-font-color;
         margin-bottom: 0;
-        margin-top: 0.3em;
         .button {
             margin-bottom: 0;
+        }
+        @include breakpoint("medium") {
+            margin-top: 0.3em;
         }
     }
 
