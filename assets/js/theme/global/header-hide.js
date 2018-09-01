@@ -18,7 +18,7 @@ function hasScrolled() {
     if (Math.abs(lastScrollTop - st) <= delta)
         return;
 
-    if (isHome && st < 584) {
+    if (isHome && st < 100) {
         header.addClass('header-home');
     } else {
         header.removeClass('header-home');
