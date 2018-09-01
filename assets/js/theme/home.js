@@ -7,23 +7,29 @@ import _ from 'lodash';
 
 const loadingGif = 'https://s3.us-east-2.amazonaws.com/salter-house-images/loading-apples.gif';
 
-const cartTemplate = ({ id, custom_url: { url }, imageUrl, name }) => `
+function twoDecimalPlaces(num) {
+  return parseFloat(Math.round(num * 100) / 100).toFixed(2);
+}
+
+const cartTemplate = ({ id, custom_url: { url }, imageUrl, name, price }) => `
 <article class="card">
     <figure class="card-figure">
         <a href="${url}">
             <div class="card-img-container">
                 <img 
                   class="card-image lazyload" 
-                  src="${loadingGif}" 
+                  src="${loadingGif}"
                   data-sizes="auto" 
-                  data-src="${imageUrl}" 
-                  alt="${name}" 
-                  title="${name}">
+                  data-src="${imageUrl}">
             </div>
         </a>
         <figcaption class="card-figcaption">
-            <div class="card-figcaption-body">
-               <a href="#" class="button button--small card-figcaption-button quickview" data-product-id="${id}">Quick view</a>              
+            <h5 class="overlay-text">${name}</h5>
+            <div class="overlay-bottom">
+                <h5 class="overlay-text">$${twoDecimalPlaces(price)}</h5>
+                <div class="card-figcaption-body">
+                      <a href="#" class="button button--small card-figcaption-button quickview" data-product-id="${id}">PREVIEW</a>
+                </div>
             </div>
         </figcaption>
     </figure>

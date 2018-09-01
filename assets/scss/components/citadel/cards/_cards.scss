@@ -15,12 +15,66 @@
 .card-figure {
     margin-top: $card-figure-marginTop;
     position: relative;
-    &:hover {
 
-        // scss-lint:disable NestingDepth
+    .card-figcaption {
+        opacity: 1;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    @include breakpoint("medium") {
         .card-figcaption {
-            opacity: 1;
+            opacity: 0;
         }
+        &:hover {
+            // scss-lint:disable NestingDepth
+            .card-figcaption {
+                opacity: 1;
+            }
+            .new-label {
+                display: none;
+            }
+        }
+    }
+}
+
+.overlay-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h5.overlay-text {
+    color: #007A51;
+    text-align: left;
+    letter-spacing: 0.07rem;
+    margin: 8px 8.5px;
+
+    @include breakpoint("medium") {
+        margin: 18px 21px;
+    }
+}
+
+h5.overlay-text, .card-figcaption-button {
+    font-size: 10px;
+    line-height: 1.2em;
+
+    @include breakpoint(720px) {
+        font-size: 11px;
+    }
+    @include breakpoint("medium") {
+        font-size: 13px;
+    }
+    @include breakpoint(1028px) {
+        font-size: 14px;
+    }
+    @include breakpoint(1190px) {
+        font-size: 16px;
+    }
+    @include breakpoint(1300px) {
+        font-size: 17px;
     }
 }
 
@@ -39,9 +93,10 @@
 }
 
 .card-figcaption-body {
-    display: $card-figcaption-body-display;
     pointer-events: all; // 1
-    transform: translate3d(0, -50%, 0); // 2
+    position: initial;
+    top: 0;
+    transform: none;
 }
 
 .card-image {
@@ -77,17 +132,21 @@
 }
 
 .card-figcaption-button {
+    display: none;
     border: $card-figcaption-button-border;
-    display: $card-figcaption-button-display;
-    margin: $card-figcaption-button-margin;
+    border-radius: 5px;
+    margin: 18px;
+    line-height: 1em;
+    background-color: transparent;
+    padding: 0.2em 0.45em;
 
     &:active {
         background-color: $card-figcaption-button-backgroundHover;
         border: $card-figcaption-button-border;
     }
 
-    + .card-figcaption-button {
-        margin: $card-figcaption-button-margin;
+    @include breakpoint("medium") {
+        display: block;
     }
 }
 
