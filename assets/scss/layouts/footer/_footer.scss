@@ -151,9 +151,9 @@
     text-align: center;
     display: none;
     img {
-        width: 65px;
+        width: 70px;
         @include breakpoint(925px) {
-            width: 85px;
+            width: 90px;
         }
     }
     @include breakpoint(700px) {

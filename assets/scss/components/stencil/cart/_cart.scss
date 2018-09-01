@@ -72,7 +72,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     }
 
     @include breakpoint("medium") {
-      padding: 0 2.25em 6em 2.25em;
+      padding: 0 2.25em;
     }
 }
 
@@ -568,9 +568,30 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-total-button {
     border-radius: 7px;
-    padding: 0.37em 0.45em 0.4em 0.5em;
+    margin-bottom: 0.12em;
+}
+
+.cart-total-value .cart-total-button {
+    padding: 0.45em 0 0.45em 0.27em;
+    font-size: 0.9em;
+    margin-bottom: 0.12em;
+
+    @include breakpoint(432px) {
+        padding: 0.37em 0.4em 0.33em 0.44em;
+    }
+    @include breakpoint("medium") {
+        padding-left: 0.47em;
+    }
+}
+
+.cart-actions .cart-total-button {
+    padding: 0.4em 0 0.45em 0;
     font-size: 1.1em;
     margin-bottom: 0.12em;
+
+    @include breakpoint(432px) {
+        padding: 0.39em 0.45em 0.4em 0.5em;
+    }
 }
 
 .cart-total-checkout {
@@ -583,7 +604,6 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
     .button {
         width: 100%;
-        font-size: 0.85em;
         background-color: #007A51;
         color: white;
     }
