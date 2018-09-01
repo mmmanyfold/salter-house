@@ -18,6 +18,7 @@
     background-color: $footer-background;
     padding: spacing("half") spacing("half") spacing("single");
     color: stencilColor("color-textSecondary");
+
     @include breakpoint("small") {
         padding: (spacing("single") + spacing("quarter"));
     }
@@ -27,10 +28,6 @@
     @include breakpoint("large") {
         padding: spacing("double");
     }
-}
-
-.footer-info-col--social {
-    width: 100%;
 }
 
 .footer-info-col--left {
@@ -56,90 +53,6 @@
 // Content
 // -----------------------------------------------------------------------------
 
-
-.footer-info {
-    @include breakpoint(700px) {
-        display: grid;
-        grid-gap: 0;
-        grid-template-columns: 2fr 1fr 2fr;
-    }
-    @include breakpoint(925px) {
-        display: grid;
-        grid-gap: 0;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-.footer-info-list {
-  list-style: none;
-  margin-left: 0;
-  text-align: left;
-
-  a {
-    color: stencilColor("color-textSecondary");
-    text-decoration: none;
-
-    // scss-lint:disable NestingDepth
-    &:hover {
-      color: stencilColor("color-textSecondary--hover");
-    }
-    // scss-lint:enable NestingDepth
-  }
-
-  @include breakpoint(700px) {
-    text-align: left;
-  }
-}
-
-.footer-links {
-    font-family: MS-PMincho;
-    font-size: 1.25rem; // 2
-    width: 280px;
-    margin: 0 auto;
-    margin-bottom: 2em;
-    text-align: left;
-    vertical-align: top;
-    > :not(:last-child) {
-        padding-right: 4.4em;
-    }
-
-    @include breakpoint(700px) {
-        font-size: 1.1rem;
-        width: auto;
-        margin: 0;
-        float: right;
-        justify-self: start;
-        > :not(:last-child) {
-            padding-right: 2em;
-        }
-    }
-
-    @include breakpoint(925px) {
-        font-size: 1.2rem;
-    }
-
-    @include breakpoint(994px) {
-        font-size: 1.4rem;
-    }
-}
-
-.footer-logo {
-    text-align: center;
-    margin-bottom: 3.8em;
-    display: none;
-    img {
-        width: 60px;
-
-        @include breakpoint(925px) {
-            width: 80px;
-        }
-    }
-
-    @include breakpoint(700px) {
-        display: block;
-    }
-}
-
 .footer-logo-medium {
     text-align: center;
     margin-bottom: 3em;
@@ -153,6 +66,101 @@
     }
 }
 
+.footer-flex {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    @include breakpoint(700px) {
+        display: grid;
+        grid-gap: 0;
+        grid-template-columns: 2fr 1fr 2fr;
+        align-items: initial;
+    }
+    @include breakpoint(925px) {
+        display: grid;
+        grid-gap: 0;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.footer-links {
+    font-family: MS-PMincho;
+    font-size: 1.26rem; // 2
+    line-height: 1.6rem;
+    width: 280px;
+    text-align: left;
+    vertical-align: top;
+    > :not(:last-child) {
+        padding-right: 4.4em;
+    }
+
+    @include breakpoint(700px) {
+        font-size: 1.1rem;
+        line-height: 1.37rem;
+        width: auto;
+        margin: 0;
+        float: right;
+        justify-self: start;
+        > :not(:last-child) {
+            padding-right: 2em;
+        }
+    }
+    @include breakpoint(925px) {
+        font-size: 1.25rem;
+        line-height: 1.72rem;
+    }
+    @include breakpoint(994px) {
+        font-size: 1.37rem;
+        line-height: 1.95rem;
+    }
+}
+
+.footer-info-list {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0em;
+    a {
+        color: stencilColor("color-textSecondary");
+        text-decoration: none;
+        // scss-lint:disable NestingDepth
+        &:hover {
+          color: stencilColor("color-textSecondary--hover");
+        }
+        // scss-lint:enable NestingDepth
+    }
+
+    @include breakpoint("small") {
+        li {
+            margin-bottom: 0.2rem;
+        }
+    }
+    @include breakpoint(925px) {
+        li {
+            margin-bottom: 0.2rem;
+        }
+    }
+    @include breakpoint(994px) {
+        li {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.footer-logo {
+    text-align: center;
+    display: none;
+    img {
+        width: 65px;
+        @include breakpoint(925px) {
+            width: 85px;
+        }
+    }
+    @include breakpoint(700px) {
+        display: block;
+    }
+}
+
 .footer-right {
     @include breakpoint(700px) {
         justify-self: end;
@@ -162,10 +170,9 @@
 .footer-right-content {
     font-size: 1.1rem;
     width: 280px;
-    margin: 0 auto;
 
-    article {
-        //padding: 0 0.64em;
+    .form-field {
+        margin-bottom: 0;
     }
     input {
         border: 0;
@@ -216,10 +223,6 @@
     }
 }
 
-.footer-newsletter-summary {
-    text-align: left;
-}
-
 address {
     font-style: normal;
     margin-bottom: 2em;
@@ -229,40 +232,9 @@ address {
 .footer-copyright {
     text-align: center;
     width: 100%;
+    margin-top: 1em;
 
     @include breakpoint(700px) {
         text-align: right;
-    }
-}
-
-.footer-payment-icons {
-    height: remCalc(40);
-    margin-top: spacing("single");
-
-    @include breakpoint("medium") {
-        margin-top: spacing("double");
-    }
-
-    .footer-payment-icon {
-        height: 100%;
-        margin: spacing("quarter");
-        vertical-align: middle;
-        width: remCalc(50);
-    }
-
-    svg {
-        fill: stencilColor("icon-color");
-    }
-}
-
-.footer-geotrust-ssl-seal {
-    @include breakpoint("small") {
-        bottom: 0;
-        position: absolute;
-        right: 16px;
-    }
-
-    table {
-        margin: auto;
     }
 }

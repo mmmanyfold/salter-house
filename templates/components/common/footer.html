@@ -1,5 +1,8 @@
 <footer class="footer" role="contentinfo">
-    <section class="footer-info">
+    <div class="footer-logo-medium">
+        <img src="{{cdn 'assets/img/logo.png'}}"/>
+    </div>
+    <div class="footer-flex">
         <div class="footer-links">
             <article data-section-type="footer-webPages">
                 <ul class="footer-info-list">
@@ -52,15 +55,6 @@
                 </article>
             </div>
         </div>
-
-    </section>
-    {{#if theme_settings.geotrust_ssl_common_name}}
-        <div class="footer-geotrust-ssl-seal">
-            {{> components/common/geotrust-ssl-seal}}
-        </div>
-    {{/if}}
-    <div class="footer-logo-medium">
-        <img src="{{cdn 'assets/img/logo.png'}}"/>
     </div>
     <div class="footer-copyright">
         <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
