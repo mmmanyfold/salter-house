@@ -1,7 +1,9 @@
 import $ from "jquery";
 import Url from 'url';
+import Global from '../global';
 
 export default function (currentUrl) {
+    const mobileMenu = Global.mobileMenuGetter();
     if (currentUrl !== '/') {
         const selector = $('#newArrivals-link');
         selector
@@ -18,6 +20,7 @@ export default function (currentUrl) {
     }
     $('#newArrivals-link').click(() => {
         const url = Url.parse(window.location.href, true);
-        window.location.href = `${url.protocol}//${url.host}/#new`
+        window.location.href = `${url.protocol}//${url.host}/#new`;
+        mobileMenu.hide();
     });
 }

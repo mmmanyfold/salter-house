@@ -46,6 +46,9 @@ export default class Home extends PageManager {
   }
 
   onReady() {
+    if ($(window).scrollTop() > 0) {
+      $('.header').removeClass('header-home')
+    }
     navUtils(this.currentUrl);
 
     const items = $('[data-filter-product-ids-from-api]').data('filterProductIdsFromApi');
