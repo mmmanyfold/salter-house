@@ -7,7 +7,7 @@ const headers = {
   "Access-Control-Allow-Origin": "*", // Required for CORS support to work
 };
 
-const productRequestConfig = (page = 1, limit = 50) => ({
+const productRequestConfig = (page = 1, limit = 48) => ({
   url: `${env['URL']}/v3/catalog/products`,
   headers: {
     'X-Auth-Client': env['X_AUTH_CLIENT'],

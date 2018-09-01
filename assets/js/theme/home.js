@@ -64,7 +64,6 @@ export default class Home extends PageManager {
 
   async fetchProductsRequest(page, limit) {
     const baseAPIUrl = 'https://hi1q1w1kij.execute-api.us-east-1.amazonaws.com/dev';
-    // const baseAPIUrl = 'http://localhost:4000';
     const endpoint = `${baseAPIUrl}/products?page=${page}&limit=${limit}&filter=[${this.filterNewItems}]`;
     try {
       const productDataResponse = await axios(endpoint, {
