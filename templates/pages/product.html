@@ -26,8 +26,8 @@ product:
             {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
         {{/all}}
         {{#if product.related_products}}
-            <div class="related-products">
-                <h5>Related Products</h5>
+            <div>
+                <h5 class="related-products">Related Products</h5>
                 {{> components/products/grid products=product.related_products}}
             </div>
         {{/if}}
