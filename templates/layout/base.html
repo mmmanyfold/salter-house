@@ -63,5 +63,14 @@
 
         {{{footer.scripts}}}
         {{{snippet 'footer'}}}
+
+        <script src="../assets/js/mailchimp.js"></script>
+        <script type='text/javascript'>(function ($) {
+          window.fnames = new Array();
+          window.ftypes = new Array();
+          fnames[0] = 'EMAIL';
+          ftypes[0] = 'email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);</script>
     </body>
 </html>
