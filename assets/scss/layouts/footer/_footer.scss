@@ -88,7 +88,7 @@
     font-family: MS-PMincho;
     font-size: 1.26rem; // 2
     line-height: 1.6rem;
-    width: 280px;
+    width: 277px;
     text-align: left;
     vertical-align: top;
     > :not(:last-child) {
@@ -110,8 +110,8 @@
         font-size: 1.25rem;
         line-height: 1.72rem;
     }
-    @include breakpoint(994px) {
-        font-size: 1.37rem;
+    @include breakpoint(1190px) {
+        font-size: 1.33rem;
         line-height: 1.95rem;
     }
 }
@@ -140,7 +140,7 @@
             margin-bottom: 0.2rem;
         }
     }
-    @include breakpoint(994px) {
+    @include breakpoint(1190px) {
         li {
             margin-bottom: 0;
         }
@@ -169,7 +169,7 @@
 
 .footer-right-content {
     font-size: 1.1rem;
-    width: 280px;
+    width: 277px;
 
     .form-field {
         margin-bottom: 0;
@@ -181,7 +181,7 @@
         background: none;
     }
     #nl_label {
-        margin-right: 0.2em;
+        margin-right: 0.15em;
         letter-spacing: 0.05em;
     }
     #mce-EMAIL {
@@ -190,6 +190,14 @@
         width: 94px;
         height: 20px;
         padding: 0 0.4em;
+        @include breakpoint(700px) {
+            width: 74px;
+            height: 15px;
+        }
+        @include breakpoint(925px) {
+            width: 94px;
+            height: 20px;
+        }
     }
     .response {
         text-transform: none;
@@ -218,8 +226,8 @@
     @include breakpoint(925px) {
         font-size: 1.1rem;
     }
-    @include breakpoint(994px) {
-        font-size: 1.17rem;
+    @include breakpoint(1190px) {
+        font-size: 1.15rem;
     }
 }
 
