@@ -5,7 +5,8 @@
             [ring.util.http-response :as response]
             [compojure.route :as route]
             [sh-api.env :refer [defaults]]
-            [mount.core :as mount]))
+            [mount.core :as mount]
+            [sh-api.routes.api :refer [api-routes]]))
 
 (mount/defstate init-app
   :start ((or (:init defaults) identity))
@@ -15,6 +16,7 @@
   :start
   (middleware/wrap-base
     (routes
+          (-> #'api-routes (wrap-routes middleware/wrap-formats))
           #'service-routes
           (route/not-found
              "page not found"))))

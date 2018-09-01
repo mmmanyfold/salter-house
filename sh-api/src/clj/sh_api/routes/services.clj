@@ -4,7 +4,7 @@
             [schema.core :as s]))
 
 (defapi service-routes
-  {:swagger {:ui "/swagger-ui"
+  {:swagger {:ui "/swagger"
              :spec "/swagger.json"
              :data {:info {:version "1.0.0"
                            :title "Sample API"

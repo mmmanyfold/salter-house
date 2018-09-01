@@ -46,4 +46,5 @@
   (.addShutdownHook (Runtime/getRuntime) (Thread. stop-app)))
 
 (defn -main [& args]
-  (start-app args))
+  (start-app args)
+  (sh-api.routes.api/init-cache))
