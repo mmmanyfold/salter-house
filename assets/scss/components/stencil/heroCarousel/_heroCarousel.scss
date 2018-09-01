@@ -19,6 +19,7 @@
 
 .heroCarousel {
     margin-top: 1.6em;
+    z-index: 20;
 
     @include breakpoint("medium") {
         margin-top: -9.2em;
