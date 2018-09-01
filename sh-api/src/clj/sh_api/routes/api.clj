@@ -5,9 +5,14 @@
       [clojure.tools.logging :as log]
       [jsonista.core :as json]
       [taoensso.carmine :as car :refer [wcar]]
+      [sh-api.sni :refer [sni-configure]]
       [clojure.core.async :as async :refer [<! timeout chan go]]))
 
+(def sni-client (http/make-client {:ssl-configurer sni-configure}))
+
 (declare init-cache)
+
+(declare fetch-products-from-api)
 
 (declare mapper)
 
@@ -40,7 +45,7 @@
 
 (defn init-cache []
       (log/info "_*_ BIG-COMMERCE API CACHE :: STARTED _*_")
-      (prn "....")
+      (prn "fetching...")
       (log/info "_*_ BIG-COMMERCE API CACHE :: COMPLETED _*_"))
 
 (def mapper
@@ -48,19 +53,21 @@
     {:decode-key-fn keyword
      :encode-key-fn name}))
 
-;(defn fetch-products-from-api
-;      "retrieve all items available for given resource table based on :offset"
-;      [resource & [offset]]
-;      (let [endpoint ""
-;            options {:query-params (when offset {:offset offset})}]
-;           (let [{:keys [error body]} @(http/get endpoint options)]
-;                (if-not error
-;                        {:error error}))))
+;; `${baseAPIUrl}/products?page=${page}&limit=${limit}&filter=[${this.filterNewItems}]`
 
-(defn products-handler [req]
-  ;redis-data (wcar* (car/get path-info))]
-  (let []
-   (response/ok {:test "foo"})))
+(defn fetch-products-from-api [page]
+  (let [endpoint "https://hi1q1w1kij.execute-api.us-east-1.amazonaws.com/dev/serverless-dev-getProducts"
+        options {:query-params {:page page}
+                 :client sni-client}]
+       (let [{:keys [error body]} @(http/get endpoint options)]
+            (if-not error
+              {:body body}
+              {:error error}))))
+
+;
+(defn products-handler [{query-params :query-params}]
+  (let [redis-data (wcar* (car/get (str "/products/" (:page query-params))))]
+    (response/ok (json/read-value "{}" mapper))))
 
 (defroutes api-routes
   (context "/api" []

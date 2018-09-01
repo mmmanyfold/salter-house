@@ -8,7 +8,7 @@
                  [compojure "1.6.1"]
                  [cprop "0.1.11"]
                  [funcool/struct "1.3.0"]
-                 [luminus-http-kit "0.1.6"]
+                 [http-kit "2.3.0-alpha4"]
                  [luminus/ring-ttl-session "0.3.2"]
                  [markdown-clj "1.0.2"]
                  [metosin/compojure-api "1.1.12"]

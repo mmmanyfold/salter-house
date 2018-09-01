@@ -1,7 +1,7 @@
 (ns sh-api.core
   (:require [sh-api.handler :as handler]
             [sh-api.nrepl :as nrepl]
-            [luminus.http-server :as http]
+            [sh-api.http :as http]
             [sh-api.config :refer [env]]
             [clojure.tools.cli :refer [parse-opts]]
             [clojure.tools.logging :as log]
