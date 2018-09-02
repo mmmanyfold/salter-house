@@ -316,7 +316,7 @@
     background-color: stencilColor("navUser-indicator-backgroundColor");
     border-radius: 50%;
     color: $green;
-    border: 0.04em solid $green;
+    border: 1px solid $green;
     display: none;
     font-size: 11px;
     font-weight: fontWeight("normal");

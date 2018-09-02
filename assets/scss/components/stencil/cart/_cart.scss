@@ -106,7 +106,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-list {
     display: block; // 1
-    border-bottom: 0.15rem solid $green;
+    border-bottom: 1px solid $green;
 
     @include breakpoint("medium") {
         display: table-row-group; // 1
@@ -122,7 +122,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     clear: both;
     display: block; // 1
     height: auto;
-    border-top: 0.15rem solid $green;
+    border-top: 1px solid $green;
     padding-bottom: 1.1em;
     padding-top: 1.25em;
 
@@ -147,7 +147,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 
 .cart-item-title, .cart-item-info {
     @include breakpoint("medium") {
-        border-top: 0.15rem solid $green;
+        border-top: 1px solid $green;
     }
 }
 
@@ -206,7 +206,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     line-height: 1.4rem;
 
     @include breakpoint("medium") {
-        border-top: 0.15rem solid $green;
+        border-top: 1px solid $green;
         line-height: 1.7em;
         display: table-cell;
         padding: $cart-item-spacing $cart-item-spacing $cart-item-spacing 0.1em;
