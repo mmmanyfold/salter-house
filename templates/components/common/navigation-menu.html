@@ -21,13 +21,15 @@
                 <div class="category-dot-container">
                     <div class="category-dot-selected-orange"></div>
                     <div class="category-dot-unselected-orange u-hiddenVisually"></div>
-                    <a id="newArrivals-link" class="navPages-action">→NEW</a>
+                    <a id="newArrivals-link" class="navPages-action" href="/new">→NEW</a>
                 </div>
             </li>
             {{#each categories}}
+                {{#unless name '==' 'New'}}
                 <li class="navPages-item">
                     {{> components/common/navigation-list}}
                 </li>
+                {{/unless}}
             {{/each}}
         </ul>
     </div>

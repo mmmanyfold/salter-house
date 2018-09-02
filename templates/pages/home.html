@@ -24,15 +24,12 @@ blog:
         {{> components/common/alert-info message}}
     {{/each}}
 
-<div id="new" class="main full">
-    <!--{{#if products.top_sellers}}-->
-        <!--{{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}-->
+<div class="main full">
+    <!--{{#if products.new}}-->
+      <!--{{> components/products/grid-new products=products.new columns=theme_settings.homepage_new_products_column_count}}-->
     <!--{{/if}}-->
-    {{#if products.new}}
-      {{> components/products/grid-new products=products.new columns=theme_settings.homepage_new_products_column_count}}
-    {{/if}}
     {{#if products.featured}}
-      {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}
 </div>
 {{/partial}}
