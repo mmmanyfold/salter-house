@@ -38,7 +38,7 @@ export default class Category extends CatalogPage {
         }
 
         // if /new
-        if ($productGridNew.length ) {
+        if ($productGridNew.length) {
           $newLink
             .siblings('div.category-dot-selected-orange')
             .toggleClass('u-hiddenVisually');
