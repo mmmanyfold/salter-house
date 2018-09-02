@@ -25,7 +25,7 @@
                 </div>
             </li>
             {{#each categories}}
-                {{#unless @first}}
+                {{#unless name '==' 'New'}}
                 <li class="navPages-item">
                     {{> components/common/navigation-list}}
                 </li>
