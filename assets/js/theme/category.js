@@ -13,7 +13,9 @@ export default class Category extends CatalogPage {
         this.currentPage = 1;
     }
 
-    onReady() {
+    async onReady() {
+        const $productGridNew = $('#_productGridNew');
+        const $newLink = $('#newArrivals-link');
         navUtils(this.currentUrl)
         const currentCategoryNode = $('.navPages-action').filter((index, elem) => {
             const url = $(elem).attr('href');
@@ -34,6 +36,22 @@ export default class Category extends CatalogPage {
             this.onSortBySubmit = this.onSortBySubmit.bind(this);
             hooks.on('sortBy-submitted', this.onSortBySubmit);
         }
+
+        // if /new
+        if ($productGridNew.length ) {
+          $newLink
+            .siblings('div.category-dot-selected-orange')
+            .toggleClass('u-hiddenVisually');
+          const page = await this.getPage('/categories', {
+            sort: 'newest',
+            limit: this.context.categoryProductsPerPage,
+          });
+          const liNodes = this.processRawHtml(page);
+          $productGridNew.append(liNodes);
+          $productGridNew.find('.new-label')
+            .each((i, p) => $(p).removeClass('u-hiddenVisually'));
+        }
+
         this.bindEvents();
     }
 
@@ -74,7 +92,7 @@ export default class Category extends CatalogPage {
         this.currentPage += 1; // assumes page one has been loaded by handlebars template
         $seeMoreBtn.click(async () => {
             const sort = $('#sort').find(":selected").text().toLowerCase();
-            const nextPage = await this.getNextPage(window.location.pathname, {
+            const nextPage = await this.getPage(window.location.pathname, {
                 sort,
                 page: this.currentPage,
                 limit,
@@ -87,7 +105,7 @@ export default class Category extends CatalogPage {
         });
     }
 
-    async getNextPage(url, params) {
+    async getPage(url, params) {
         return new Promise((resolve, reject) =>
             api.getPage(url, {
                 params: params

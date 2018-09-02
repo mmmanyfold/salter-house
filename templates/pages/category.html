@@ -22,7 +22,7 @@ category:
         {{#if category.products}}
             {{> components/category/product-listing}}
         {{else}}
-            <p>{{lang 'categories.no_products'}}</p>
+            {{> components/products/grid-new}}
         {{/if}}
     </main>
 </div>
