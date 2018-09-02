@@ -10,6 +10,7 @@ export default class Category extends CatalogPage {
     constructor(context) {
         super(context);
         this.currentUrl = urlUtils.getUrl();
+        this.currentPage = 1;
     }
 
     onReady() {
@@ -70,17 +71,19 @@ export default class Category extends CatalogPage {
         const $seeMoreBtn = $('#_see-more-btn');
         const $productGrid = $('.productGrid');
         const limit = this.context.categoryProductsPerPage;
-        let page = 2; // assumes page one has been loaded by handlebars template
+        this.currentPage += 1; // assumes page one has been loaded by handlebars template
         $seeMoreBtn.click(async () => {
             const sort = $('#sort').find(":selected").text().toLowerCase();
             const nextPage = await this.getNextPage(window.location.pathname, {
                 sort,
-                page,
+                page: this.currentPage,
                 limit,
             });
             const liNodes = this.processRawHtml(nextPage);
             $productGrid.append(liNodes);
-            page += 1;
+            this.currentPage += 1;
+            const manyLi = $('.productGrid li').length;
+            window.history.replaceState({ page: this.currentPage }, null, `?page=1&limit=${manyLi}`);
         });
     }
 
