@@ -18,9 +18,7 @@
         {{/or}}
         <a href="{{url}}">
             <div class="card-img-container">
-                {{#if new}}
-                    <p class="new-label">NEW</p>
-                {{/if}}
+                <p class="new-label u-hiddenVisually">NEW</p>
                 <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}"">
             </div>
         </a>
