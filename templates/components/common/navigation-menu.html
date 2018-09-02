@@ -25,9 +25,11 @@
                 </div>
             </li>
             {{#each categories}}
+                {{#unless @first}}
                 <li class="navPages-item">
                     {{> components/common/navigation-list}}
                 </li>
+                {{/unless}}
             {{/each}}
         </ul>
     </div>

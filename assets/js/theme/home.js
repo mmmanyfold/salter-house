@@ -12,15 +12,15 @@ export default class Home extends PageManager {
   }
 
   async onReady() {
-    const $productGrid = $('.productGrid');
+    const $productGridNew = $('.productGridNew');
     const nextPage = await this.getNextPage('/categories', {
       page: 1,
       limit: 12,
       sort: 'newest',
     });
     const liNodes = this.processRawHtml(nextPage);
-    $productGrid.append(liNodes);
-    $productGrid.find('.new-label')
+    $productGridNew.append(liNodes);
+    $productGridNew.find('.new-label')
       .each((i, p) => $(p).removeClass('u-hiddenVisually'));
     this.bindEvents();
     navUtils(this.currentUrl);
@@ -31,7 +31,7 @@ export default class Home extends PageManager {
 
   bindEvents() {
     const $seeMoreBtn = $('#_see-more-btn');
-    const $productGrid = $('.productGrid');
+    const $productGridNew = $('.productGridNew');
     const limit = this.categoryProductsPerPage;
     let page = 2; // assumes page one has been loaded by onReady() call
     $seeMoreBtn.click(async () => {
@@ -44,7 +44,7 @@ export default class Home extends PageManager {
       if (liNodes.length < this.categoryProductsPerPage) {
         $('#_see-more-btn').hide();
       }
-      $productGrid.append(liNodes);
+      $productGridNew.append(liNodes);
       page += 1;
     });
   }
@@ -65,7 +65,7 @@ export default class Home extends PageManager {
   processRawHtml(html) {
     const template = document.createElement('div');
     template.innerHTML = html;
-    return template.querySelectorAll('.productGrid li');
+    return template.querySelectorAll('.productGridNew li');
   }
 
 }
