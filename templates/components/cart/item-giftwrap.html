@@ -9,14 +9,6 @@
                     <a class="button button--secondary" href="{{gift_wrapping.remove_url}}" onclick="return confirm('{{lang 'cart.gift_wrapping.remove_confirm'}}')">{{lang 'cart.gift_wrapping.remove'}}</a>
                 </span>
             </dd>
-            {{#if gift_wrapping.message}}
-                <dt class="cart-item-option-title">
-                    {{lang 'cart.gift_wrapping.gift_message'}}:
-                </dt>
-                <dd class="cart-item-option-description">
-                    {{gift_wrapping.message}}
-                </dd>
-            {{/if}}
         {{else}}
             <dd class="cart-item-option-description">
                 <a class="button button--secondary" href="" data-item-giftwrap="{{id}}">{{lang 'cart.gift_wrapping.add'}}</a>
