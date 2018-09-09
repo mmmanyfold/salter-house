@@ -636,7 +636,9 @@ export default class ProductDetails {
 
     bindEvents() {
       $(this.$zoomModalBtn).click(() => {
-        const currentSlideImgUrl = _.nth(this.$zoomModal.data('productImages').trim().split(','), window._currentSlide);
+        const images = this.$zoomModal.data('productImages')
+          .trim().split(',').filter(e => e);
+        const currentSlideImgUrl = _.trim(_.nth(images, window._currentSlide));
         $(this.$zoomModalContentImg).attr('src', currentSlideImgUrl);
         this.zoomModal.open({ clearContent: false, pending: false });
       })
