@@ -223,6 +223,10 @@
 }
 
 #_zoomModalBtn {
+  display: none;
+  @include breakpoint("small") {
+    display: block;
+  }
   @include breakpoint(2056px) {
     display: none;
   }
