@@ -53,6 +53,11 @@
     @include breakpoint("medium") {
         font-size: 32px;
     }
+
+    img {
+      width: 25px;
+      margin-bottom: 11px;
+    }
 }
 
 .modal-body {
