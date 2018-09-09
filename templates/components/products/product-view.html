@@ -15,7 +15,7 @@
             <div class="productView-carousel-slide {{#if @first}}productView-carousel-slide--first{{/if}}">
                 <div class="productView-carousel-image-wrapper">
                     <img data-image-gallery-item
-                         data-image-gallery-zoom-image-url="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}"
+                         data-carousel-index="{{@index}}"
                          class="productView-carousel-image lazyload"
                          data-sizes="auto"
                          src="{{cdn 'img/loading-apples.gif'}}"
@@ -26,6 +26,7 @@
             </div>
             {{/each}}
         </section>
+        <div id="_zoomModalBtn"class="glyphicons glyphicons-plus">+</div>
         </div>
 
         <!--<figure class="productView-image"-->
@@ -203,4 +204,23 @@
     </a>
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
+</div>
+
+<div id="zoomModal" class="modal" data-reveal
+     data-product-images="
+     {{#each product.images}}
+        {{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}},
+     {{/each}}">
+  <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
+    <span aria-hidden="true">&#215;</span>
+  </a>
+  <div class="modal-content">
+    <img id="_zoomModalContentImg"
+         data-image-gallery-item
+         class="productView-carousel-image lazyload"
+         data-sizes="auto"
+         src="{{cdn 'img/loading-apples.gif'}}"
+         data-src="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}"/>
+  </div>
+  <div class="loadingOverlay"></div>
 </div>

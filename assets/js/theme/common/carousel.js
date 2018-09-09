@@ -7,7 +7,7 @@ export default function () {
     if ($carousel.length) {
         $carousel.slick();
     }
-
+    window.foo = $carousel;
     const $carouselProduct = $('.productView-carousel');
 
     if ($carouselProduct.length) {
@@ -20,7 +20,14 @@ export default function () {
             arrows: false,
             vertical: false,
             verticalSwiping: false,
-            lazyLoad: "anticipated"
+            lazyLoad: "anticipated",
+            onAfterChange: () => {
+              console.log($(this).slickCurrentSlide()+1);
+            },
+        });
+
+        $carouselProduct.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          console.log(nextSlide);
         });
     }
 

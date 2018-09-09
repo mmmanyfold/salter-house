@@ -17,6 +17,9 @@ export default class ProductDetails {
         this.imageGallery.init();
         this.listenQuantityChange();
         this.initRadioAttributes();
+        this.$zoomModal = $('#zoomModal');
+        this.$zoomModalBtn = $('#_zoomModalBtn');
+        this.$zoomModalContentImg = $('#_zoomModalContentImg');
         Wishlist.load(this.context);
         this.getTabRequests();
 
@@ -55,6 +58,8 @@ export default class ProductDetails {
         $productOptionsElement.show();
 
         this.previewModal = modalFactory('#previewModal')[0];
+        this.zoomModal = modalFactory('#zoomModal')[0];
+        this.bindEvents();
     }
 
     /**
@@ -627,5 +632,13 @@ export default class ProductDetails {
                     .removeClass('is-active');
             }
         }
+    }
+
+    bindEvents() {
+      $(this.$zoomModalBtn).click(() => {
+        const defaultImgUrl = _.first(this.$zoomModal.data('productImages').trim().split(','));
+        $(this.$zoomModalContentImg).attr('src', defaultImgUrl);
+        this.zoomModal.open({ clearContent: false, pending: false });
+      })
     }
 }
