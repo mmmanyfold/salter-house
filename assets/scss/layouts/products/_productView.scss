@@ -2,6 +2,7 @@
 // PRODUCT VIEW (CSS)
 // =============================================================================
 
+@import "../../globals";
 
 // Product view layout
 // -----------------------------------------------------------------------------
@@ -202,4 +203,37 @@
             opacity: 0;
         }
     }
+}
+
+#zoomModal {
+  .modal-content {
+    max-width: 1028px;
+  }
+}
+
+#_zoomModalBtn {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  margin: 0.33em .63em;
+  font-size: 2.5em;
+  line-height: 1em;
+  cursor: pointer;
+  color: $green;
+}
+
+#_zoomModalBtn {
+  display: none;
+  @include breakpoint("small") {
+    display: block;
+  }
+  @include breakpoint(1500px) {
+    display: none;
+  }
+}
+
+#modal {
+  #_zoomModalBtn {
+    display: none;
+  }
 }

@@ -19,6 +19,10 @@
     border: 0.15rem solid #007A51;
 }
 
+#zoomModal.modal.open {
+  max-height: 100%;
+}
+
 .modal--large {
     @include breakpoint("large") {
         width: $modal-width--large;
@@ -52,6 +56,11 @@
 
     @include breakpoint("medium") {
         font-size: 32px;
+    }
+
+    img {
+      width: 25px;
+      margin-bottom: 11px;
     }
 }
 

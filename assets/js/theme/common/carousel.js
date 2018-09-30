@@ -20,7 +20,11 @@ export default function () {
             arrows: false,
             vertical: false,
             verticalSwiping: false,
-            lazyLoad: "anticipated"
+            lazyLoad: "anticipated",
+        });
+        window._currentSlide = 0;
+        $carouselProduct.on('beforeChange', (event, slick, currentSlide, nextSlide) => {
+          window._currentSlide = currentSlide + 1;
         });
     }
 
