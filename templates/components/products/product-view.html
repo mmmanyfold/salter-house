@@ -30,30 +30,6 @@
             <img width="20px" src="{{cdn 'icons/zoom.svg'}}"/>
         </div>
         </div>
-
-        <!--<figure class="productView-image"-->
-                <!--data-image-gallery-main-->
-                <!--{{#if product.main_image}}-->
-                <!--data-zoom-image="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}"-->
-                <!--{{/if}}-->
-        <!--&gt;-->
-        <!--<div class="productView-img-container">-->
-            <!--{{!&#45;&#45; Remove the surrounding a-element if there is no main image. &#45;&#45;}}-->
-            <!--{{#if product.main_image}}-->
-            <!--<a href="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}">-->
-                <!--{{/if}}-->
-
-                <!--<img class="productView-image&#45;&#45;default lazyload"-->
-                     <!--data-sizes="auto"-->
-                     <!--src="{{cdn 'img/loading-apples.gif'}}"-->
-                     <!--data-src="{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}"-->
-                     <!--alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}" data-main-image>-->
-
-                <!--{{#if product.main_image}}-->
-            <!--</a>-->
-            <!--{{/if}}-->
-        <!--</div>-->
-        <!--</figure>-->
     </section>
 
     <section class="productView-details">
@@ -185,13 +161,8 @@
                 </div>
                 {{#if product.can_purchase}}
                 {{> components/products/add-to-cart}}
-                {{/if}}
-                {{#if product.out_of_stock}}
-                {{#if product.out_of_stock_message}}
-                {{> components/common/alert-error product.out_of_stock_message}}
                 {{else}}
-                {{> components/common/alert-error (lang 'products.sold_out')}}
-                {{/if}}
+                <div>Out of Stock</div>
                 {{/if}}
             </form>
         </div>
