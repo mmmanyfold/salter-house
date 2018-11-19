@@ -162,15 +162,8 @@
                 {{#if product.can_purchase}}
                 {{> components/products/add-to-cart}}
                 {{else}}
-                {{> components/products/pre-order}}
+                <div>Out of Stock</div>
                 {{/if}}
-                <!--{{#if product.out_of_stock}}-->
-                <!--{{#if product.out_of_stock_message}}-->
-                <!--{{> components/common/alert-error product.out_of_stock_message}}-->
-                <!--{{else}}-->
-                <!--{{> components/common/alert-error (lang 'products.sold_out')}}-->
-                <!--{{/if}}-->
-                <!--{{/if}}-->
             </form>
         </div>
         {{{snippet 'product_details'}}}
