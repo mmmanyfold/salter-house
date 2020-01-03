@@ -45,19 +45,6 @@ class RevealClose {
     }
 }
 
-/*
- * Extend foundation.reveal with the ability to close a modal by clicking on any of its child element
- * with data-reveal-close attribute.
- *
- * @example
- *
- * <div data-reveal id="helloModal">
- *   <button data-reveal-close>Continue</button>
- * </div>
- *
- * <div data-reveal id="helloModal"></div>
- * <button data-reveal-close="helloModal">Continue</button>
- */
 export default function revealCloseFactory(selector = revealCloseSelector, options = {}) {
     const $buttons = $(selector, options.$context);
 

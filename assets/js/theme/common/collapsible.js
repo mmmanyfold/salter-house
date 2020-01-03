@@ -37,22 +37,6 @@ function optionsFromData($element) {
  * Collapse/Expand toggle
  */
 export class Collapsible {
-    /**
-     * @param {jQuery} $toggle - Trigger button
-     * @param {jQuery} $target - Content to collapse / expand
-     * @param {Object} [options] - Configurable options
-     * @param {Object} [options.$context]
-     * @param {Object} [options.disabledBreakpoint]
-     * @param {Object} [options.disabledState]
-     * @param {Object} [options.enabledState]
-     * @param {Object} [options.openClassName]
-     * @example
-     *
-     * <button id="#more">Collapse</button>
-     * <div id="content">...</div>
-     *
-     * new Collapsible($('#more'), $('#content'));
-     */
     constructor($toggle, $target, {
         disabledBreakpoint,
         disabledState,
@@ -198,24 +182,6 @@ export class Collapsible {
     }
 }
 
-/**
- * Convenience method for constructing Collapsible instance
- *
- * @param {string} [selector]
- * @param {Object} [options]
- * @param {Object} [options.$context]
- * @param {Object} [options.disabledBreakpoint]
- * @param {Object} [options.disabledState]
- * @param {Object} [options.enabledState]
- * @param {Object} [options.openClassName]
- * @return {Array} array of Collapsible instances
- *
- * @example
- * <a href="#content" data-collapsible>Collapse</a>
- * <div id="content">...</div>
- *
- * collapsibleFactory();
- */
 export default function collapsibleFactory(selector = `[data-${PLUGIN_KEY}]`, overrideOptions = {}) {
     const $collapsibles = $(selector, overrideOptions.$context);
 
