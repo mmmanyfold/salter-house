@@ -11,6 +11,7 @@
         <input type="hidden" name="action" value="save_giftwrapping">
         <input type="hidden" name="item_id" value="{{item_id}}">
         <fieldset class="form-fieldset">
+            <legend style="font-size: 0;">Gift Wrapping Options</legend>
 
             <div class="form-field" {{#if quantity '===' 1}}style="display:none"{{/if}}>
                 <input type="radio" class="form-radio" name="giftwraptype" id="giftWrapping-radio-same" checked="checked" value="same">
