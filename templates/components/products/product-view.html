@@ -172,8 +172,8 @@
 </div>
 
 <div id="previewModal" class="modal modal--large" data-reveal>
-    <a href="#" onClick="window.location.reload()" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
-      <img src="{{cdn 'icons/close.svg'}}"/>
+    <a href="#" onClick="window.location.reload()" class="modal-close" aria-label="{{lang 'common.close'}}">
+      <img src="{{cdn 'icons/close.svg'}}" alt="Close Preview"/>
     </a>
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
@@ -184,8 +184,8 @@
      {{#each product.images}}
         {{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}},
      {{/each}}">
-  <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
-      <img src="{{cdn 'icons/close.svg'}}"/>
+  <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}">
+      <img src="{{cdn 'icons/close.svg'}}" alt="Close Preview"/>
   </a>
   <div class="modal-content">
     <img id="_zoomModalContentImg"
