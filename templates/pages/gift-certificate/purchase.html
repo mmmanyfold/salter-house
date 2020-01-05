@@ -1,9 +1,9 @@
 {{#partial "page"}}
-<div class="gift-certificate-wrapper">
+<main class="gift-certificate-wrapper">
 <h1 style="text-align: center" class="page-heading">{{lang 'gift_certificate.heading' }}</h1>
 {{> components/gift-certificate/navigation gift_page='purchase'}}
 
-<main class="account account--fixed">
+<div class="account account--fixed">
 
     {{#each forms.gift_certificate.errors}}
         {{> components/common/alert-error this}}
@@ -112,7 +112,7 @@
                 value="{{lang 'forms.gift_certificate.purchase.submit_value' }}">
         </div>
     </form>
-</main>
 </div>
+</main>
 {{/partial}}
 {{> layout/base}}
