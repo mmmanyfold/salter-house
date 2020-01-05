@@ -1,4 +1,4 @@
-<main class="productView">
+<div class="productView">
     {{#each product.reviews.messages}}
         {{#if error}}
             {{> components/common/alert-error error}}
@@ -196,4 +196,4 @@
          data-src="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}"/>
   </div>
   <div class="loadingOverlay"></div>
-</main>
+</div>
