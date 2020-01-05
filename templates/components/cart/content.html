@@ -1,5 +1,15 @@
 <table class="cart" data-cart-quantity="{{cart.quantity}}">
     <tbody class="cart-list">
+        <tr style="font-size: 0;">
+            <th>Product Image</th>
+            <th></th>
+            <th>Product Name</th>
+            <th>Product Options</th>
+            <th>Product Price</th>
+            <th>Product Quantity</th>
+            <th>Total Price</th>
+            <th>Remove Product</th>
+        </tr>
         {{#each cart.items}}
             <tr class="cart-item" data-item-row>
                 <td class="cart-item-block cart-item-figure">
