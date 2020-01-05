@@ -24,13 +24,13 @@ blog:
         {{> components/common/alert-info message}}
     {{/each}}
 
-<div class="main full">
+<main class="main full">
     <!--{{#if products.new}}-->
       <!--{{> components/products/grid-new products=products.new columns=theme_settings.homepage_new_products_column_count}}-->
     <!--{{/if}}-->
     {{#if products.featured}}
         {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}
-</div>
+</main>
 {{/partial}}
 {{> layout/base}}
