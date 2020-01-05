@@ -1,4 +1,4 @@
-<div class="productView">
+<main class="productView">
     {{#each product.reviews.messages}}
         {{#if error}}
             {{> components/common/alert-error error}}
@@ -13,7 +13,7 @@
         <section class="productView-carousel">
             {{#each product.images}}
             <div class="productView-carousel-slide {{#if @first}}productView-carousel-slide--first{{/if}}">
-                <div class="productView-carousel-image-wrapper">
+                <div tabindex='-1' class="productView-carousel-image-wrapper">
                     <img data-image-gallery-item
                          data-carousel-index="{{@index}}"
                          class="productView-carousel-image lazyload"
@@ -27,7 +27,7 @@
             {{/each}}
         </section>
         <div id="_zoomModalBtn">
-            <img width="20px" src="{{cdn 'icons/zoom.svg'}}"/>
+            <img width="20px" src="{{cdn 'icons/zoom.svg'}}" alt="Zoom Icon"/>
         </div>
         </div>
     </section>
@@ -196,4 +196,4 @@
          data-src="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}"/>
   </div>
   <div class="loadingOverlay"></div>
-</div>
+</main>
