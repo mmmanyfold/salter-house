@@ -45,9 +45,9 @@
             </div>
             {{#if product.brand}}
             <div class="productView-brand-wrapper">
-                <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
+                <button class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
                     <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
-                </h2>
+                </button>
             </div>
             {{/if}}
             </div>
