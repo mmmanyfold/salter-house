@@ -129,16 +129,14 @@
 .navPages-list-left {
     margin-left: 0;
     margin-bottom: 0;
+    display: none;
 
     #shop-all {
-        display: none;
+        width: 5.5em;
     }
 
     @include breakpoint(1010px) {
-        #shop-all {
-            display: block;
-            width: 5.5em;
-        }
+        display: block;
     }
 
     .navPages-action {
