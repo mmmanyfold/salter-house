@@ -112,7 +112,7 @@ export class MobileMenuToggle {
 
         this.$menu
             .removeClass('is-open')
-            .attr('aria-hidden', true);
+            // .attr('aria-hidden', true);
 
         this.$header.removeClass('is-open');
 

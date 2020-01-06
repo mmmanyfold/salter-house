@@ -1,30 +1,28 @@
 <nav class="navPages">
-    <div class="navPages-wrapper">
-        <ul class="navPages-list-left">
+    <ul class="navPages-list-left">
+        <li class="navPages-item">
+            <a class="navPages-action" id="shop-all" href="../categories">SHOP ALL</a>
+        </li>
+    </ul>
+    <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+        <li class="navPages-item mobileMenu-info" aria-hidden="true">
+            <a id="_info-btn-mobile" class="navPages-action" href="#" style="font-weight: bold;">
+                INFO
+            </a>
+        </li>
+        <li class="navPages-item">
+            <div class="category-dot-container">
+                <div class="category-dot-selected-orange" aria-hidden="true"></div>
+                <div class="category-dot-unselected-orange u-hiddenVisually" aria-hidden="true"></div>
+                <a id="newArrivals-link" class="navPages-action" href="/new">→NEW</a>
+            </div>
+        </li>
+        {{#each categories}}
+            {{#unless name '==' 'New'}}
             <li class="navPages-item">
-                <a class="navPages-action" id="shop-all" href="../categories">SHOP ALL</a>
+                {{> components/common/navigation-list}}
             </li>
-        </ul>
-        <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
-            <li class="navPages-item mobileMenu-info">
-                <a id="_info-btn-mobile" class="navPages-action" href="#" style="font-weight: bold;">
-                    INFO
-                </a>
-            </li>
-            <li class="navPages-item">
-                <div class="category-dot-container">
-                    <div class="category-dot-selected-orange"></div>
-                    <div class="category-dot-unselected-orange u-hiddenVisually"></div>
-                    <a id="newArrivals-link" class="navPages-action" href="/new" tabindex='-1'>→NEW</a>
-                </div>
-            </li>
-            {{#each categories}}
-                {{#unless name '==' 'New'}}
-                <li class="navPages-item">
-                    {{> components/common/navigation-list}}
-                </li>
-                {{/unless}}
-            {{/each}}
-        </ul>
-    </div>
+            {{/unless}}
+        {{/each}}
+    </ul>
 </nav>

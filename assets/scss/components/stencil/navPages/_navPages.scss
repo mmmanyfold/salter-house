@@ -61,23 +61,17 @@
     }
 }
 
-.navPages-wrapper {
-    @include breakpoint("medium") {
-        display: flex;
-    }
-}
-
 //
 // Top level Pages navigation list styles
 // -----------------------------------------------------------------------------
 
 .navPages {
     background-color: $navPages-backgroundColor;
-    height: 100%;
     overflow-y: auto;
     padding: 1.25rem 3.5rem;
 
     @include breakpoint("medium") {
+        display: flex;
         @include grid-row(); // 1
         @include nav($style: "navBar", $wrapper: "nav");
         background: none;
