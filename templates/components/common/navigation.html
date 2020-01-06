@@ -15,10 +15,8 @@
                class="navUser-action cart-link"
                data-options="align:right"
                href="#">
-                <span class="navUser-item-cartLabel">
-                    <img width="13px" src="{{cdn 'assets/img/shopping-bag.png'}}" alt="Cart Icon">
-                </span>
-                <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
+                <img width="13px" src="{{cdn 'assets/img/shopping-bag.png'}}" alt="View Cart">
+                <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity" aria-hidden="true">{{cart.quantity}}</span>
             </a>
         </div>
     </div>
