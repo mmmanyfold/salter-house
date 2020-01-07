@@ -48,7 +48,7 @@
     <amp-accordion class="productAccordion-wrapper">
         {{#if product.description}}
             <section expanded class="productAccordion">
-                <h4 class="productAccordion-title">Description</h4>
+                <span class="productAccordion-title">Description</span>
                 <div class="productAccordion-content">
                     {{{product.description}}}
                 </div>
@@ -62,7 +62,7 @@
         {{/if}}
         {{#if settings.add_this.buttons}}
             <section expanded class="productAccordion">
-                <h4 class="productAccordion-title">Share</h4>
+                <span class="productAccordion-title">Share</span>
                 <div class="productAccordion-content social-share">
                     {{> components/amp/common/share }}
                 </div>

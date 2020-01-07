@@ -1,5 +1,5 @@
-<div id="_cart" class="hidden">
-    <main class="page-content" data-cart>
+<div role="complementary" id="_cart" class="hidden">
+    <div class="page-content" data-cart>
         <div class="cart-wrapper cart-panel">
 
         {{#if cart.items.length}}
@@ -22,10 +22,10 @@
         {{{snippet 'cart'}}}
 
         <div class="button--close">
-            <a id="_cart-btn-close" href="#">
-                <svg data-src="{{cdn 'icons/close.svg'}}"/>
+            <a id="_cart-btn-close" href="#" aria-label="Close Cart">
+                <svg data-src="{{cdn 'icons/close.svg'}}" alt="Close Cart"/>
             </a>
         </div>
         </div>
-    </main>
+    </div>
 </div>

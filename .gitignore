@@ -3,3 +3,4 @@ node_modules
 assets/dist
 salter-house.iml
 Cornerstone-2.2.1.zip
+.DS_Store

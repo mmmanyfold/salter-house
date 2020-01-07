@@ -15,7 +15,7 @@ product:
         {{> components/common/alert-info message}}
     {{/each}}
 
-    <div itemscope itemtype="http://schema.org/Product">
+    <main itemscope itemtype="http://schema.org/Product">
         {{> components/products/product-view schema=true}}
 
         {{#if product.videos.list.length}}
@@ -27,11 +27,11 @@ product:
         {{/all}}
         {{#if product.related_products}}
             <div>
-                <h5 class="related-products">Related Products</h5>
+                <p class="related-products">Related Products</p>
                 {{> components/products/grid products=product.related_products}}
             </div>
         {{/if}}
-    </div>
+    </main>
 
 {{/partial}}
 {{> layout/base}}

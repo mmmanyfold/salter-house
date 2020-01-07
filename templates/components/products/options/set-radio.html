@@ -3,18 +3,21 @@
         {{ this.display_name }}:
     </label>
 
-    {{#each this.values}}
-        <input
-            class="form-radio"
-            type="radio"
-            id="attribute_radio_{{id}}"
-            name="attribute[{{../id}}]"
-            value="{{id}}"
-            {{#if selected}}
-                checked
-                data-default
-            {{/if}}
-            {{#if ../required}}required{{/if}}>
-        <label data-product-attribute-value="{{id}}" class="form-label" for="attribute_radio_{{id}}">{{this.label}}</label>
-    {{/each}}
+    <fieldset class="form-fieldset">
+        <legend style="font-size: 0;">Product Options</legend>
+        {{#each this.values}}
+            <input
+                class="form-radio"
+                type="radio"
+                id="attribute_radio_{{id}}"
+                name="attribute[{{../id}}]"
+                value="{{id}}"
+                {{#if selected}}
+                    checked
+                    data-default
+                {{/if}}
+                {{#if ../required}}required{{/if}}>
+            <label data-product-attribute-value="{{id}}" class="form-label" for="attribute_radio_{{id}}">{{this.label}}</label>
+        {{/each}}
+    </fieldset>
 </div>

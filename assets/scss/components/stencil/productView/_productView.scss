@@ -71,6 +71,7 @@
 }
 
 .productView-brand {
+    font-family: "Plaids";
     display: inline-block;
     color: $productView-brand-link-color;
     font-size: fontSize("smaller");
@@ -125,6 +126,10 @@
         color: inherit;
         font-size: inherit;
     }
+
+    mark {
+        color: #000;
+    }
 }
 
 .productView-reviewLink {
@@ -159,6 +164,9 @@
     margin-top: 1.25em;
     .productView-price, .productView-brand-wrapper {
         width: 50%;
+    }
+    .productView-brand-wrapper {
+        text-align: right;
     }
 }
 

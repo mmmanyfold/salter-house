@@ -36,6 +36,12 @@ a {
     transition: $anchor-transition;
 }
 
+mark {
+    background-color: #fff;
+    color: #007A51;
+    padding: 1px 3px;
+}
+
 cite {
     line-height: $blockquote-cite-lineHeight;
     margin: $blockquote-cite-margin;

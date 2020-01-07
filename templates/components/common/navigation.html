@@ -1,37 +1,11 @@
-<nav class="navUser">
-    {{> components/common/currency-selector}}
-
-    <ul class="navUser-section navUser-section--alt">
-        {{#if customer.store_credit.value '>' 0}}
-            <li class="navUser-item">
-                <a class="navUser-action navUser-action--storeCredit"
-                   data-dropdown="storeCredit-dropdown"
-                   data-options="align:bottom"
-                   href="{{urls.cart}}">
-                        <span class="navUser-action-divider">{{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}</span>
-                </a>
-                <div class="dropdown-menu" id="storeCredit-dropdown" data-dropdown-content aria-hidden="true">
-                    {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
-                </div>
-            </li>
-        {{/if}}
-        <li class="navUser-item">
-            <a class="navUser-action navUser-item--compare" href="{{urls.compare}}" data-compare-nav>{{lang 'common.compare'}} <span class="countPill countPill--positive countPill--alt"></span></a>
-        </li>
-        {{#if theme_settings.social_icon_placement_top}}
-            <li class="navUser-item navUser-item--social">
-                {{> components/common/social-links}}
-            </li>
-            <li class="navUser-item navUser-item--divider">|</li>
-        {{/if}}
-    </ul>
+<div class="navUser">
     <div>
         <ul style="display: inline-flex">
             <li class="navUser-item">
                 <a id="_info-btn" class="navUser-action" href="#">INFO</a>
             </li>
             <li class="navUser-item">
-                <div id="quickSearch-container" aria-hidden="true" tabindex="-1">
+                <div id="quickSearch-container">
                     {{> components/common/quick-search}}
                 </div>
             </li>
@@ -41,11 +15,9 @@
                class="navUser-action cart-link"
                data-options="align:right"
                href="#">
-                <span class="navUser-item-cartLabel">
-                    <img width="13px" src="{{cdn 'assets/img/shopping-bag.png'}}">
-                </span>
-                <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
+                <img width="13px" src="{{cdn 'assets/img/shopping-bag.png'}}" alt="View Cart">
+                <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity" aria-hidden="true">{{cart.quantity}}</span>
             </a>
         </div>
     </div>
-</nav>
+</div>

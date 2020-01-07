@@ -1,10 +1,10 @@
 {{#partial "page"}}
 
-<div class="gift-certificate-wrapper">
+<main class="gift-certificate-wrapper">
 <h1 style="text-align: center" class="page-heading">{{lang 'gift_certificate.heading' }}</h1>
 {{> components/gift-certificate/navigation gift_page='balance'}}
 
-<main class="account account--fixed gift-certificate-text">
+<div class="account account--fixed gift-certificate-text">
     <p>
         <strong>{{lang 'gift_certificate.balance.intro' }}</strong>
     </p>
@@ -22,12 +22,12 @@
         <input type="hidden" name="action" value="balance">
         <div class="form-field">
             <div class="form-prefixPostfix wrap">
-                <input class="form-input" id="giftcertificatecode" name="giftcertificatecode">
-                <input type="submit" class="button button--primary form-prefixPostfix-button--postfix" value="{{lang 'forms.gift_certificate.balance.submit_value' }}">
+                <input class="form-input" id="giftcertificatecode" name="giftcertificatecode" aria-label="Gift Certificate Code">
+                <input type="submit" class="button button--primary form-prefixPostfix-button--postfix" value="{{lang 'forms.gift_certificate.balance.submit_value' }}" aria-label="Submit">
             </div>
         </div>
     </form>
-</main>
 </div>
+</main>
 {{/partial}}
 {{> layout/base}}

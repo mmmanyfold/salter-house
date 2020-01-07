@@ -19,18 +19,18 @@
         <a href="{{url}}">
             <div class="card-img-container">
                 <p class="new-label u-hiddenVisually">NEW</p>
-                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}"">
+                <img alt="{{name}}" class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading-apples.gif'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}">
             </div>
         </a>
         <figcaption class="card-figcaption">
-            <h5 class="overlay-text">{{name}}</h5>
+            <div class="overlay-text"><mark>{{name}}</mark></div>
             <div class="overlay-bottom">
-                <h5 class="overlay-text">{{> components/products/price price=price}}</h5>
-                <div class="card-figcaption-body">
+                <div class="overlay-text">{{> components/products/price price=price}}</div>
+                <!-- <div class="card-figcaption-body">
                     {{#if theme_settings.show_product_quick_view}}
                         <a href="#" class="button button--small card-figcaption-button quickview" data-product-id="{{id}}">{{lang 'products.quick_view'}}</a>
                     {{/if}}
-                </div>
+                </div> -->
             </div>
         </figcaption>
     </figure>

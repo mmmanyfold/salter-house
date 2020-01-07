@@ -1,4 +1,4 @@
-<section class="heroCarousel"
+<section role="complementary" class="heroCarousel" aria-label="Featured Products Carousel"
     data-slick='{
         "dots": true,
         "mobileFirst": true,
@@ -17,7 +17,7 @@
             <img class="heroCarousel-image" data-lazy="{{image}}" alt="{{alt_text}}" title="{{alt_text}}"
             {{#if image_width}}width="{{image_width}}"{{/if}} {{#if image_height}}height="{{image_height}}"{{/if}} />
         </div>
-        <a href="{{url}}">
+        <a href="{{url}}" role="button">
             {{#if heading}}
                 {{> components/carousel-content show_background=true}}
             {{else}}

@@ -13,7 +13,7 @@
         <section class="productView-carousel">
             {{#each product.images}}
             <div class="productView-carousel-slide {{#if @first}}productView-carousel-slide--first{{/if}}">
-                <div class="productView-carousel-image-wrapper">
+                <div tabindex='-1' class="productView-carousel-image-wrapper">
                     <img data-image-gallery-item
                          data-carousel-index="{{@index}}"
                          class="productView-carousel-image lazyload"
@@ -27,7 +27,7 @@
             {{/each}}
         </section>
         <div id="_zoomModalBtn">
-            <img width="20px" src="{{cdn 'icons/zoom.svg'}}"/>
+            <img width="20px" src="{{cdn 'icons/zoom.svg'}}" alt="Zoom Icon"/>
         </div>
         </div>
     </section>
@@ -45,9 +45,9 @@
             </div>
             {{#if product.brand}}
             <div class="productView-brand-wrapper">
-                <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
+                <button class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
                     <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
-                </h2>
+                </button>
             </div>
             {{/if}}
             </div>
@@ -172,8 +172,8 @@
 </div>
 
 <div id="previewModal" class="modal modal--large" data-reveal>
-    <a href="#" onClick="window.location.reload()" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
-      <img src="{{cdn 'icons/close.svg'}}"/>
+    <a href="#" onClick="window.location.reload()" class="modal-close" aria-label="{{lang 'common.close'}}">
+      <img src="{{cdn 'icons/close.svg'}}" alt="Close Preview"/>
     </a>
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
@@ -184,8 +184,8 @@
      {{#each product.images}}
         {{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}},
      {{/each}}">
-  <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
-      <img src="{{cdn 'icons/close.svg'}}"/>
+  <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}">
+      <img src="{{cdn 'icons/close.svg'}}" alt="Close Preview"/>
   </a>
   <div class="modal-content">
     <img id="_zoomModalContentImg"

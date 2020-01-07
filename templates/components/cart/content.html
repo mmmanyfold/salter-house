@@ -1,5 +1,15 @@
 <table class="cart" data-cart-quantity="{{cart.quantity}}">
     <tbody class="cart-list">
+        <tr style="font-size: 0;">
+            <th>Product Image</th>
+            <th></th>
+            <th>Product Name</th>
+            <th>Product Options</th>
+            <th>Product Price</th>
+            <th>Product Quantity</th>
+            <th>Total Price</th>
+            <th>Remove Product</th>
+        </tr>
         {{#each cart.items}}
             <tr class="cart-item" data-item-row>
                 <td class="cart-item-block cart-item-figure">
@@ -16,7 +26,7 @@
                     {{#if brand.name}}
                         <p class="cart-item-brand">{{brand.name}}</p>
                     {{/if}}
-                    <h4 class="cart-item-name"><a href="{{url}}">{{name}}</a></h4>
+                    <span class="cart-item-name"><a href="{{url}}">{{name}}</a></span>
                     {{#if release_date}}
                         <p>({{release_date}})</p>
                     {{/if}}
@@ -103,6 +113,7 @@
                                min="1"
                                pattern="[0-9]*"
                                aria-live="polite"
+                               aria-label="Quantity"
                                disabled>
                         {{# if can_modify}}
                             <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="inc">
@@ -128,12 +139,12 @@
                 <td class="cart-item-block cart-item-info cart-item-remove">
                     {{# if can_modify}}
                     <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
-                        <img src="{{cdn 'img/close.png'}}"/>
+                        <img src="{{cdn 'img/close.png'}}" alt="Close Icon"/>
                     </a>
                     {{else}}
                     {{#if type '==' 'GiftCertificate'}}
                     <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
-                        <img src="{{cdn 'img/close.png'}}"/>
+                        <img src="{{cdn 'img/close.png'}}" alt="Close Icon"/>
                     </a>
                     {{/if}}
                     {{/if}}

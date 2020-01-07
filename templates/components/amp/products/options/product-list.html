@@ -8,16 +8,18 @@
         {{/if}}
     </label>
 
+    <fieldset class="form-fieldset">
+    <legend style="font-size: 0;">Product Options</legend>
     {{#if values.0.image}}
         <ul class="productOptions-list">
             {{#unless required}}
                 <li class="productOptions-list-item">
                     <input class="form-radio"
-                           type="radio"
-                           name="attribute[{{id}}]"
-                           value="0"
-                           id="attribute_0_{{id}}"
-                           {{#if defaultValue '==' 0}}checked{{/if}} required>
+                        type="radio"
+                        name="attribute[{{id}}]"
+                        value="0"
+                        id="attribute_0_{{id}}"
+                        {{#if defaultValue '==' 0}}checked{{/if}} required>
                     <label class="form-label" for="attribute_0_{{id}}">{{lang 'products.none'}}</label>
                 </li>
             {{/unless}}
@@ -63,4 +65,5 @@
             <label data-product-attribute-value="{{id}}" class="form-label" for="attribute_{{id}}">{{label}}</label>
         {{/each}}
     {{/if}}
+    </fieldset>
 </div>

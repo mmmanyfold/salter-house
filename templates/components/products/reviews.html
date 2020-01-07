@@ -1,6 +1,6 @@
 {{#if reviews.total}}
 <section class="toggle productReviews" id="product-reviews" data-product-reviews>
-    <h4 class="toggle-title">
+    <span class="toggle-title">
         {{lang 'products.reviews.header' total=reviews.total}}
         {{#if theme_settings.show_product_reviews_tabs '!==' true}}
             <a class="toggleLink is-open" data-collapsible href="#productReviews-content">
@@ -12,7 +12,7 @@
                 </span>
             </a>
         {{/if}}
-    </h4>
+    </span>
     <div class="toggle-content is-open" id="productReviews-content" aria-hidden="false">
         <ul class="productReviews-list" id="productReviews-list">
             {{#each reviews.list}}

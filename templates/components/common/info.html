@@ -1,5 +1,5 @@
-<div id="_info" class="page hidden">
-    <main class="page">
+<div id="_info" class="page hidden" role="complementary">
+    <div class="page">
         <div class="info-page">
             <div class="page-content page-content--centered">
                 <p style="display: none">{{page.content}}</p>
@@ -17,17 +17,14 @@
                             EMAIL: info@salter.house<br>
                             INSTAGRAM: salter.house
                         </div>
-                        <div class="info-newsletter">
-                          {{> components/common/subscription-form}}
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
     <div class="button--close">
-        <a id="_info-btn-close" href="#">
-            <svg data-src="{{cdn 'icons/close.svg'}}"/>
+        <a id="_info-btn-close" href="#" aria-label="Close Info">
+            <svg data-src="{{cdn 'icons/close.svg'}}" alt="Close Info"/>
         </a>
     </div>
 </div>
