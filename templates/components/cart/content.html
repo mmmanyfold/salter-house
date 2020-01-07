@@ -23,9 +23,6 @@
                 </td>
                 <td class="cart-item-spacer"></td>
                 <td class="cart-item-block cart-item-title">
-                    {{#if brand.name}}
-                        <p class="cart-item-brand">{{brand.name}}</p>
-                    {{/if}}
                     <span class="cart-item-name"><a href="{{url}}">{{name}}</a></span>
                     {{#if release_date}}
                         <p>({{release_date}})</p>
@@ -66,6 +63,7 @@
                     <span class="cart-item-options-wrapper">
                     <dl class="definitionList">
                         {{#each options}}
+                        <dt></dt>
                         <dd class="definitionList-value">
                             {{#if is_file}}
                             <a href="/viewfile.php?attributeId={{../id}}&cartitem={{../../id}}">{{{value}}}</a>
@@ -113,7 +111,7 @@
                                min="1"
                                pattern="[0-9]*"
                                aria-live="polite"
-                               aria-label="Quantity"
+                               aria-label="Quantity for {{name}}"
                                disabled>
                         {{# if can_modify}}
                             <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="inc">

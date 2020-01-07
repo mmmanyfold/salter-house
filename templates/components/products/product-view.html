@@ -106,6 +106,7 @@
                 {{/if}}
                 {{#if product.gift_wrapping_available}}
                     <dt class="productView-info-name">{{lang 'products.gift_wrapping'}}</dt>
+                    <dd></dd>
                 {{/if}}
                 {{#if product.shipping}}
                     {{#if product.shipping.calculated}}
@@ -120,12 +121,6 @@
                             <dd class="productView-info-value">{{lang 'products.shipping_fixed' amount=product.shipping.price.formatted}}</dd>
                         {{/if}}
                     {{/if}}
-                {{/if}}
-
-                {{#if settings.bulk_discount_enabled}}
-                    <div class="productView-info-bulkPricing">
-                        {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates}}
-                    </div>
                 {{/if}}
 
                 {{#each product.custom_fields}}
