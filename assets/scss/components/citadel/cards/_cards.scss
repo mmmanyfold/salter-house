@@ -46,9 +46,9 @@
     align-items: center;
 }
 
-span.overlay-text {
+div.overlay-text {
     text-transform: uppercase;
-    color: #007A51;
+    color: #007A51 !important;
     text-align: left;
     letter-spacing: 0.07rem;
     margin: 8px 8.5px;
@@ -59,7 +59,7 @@ span.overlay-text {
     }
 }
 
-span.overlay-text, .card-figcaption-button {
+div.overlay-text, .card-figcaption-button {
     font-size: 10px;
     line-height: 1.2em;
 
