@@ -51,12 +51,6 @@
     }
 }
 
-.header-home {
-    @include breakpoint("medium") {
-        background-color: rgba(0,0,0,0);
-    }
-}
-
 .header-up {
     @include breakpoint(801px) {
         top: -86px;
