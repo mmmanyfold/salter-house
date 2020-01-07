@@ -58,7 +58,7 @@ $orange: #F39838;
 
 .category-dot-selected-orange {
   @extend .category-dot-selected;
-  background: $orange;
+  background: $green;
 }
 
 .category-dot-unselected {
@@ -77,7 +77,7 @@ $orange: #F39838;
 
 .category-dot-unselected-orange {
   @extend .category-dot-unselected;
-  border: 1px $orange solid;
+  border: 1px $green solid;
 }
 
 .category-dot-selected-green {
