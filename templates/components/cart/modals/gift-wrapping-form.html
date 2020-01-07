@@ -43,7 +43,7 @@
 
                 <div class="form-field" id="giftWrapping-message-all" {{#unless selected_wrapping}}style="display:none"{{/unless}}>
                     <label class="form-label" for="giftMessage">{{lang 'cart.gift_wrapping.gift_message'}}</label>
-                    <textarea class="form-input" name="giftmessage[all]" id="giftMessage" rows="3">{{selected_wrapping.message}}</textarea>
+                    <textarea class="form-input" name="giftmessage[all]" aria-label="Gift Message" rows="3">{{selected_wrapping.message}}</textarea>
                 </div>
             </div>
 
@@ -70,7 +70,7 @@
 
                     <div class="form-field" id="giftWrapping-message-{{$index}}" style="display:none">
                         <label class="form-label" for="giftMessage">{{lang 'cart.gift_wrapping.gift_message'}}</label>
-                        <textarea class="form-input" name="giftmessage[{{$index}}]" id="giftMessage" rows="3">{{selected_wrapping.message}}</textarea>
+                        <textarea class="form-input" name="giftmessage[{{$index}}]" aria-label="Gift Message" rows="3">{{selected_wrapping.message}}</textarea>
                     </div>
                 {{/for}}
             </div>
