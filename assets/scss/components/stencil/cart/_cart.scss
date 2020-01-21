@@ -45,9 +45,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
         }
     }
 
-    h3 {
+    p.empty-cart {
         text-align: center;
         margin-top: 0;
+        font-size: 22px;
     }
 }
 

@@ -281,9 +281,6 @@
                     width: auto;
                     margin: 0 2em 0 0;
                     text-align: left;
-                    @include breakpoint(963px) {
-                        margin-right: 3em;
-                    }
                 }
                 .info-newsletter {
                     width: auto;
