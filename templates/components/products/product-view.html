@@ -43,13 +43,13 @@
                 <div class="productView-price">
                     {{> components/products/price price=product.price schema_org=schema}}
             </div>
-            {{#if product.brand}}
+            <!-- {{#if product.brand}}
             <div class="productView-brand-wrapper">
                 <button class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
                     <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
                 </button>
             </div>
-            {{/if}}
+            {{/if}} -->
             </div>
         </div>
             {{{region name="product_below_price"}}}
