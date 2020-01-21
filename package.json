@@ -15,7 +15,7 @@
     "jquery-migrate": "^1.4.1",
     "jstree": "github:vakata/jstree",
     "lazysizes": "3.0.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.13",
     "nod-validate": "^2.0.12",
     "pace": "github:hubspot/pace#a03f1f1de62c9cea6c88b2267b8d7a83858b6cb6",
     "slick-carousel": "^1.8.1",
