@@ -1,5 +1,6 @@
 {{{ snippet "forms_search"}}}
 <form class="form" action="{{urls.search}}">
-    <input required aria-label="Search Input" data-search-quick name="search_query" class="search_query" data-error-message="{{lang 'search.error.empty_field'}}" autocomplete="off">
+    <!-- <label for="search_query" class="font-size-0">Search</label> -->
+    <input required aria-required="true" aria-label="Search Input" data-search-quick name="search_query" class="search_query" data-error-message="{{lang 'search.error.empty_field'}}" autocomplete="off">
     <button type="submit" class="navUser-action navUser-action--quickSearch" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">{{lang 'common.search'}}</button>
 </form>
