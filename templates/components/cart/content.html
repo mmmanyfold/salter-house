@@ -1,14 +1,14 @@
 <table class="cart" data-cart-quantity="{{cart.quantity}}">
     <tbody class="cart-list">
-        <tr class="font-size-0">
-            <th>Product Image</th>
-            <th></th>
-            <th>Product Name</th>
-            <th>Product Options</th>
-            <th>Product Price</th>
-            <th>Product Quantity</th>
-            <th>Total Price</th>
-            <th>Remove Product</th>
+        <tr class="cart-table-headings">
+            <th class="font-size-0">Product Image</th>
+            <th aria-hidden="true"></th>
+            <th style="text-align:left">Item</th>
+            <th class="padded-th" style="text-align:left">Options</th>
+            <th class="padded-th">Price</th>
+            <th class="padded-th">Quantity</th>
+            <th class="padded-th" style="text-align:left">Item Total</th >
+            <th style="text-align:right">Remove</th>
         </tr>
         {{#each cart.items}}
             <tr class="cart-item" data-item-row>
@@ -21,7 +21,7 @@
                         </a>
                     {{/if}}
                 </td>
-                <td class="cart-item-spacer"></td>
+                <td class="cart-item-spacer" aria-hidden="true"></td>
                 <td class="cart-item-block cart-item-title">
                     <span class="cart-item-name"><a href="{{url}}">{{name}}</a></span>
                     {{#if release_date}}
@@ -92,6 +92,7 @@
                 </td>
 
                 <td class="cart-item-block cart-item-info cart-item-quantity">
+                    <label class="font-size-0" for="qty-{{id}}">Quantity</label>
                     <div class="form-increment">
                         {{# if can_modify}}
                             <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="dec">

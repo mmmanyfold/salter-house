@@ -331,6 +331,23 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     clear: none;
 }
 
+.cart-table-headings {
+    font-size: 0;
+    @include breakpoint("medium") {
+        font-size: 14px;
+    }
+    text-transform: uppercase;
+    color: #007A51;
+    margin-bottom: 2px;
+    th {
+        font-weight: 400;
+        letter-spacing: 0.07rem;
+        padding-bottom: 5px;
+    }
+    .padded-th {
+        padding-left: $cart-item-spacing;
+    }
+}
 
 // Cart content
 // -----------------------------------------------------------------------------
