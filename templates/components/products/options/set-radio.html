@@ -1,10 +1,9 @@
 <div class="form-field" data-product-attribute="set-radio">
-    <label class="form-label form-label--alternate form-label--inlineSmall">
-        {{ this.display_name }}:
-    </label>
-
+    
     <fieldset class="form-fieldset">
-        <legend class="font-size-0">Product Options</legend>
+        <legend class="form-label form-label--alternate form-label--inlineSmall" style="font-size:14px">
+            {{ this.display_name }}:
+        </legend>
         {{#each this.values}}
             <input
                 class="form-radio"
