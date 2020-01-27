@@ -86,10 +86,10 @@
                     <label class="form-label" for="message">{{lang 'forms.gift_certificate.purchase.message' }}</label>
                     <textarea class="form-input" name="message" id="message" rows="8" >{{forms.gift_certificate.values.message}}</textarea>
                 </div>
-                <label for="theme_{{this.value}}" class="form-label">
+                <span class="form-label">
                     {{lang 'forms.gift_certificate.purchase.theme' }}
                     <small>{{lang 'common.required' }}</small>
-                </label>
+                </span>
                 <div class="form-field form-field-group">
                     {{#each forms.gift_certificate.themes}}
                         <input type="radio" class="form-radio" name="certificate_theme" id="theme_{{this.value}}" value="{{this.value}}"{{#if this.value '==' ../forms.gift_certificate.values.theme}} checked{{/if}}>
