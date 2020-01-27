@@ -47,8 +47,9 @@
         </div>
         <div class="form-row">
             <fieldset class="form-fieldset form-column">
+                <legend class="font-size-0">Certificate Amount Agreement</legend>
                 {{#if forms.gift_certificate.can_use_custom_amount }}
-                    <div class="form-field">
+                    <div class="form-field no-padding">
                         <label class="form-label" for="certificate_amount">
                             {{lang 'forms.gift_certificate.purchase.amount' }}
                             <small>{{lang 'common.required' }}</small>
@@ -56,7 +57,7 @@
                         <input type="text" data-min="{{forms.gift_certificate.minimum.value}}" data-max="{{forms.gift_certificate.maximum.value}}" data-min-formatted="{{forms.gift_certificate.minimum.formatted}}" data-max-formatted="{{forms.gift_certificate.maximum.formatted}}" class="form-input" name="certificate_amount" id="certificate_amount" value="{{forms.gift_certificate.values.amount.value}}">
                     </div>
                 {{else}}
-                    <div class="form-field">
+                    <div class="form-field no-padding">
                         <label class="form-label" for="selected_amount">
                             {{lang 'forms.gift_certificate.purchase.amount' }}
                             <small>{{lang 'common.required' }}</small>
@@ -69,23 +70,23 @@
                     </div>
                 {{/if}}
                 {{#if forms.gift_certificate.expires_in_days }}
-                    <div class="form-field">
+                    <div class="form-field no-padding">
                         <input type="checkbox" class="form-checkbox" name="agree" id="agree">
                         <label class="form-label" for="agree">{{lang 'forms.gift_certificate.purchase.agree' days=forms.gift_certificate.expires_in_days}}</label>
                     </div>
                 {{/if}}
-                <div class="form-field">
+                <div class="form-field no-padding">
                     <input type="checkbox" class="form-checkbox" name="agree2" id="agree2"{{#if forms.gift_certificate.editing}} checked{{/if}}>
                     <label class="form-label" for="agree2">{{lang 'forms.gift_certificate.purchase.agree2' }}</label>
                 </div>
             </fieldset>
             <fieldset class="form-fieldset form-column">
                 <legend class="font-size-0">Gift Certificate Appearance</legend>
-                <div class="form-field">
+                <div class="form-field no-padding">
                     <label class="form-label" for="message">{{lang 'forms.gift_certificate.purchase.message' }}</label>
                     <textarea class="form-input" name="message" id="message" rows="8" >{{forms.gift_certificate.values.message}}</textarea>
                 </div>
-                <label class="form-label">
+                <label for="theme_{{this.value}}" class="form-label">
                     {{lang 'forms.gift_certificate.purchase.theme' }}
                     <small>{{lang 'common.required' }}</small>
                 </label>

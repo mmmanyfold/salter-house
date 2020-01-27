@@ -5,10 +5,8 @@
 {{> components/gift-certificate/navigation gift_page='balance'}}
 
 <div class="account account--fixed gift-certificate-text">
-    <p>
-        <strong>{{lang 'gift_certificate.balance.intro' }}</strong>
-    </p>
-
+    <label for="giftcertificatecode">{{lang 'gift_certificate.balance.intro' }}</label>
+    <br><br>
     {{#if gift_certificate}}
         {{#if gift_certificate.error}}
             {{> components/common/alert-error gift_certificate.error}}

@@ -19,9 +19,13 @@ category:
 {{{snippet 'categories'}}}
 <div class="page">
     <main class="page-content" id="product-listing-container">
-        <h1 class="font-size-0">
-            {{category.name}}
-        </h1>
+        {{#if category.name}}
+            <h1 class="font-size-0">
+                {{category.name}}
+            </h1>
+        {{else}}
+            <h1 class="font-size-0">All Products</h1>
+        {{/if}}
         {{#if category.products}}
             {{> components/category/product-listing}}
         {{else}}

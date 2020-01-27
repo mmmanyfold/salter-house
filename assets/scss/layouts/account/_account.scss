@@ -13,7 +13,6 @@
 .gift-certificate-text {
     font-family: "MS-PMincho";
     font-size: 1.2em;
-    //padding: 0 2em;
 
     @include breakpoint("small") {
         font-size: 1.3em;
