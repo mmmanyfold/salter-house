@@ -399,4 +399,8 @@
 .form-input {
     letter-spacing: 0.05em;
     color: black;
+
+    &[readonly] {
+        background-color: white;
+    }
 }
