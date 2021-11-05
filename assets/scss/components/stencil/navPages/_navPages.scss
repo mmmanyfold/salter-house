@@ -47,7 +47,7 @@
     right: 0;
     z-index: zIndex("lower");
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         background: transparent;
         display: block;
         padding: 0 1em 0 0;
@@ -70,7 +70,7 @@
     overflow-y: auto;
     padding: 1.25rem 3.5rem;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         display: flex;
         @include grid-row(); // 1
         @include nav($style: "navBar", $wrapper: "nav");
@@ -93,7 +93,7 @@
         margin-left: 0;
         padding-left: 0;
 
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             @include grid-row();
             border-left: 0;
             margin: auto;
@@ -102,21 +102,21 @@
     }
 }
 
-.navPages-list {
-    margin: 0;
-
-    @include breakpoint("medium") {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        float: none;
-    }
-}
-
 .mobileMenu-info {
     display: block;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         display: none;
+    }
+}
+
+.navPages-list {
+    margin: 0;
+
+    @include breakpoint(990px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        float: none;
     }
 }
 
@@ -129,16 +129,25 @@
         width: 5.5em;
     }
 
-    @include breakpoint(1010px) {
+    @include breakpoint(1042px) {
         display: block;
     }
 
     .navPages-action {
         color: black;
 
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             padding-right: 1.5em;
         }
+    }
+}
+
+.navPages-list-right {
+    margin: 0;
+
+    @include breakpoint(990px) {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -146,7 +155,7 @@
     .is-hidden {
         display: none;
 
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             display: inline-block;
         }
     }
@@ -154,7 +163,7 @@
     .navPages-item-page {
         display: none;
 
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             display: inline-block;
         }
     }
@@ -162,7 +171,7 @@
 
 .navPages-action-depth-max.has-subMenu.is-root.is-open {
     .navPages-action-moreIcon {
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             transform: rotate(0);
         }
     }
@@ -172,7 +181,7 @@
     border-bottom: 1px solid $navPages-list--user-borderColor;
     text-align: center;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         border-bottom: 0;
         text-align: left;
     }
@@ -187,7 +196,7 @@
         transform: rotate(90deg);
         width: 35px;
 
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             @include square(8px);
             border: 0;
             border-radius: 0;
@@ -202,7 +211,7 @@
         height: 9.6px;
         width: 9.6px;
 
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             height: 100%;
             width: 100%;
         }
@@ -219,10 +228,10 @@
     text-transform: uppercase;
     line-height: 1.2em;
 
-    @include breakpoint("medium") {
-        font-size: 1.1rem;
+    @include breakpoint(990px) {
+        font-size: 0.9rem;
         display: inline-block;
-        padding: 0 (spacing("single") + spacing("quarter")) 0 (spacing("half") + spacing("quarter"));
+        padding: 0 (spacing("single") + spacing("quarter")) 0 spacing("half");
 
         &.is-open {
             background-color: stencilColor("navPages-subMenu-backgroundColor");
@@ -235,12 +244,17 @@
         }
     }
 
-    @include breakpoint(1225px) {
-        font-size: 1.3rem;
+    @include breakpoint(1200px) {
+        font-size: 1rem;
     }
 
-    @include breakpoint(1300px) {
-        font-size: fontSize("small");
+    @include breakpoint(1257px) {
+        font-size: fontSize("smaller");
+        padding: 0 (spacing("single") + spacing("quarter")) 0 (spacing("half") + spacing("quarter"));
+    }
+
+    @include breakpoint(1520px) {
+        font-size: 1.3rem;
     }
 
     &:hover {
@@ -282,7 +296,7 @@
     margin-left: spacing("quarter");
     transform: rotate(-90deg);
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         transform: none;
     }
 
@@ -299,7 +313,7 @@
     @extend %navPage-childList;
     display: none;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         border: 0;
         display: block;
     }
@@ -321,7 +335,7 @@
     display: none;
     outline: 0;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         // scss-lint:disable ImportantRule
         background-color: stencilColor("navPages-subMenu-backgroundColor");
         padding: spacing("single") spacing("single") (spacing("single") + spacing("half")) !important;
@@ -345,7 +359,7 @@
 }
 
 .has-subMenu.is-root + .navPage-subMenu-horizontal {
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         border-left: 0;
         height: $navPage-subMenu-horizontal-height;
         left: inherit;
@@ -357,7 +371,7 @@
 
 .navPage-subMenu-horizontal {
     &.is-open {
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             border-left: 1px solid stencilColor("navPages-subMenu-separatorColor");
             display: inherit;
             height: $navPage-subMenu-horizontal-height;
@@ -369,7 +383,7 @@
     }
 
     .navPages-action-moreIcon {
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             display: inline-block;
             transform: rotate(-90deg);
         }
@@ -377,7 +391,7 @@
 }
 
 .navPage-subMenu-item {
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         // scss-lint:disable ImportantRule
         @include grid-column(3);
         padding: 0 0.75rem !important; // 1
@@ -398,7 +412,7 @@
 .navPage-subMenu-item-parent {
     width: 100%;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         .navPage-subMenu-action {
             padding-left: spacing("single");
             padding-right: spacing("single");
@@ -418,7 +432,7 @@
 .navPage-subMenu-action {
     padding: spacing("half") 0;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         padding: spacing("half") 0 (spacing("half") + spacing("quarter"));
     }
 }
@@ -429,7 +443,7 @@
 // -----------------------------------------------------------------------------
 
 .navPage-childList-item {
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
     }
 }
 
@@ -450,7 +464,7 @@
     user-select: all;
     margin-bottom: 1.06rem;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         display: none;
     }
 
@@ -504,7 +518,7 @@
 // -----------------------------------------------------------------------------
 
 .navPages-list--user {
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         display: none;
     }
 

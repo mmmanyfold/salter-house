@@ -32,7 +32,7 @@
     z-index: zIndex("high");
     letter-spacing: 0.1em;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         overflow: hidden;
         display: flex;
         justify-content: space-between;
@@ -45,7 +45,7 @@
 
     &.is-open {
         height: 100%;
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             height: auto;
         }
     }
@@ -68,11 +68,11 @@
         margin-right: remCalc($header-toggle-width * 1.5);
     }
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         padding: 0;
-        margin-left: (spacing("single") + spacing("half"));
+        margin-left: (spacing("single"));
         margin-right: 2.75rem;
-        width: 264px;
+        width: 180px;
 
         .header.fixed & {
             background-color: color("greys", "lightest");
@@ -84,16 +84,30 @@
         }
     }
 
-    @include breakpoint(1010px) {
+    @include breakpoint(1042px) {
         margin-right: spacing("single");
     }
 
-    @include breakpoint(1225px) {
-        width: 290px;
+    @include breakpoint(1112px) {
+        width: 210px;
     }
 
-    @include breakpoint(1300px) {
-        width: 355px;
+    @include breakpoint(1235px) {
+        width: 230px;
+    }
+
+    // @include breakpoint(1307px) {
+    //     width: 290px;
+    // }
+
+    // @include breakpoint(1300px) {
+    //     width: 300px;
+    //     margin-left: (spacing("single") + spacing("quarter"));
+    // }
+
+    @include breakpoint(1520px) {
+        margin-left: (spacing("single") + spacing("quarter"));
+        width: 300px;
     }
 
     > a {
@@ -107,7 +121,7 @@
         z-index: zIndex("low");
 
         // scss-lint:disable NestingDepth
-        @include breakpoint("medium") {
+        @include breakpoint(990px) {
             background: none;
             border-bottom: 0;
             display: inline;
@@ -128,7 +142,7 @@
 .header-logo--left {
     text-align: left;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         margin-left: remCalc(40px);
     }
 
@@ -140,7 +154,7 @@
 .header-logo--right {
     text-align: right;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         margin-right: remCalc(40px);
     }
 
@@ -170,7 +184,7 @@
         padding-top: 0;
     }
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         display: inline;
         font-size: $fontSize-logo-large;
         margin-left: 0;
@@ -197,7 +211,7 @@
     display: block;
     padding-bottom: remCalc($header-height) - $header-logo-marginVertical * 2;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         padding-bottom: get-height(stencilString('logo_size'));
     }
 }
@@ -205,7 +219,7 @@
 .header-logo-image {
     max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         position: absolute;
         top: 0;
         max-height: none;
@@ -217,7 +231,7 @@
 .header-logo-image-unknown-size { // 5
     max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         max-height: none;
     }
 }
@@ -238,7 +252,7 @@
     position: absolute;
     z-index: zIndex("high");
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         display: none;
     }
 
