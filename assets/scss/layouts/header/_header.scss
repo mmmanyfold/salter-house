@@ -37,9 +37,14 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 1.5em;
+        height: 73px;
     }
 
-    @include breakpoint(801px) {
+    @include breakpoint(1257px) {
+        height: 82px;
+    }
+
+    @include breakpoint(1520px) {
         height: 86px;
     }
 
