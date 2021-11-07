@@ -143,8 +143,12 @@
             outline: 0;
         }
 
-        @include breakpoint(1060px) {
+        @include breakpoint(1082px) {
             width: 90px;
+        }
+
+        @include breakpoint(1200px) {
+            width: 100px;
         }
 
         @include breakpoint(1300px) {
@@ -152,7 +156,7 @@
             padding-top: 0.3em;
         }
 
-        @include breakpoint("large") {
+        @include breakpoint(1370px) {
             width: 150px;
         }
     }

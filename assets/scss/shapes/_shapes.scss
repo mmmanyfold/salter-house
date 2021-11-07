@@ -1,7 +1,8 @@
 // CSS Shapes:
 // https://css-tricks.com/examples/ShapesOfCSS/
 
-$size: 10px;
+$size: 9px;
+$size-small: 10px;
 $size-medium: 11px;
 $size-large: 12px;
 $green: #007A51;
@@ -15,7 +16,15 @@ $orange: #F39838;
   -webkit-border-radius: $size / 2;
   border-radius: $size / 2;
 
-  @include breakpoint(1225px) {
+  @include breakpoint(1200px) {
+    width: $size-small;
+    height: $size-small;
+    border-radius: $size-small / 2;
+    -moz-border-radius: $size-small / 2;
+    -webkit-border-radius: $size-small / 2;
+  }
+
+  @include breakpoint(1257px) {
     width: $size-medium;
     height: $size-medium;
     border-radius: $size-medium / 2;
@@ -23,7 +32,7 @@ $orange: #F39838;
     -webkit-border-radius: $size-medium / 2;
   }
 
-  @include breakpoint(1300px) {
+  @include breakpoint(1520px) {
     width: $size-large;
     height: $size-large;
     border-radius: $size-large / 2;
@@ -38,7 +47,7 @@ $orange: #F39838;
 
 .category-dot-selected, .category-dot-unselected, .circle {
   display: none;
-  @include breakpoint("medium") {
+  @include breakpoint(990px) {
     display: block;
   }
 }
@@ -48,11 +57,15 @@ $orange: #F39838;
   margin: 1em;
   background: $green;
   position: absolute;
-  top: 5px;
+  top: 3px;
   left: -5px;
 
-  @include breakpoint(1300px) {
-    top: 7px;
+  @include breakpoint(1257px) {
+    top: 4px;
+  }
+
+  @include breakpoint(1520px) {
+    top: 5px;
   }
 }
 
@@ -67,11 +80,15 @@ $orange: #F39838;
   background: transparent;
   border: 1px $green solid;
   position: absolute;
-  top: 5px;
+  top: 3px;
   left: -5px;
 
-  @include breakpoint(1300px) {
-    top: 7px;
+  @include breakpoint(1257px) {
+    top: 4px;
+  }
+
+  @include breakpoint(1520px) {
+    top: 5px;
   }
 }
 

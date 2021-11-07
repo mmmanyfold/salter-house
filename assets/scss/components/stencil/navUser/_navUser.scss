@@ -25,7 +25,7 @@
     flex: 1;
     text-align: right;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         padding-right: (spacing("base") + spacing("half"));
         position: relative;
         right: auto;
@@ -70,19 +70,23 @@
 
 .navUser-action {
     color: stencilColor("navUser-color");
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: fontWeight("normal");
     padding: 0 spacing("quarter");
     text-decoration: none;
     text-transform: uppercase;
     line-height: 1.2em;
 
-    @include breakpoint(1225px) {
-        font-size: 1.3rem;
+    @include breakpoint(1200px) {
+        font-size: 1rem;
     }
 
-    @include breakpoint(1300px) {
-        font-size: fontSize("small");
+    @include breakpoint(1257px) {
+        font-size: fontSize("smaller");
+    }
+
+    @include breakpoint(1520px) {
+        font-size: 1.3rem;
     }
 
     &:hover,
@@ -149,7 +153,7 @@
 .navUser-item {
     display: none;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         display: block;
 
         &.navUser-item--social {
@@ -331,7 +335,7 @@
 .countPill--positive {
     display: none;
 
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         display: inline-block;
     }
 }
@@ -344,7 +348,7 @@
 .cart-link {
     display: initial;
     margin-right: 0.8em;
-    @include breakpoint("medium") {
+    @include breakpoint(990px) {
         margin-right: 0.2em;
     }
 }
