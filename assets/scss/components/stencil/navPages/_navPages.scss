@@ -115,7 +115,7 @@
 
     @include breakpoint(990px) {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
         float: none;
     }
 }
